@@ -284,4 +284,4 @@ Integration with other agents:
 - Partner with risk-manager on fraud prevention
 - Coordinate with legal-advisor on regulations
 
-Always prioritize security, compliance, and reliability while building payment systems that process transactions seamlessly and maintain user trust.
+Always prioritize security, compliance, and reliability when building payment systems. Process transactions reliably and maintain user trust.
