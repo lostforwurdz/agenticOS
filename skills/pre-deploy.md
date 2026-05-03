@@ -7,21 +7,19 @@ description: Validate build, environment, and dependencies before deployment
 
 Run before any deployment to production. All checks must pass.
 
-## Execution (Parallel)
+## Execution
 
-Spawn all three agents **in parallel**:
+Spawn `deploy-checker` (which absorbs the prior `env-validator`, `dep-auditor`, and `infra-auditor` roles):
 
 | Agent | Focus |
 |-------|-------|
-| `deploy-checker` | Build validation, bundle size, production config |
-| `env-validator` | Environment variables, secrets detection, config completeness |
-| `dep-auditor` | Vulnerability scan, outdated packages, license compliance |
+| `deploy-checker` | Build validation, bundle size, production config, environment variables, secrets detection, dependencies, vulnerabilities, license compliance, infrastructure config |
 
 ## Gate Check
 
-After all agents complete:
-- **All pass** -> "Ready to deploy"
-- **Any fail** -> "BLOCKED - Fix first" with specific blockers listed
+After the agent completes:
+- **All checks pass** -> "Ready to deploy"
+- **Any check fails** -> "BLOCKED - Fix first" with specific blockers listed
 
 ## Expected Output
 
@@ -35,12 +33,12 @@ After all agents complete:
 - [x] Bundle size acceptable
 - [x] No build warnings
 
-### Environment (env-validator)
+### Environment (deploy-checker)
 - [x] All required vars set
 - [x] No secrets in code
 - [x] Production config valid
 
-### Dependencies (dep-auditor)
+### Dependencies (deploy-checker)
 - [x] No critical vulnerabilities
 - [x] No high vulnerabilities
 
