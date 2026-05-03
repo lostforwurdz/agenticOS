@@ -209,7 +209,7 @@ Progress tracking:
 
 ### 3. Data Excellence
 
-Achieve world-class data platform.
+Deliver a production-grade data platform.
 
 Excellence checklist:
 - Pipelines reliable
