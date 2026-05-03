@@ -45,7 +45,7 @@ Review your own plan immediately.
 ```
 
 *Guidance:*
-- Did you run `compound-search`?
+- Did you run `compound-search.sh`?
 - Is the verification plan solid?
 - If yes → **Approved**.
 
