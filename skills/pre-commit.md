@@ -10,12 +10,12 @@ Run before every commit to catch issues early.
 ## Execution (Sequential)
 
 ### Step 1: Code Audit
-Spawn `code-auditor` on staged/changed files:
+Spawn `reviewer` on staged/changed files:
 - Check for `any` types, empty catch blocks, console.logs, obvious bugs
 - Focus only on files being committed
 
 ### Step 2: Test Run
-Spawn `test-runner`:
+Spawn `tester`:
 - Run the full test suite
 - Report any failures
 
