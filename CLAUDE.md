@@ -2,124 +2,153 @@
 
 ## Identity
 
-This is a proactive agentic operating system built on Claude Code. It maintains memory across sessions, integrates with external tools, runs autonomous scheduled agents, and governs itself via this document.
+This is a proactive agentic operating system built on Claude Code. It maintains persistent memory across sessions, integrates with external tools via MCP servers, runs autonomous scheduled agents, and governs itself via this document.
 
-**Purpose:** Serve as a persistent, self-managing AI platform for the user — surfacing context, managing tasks, and executing autonomous workflows so the user stays in flow.
+**Purpose:** Serve as a persistent, self-managing AI platform — surfacing context, managing tasks, and executing autonomous workflows so the user stays in flow.
+
+**Source of truth:** This repository is the canonical source. Edits to `~/.claude/CLAUDE.md` (etc.) modify symlinked files here. Commit and push to propagate changes to other machines.
 
 ---
 
 ## User Profile
 
 - **Handle:** lostforwurdz@gmail.com
-- **Work style:** Terse responses preferred. Heavy Claude Code user (opus-4-7 model). Operates in both Windows (local dev) and Linux (VPS). Deep Python expertise. Uses beads (`bd`) for all issue tracking.
-- **Claude Code model:** claude-opus-4-7
+- **Work style:** Terse responses. Heavy Claude Code user (claude-opus-4-7 model). Operates Windows (local dev) + Linux (VPS). Deep Python expertise. Uses beads (`bd`) for all issue tracking and persistent memory.
+- **Preferred model:** claude-opus-4-7
 
 ---
 
 ## Standing Instructions
 
-These behaviors are always active in this workspace:
+These behaviors are always active:
 
-1. **Memory hygiene** — Save non-obvious decisions, patterns, and blockers with `bd remember --key "{type}.{slug}" "..."` before session close. Do NOT create or maintain MEMORY.md files.
-2. **Tool-use defaults** — Prefer dedicated tools (Read, Grep, Glob) over Bash for file operations. Use `sys.executable` not `python3` on Windows. Use `scp` not `rsync` for VPS transfers.
-3. **No TodoWrite** — Use `bd` for all task tracking. Never use TodoWrite, TaskCreate, or markdown TODO files.
+1. **Memory hygiene** — Before session close, save non-obvious decisions and blockers via `bd remember --key "{type}.{slug}" "..."`. Do NOT create or maintain MEMORY.md files.
+2. **Tool-use defaults** — Prefer dedicated tools (Read, Glob, Bash) over piping. Use `sys.executable` not `python3` on Windows. Use `scp -o BatchMode=yes` not `rsync` for VPS transfers.
+3. **No TodoWrite** — Use `bd` for ALL task tracking. Never use TodoWrite, TaskCreate, or markdown TODO files.
 4. **Proof required** — Never claim "done" without evidence (test output, logs, diffs). No phrases like "should work" or "probably".
-5. **Session close** — Always commit + push before ending. `git pull --rebase && bd dolt push && git push` is mandatory.
-6. **Permanent orchestrator** — The top-level Claude Code session is always the orchestrator. Never delegate orchestration to a subagent. Subagents cannot use the Agent tool, so all parallel agent dispatches must originate from this session. When multi-agent work is needed, spawn all agents directly from here.
+5. **Session close mandatory** — Before ending: `git pull --rebase && bd dolt push && git push`. Verify `git status` shows "up to date with origin".
+6. **Permanent orchestrator** — Top-level Claude Code session orchestrates. Subagents cannot use the Agent tool, so all parallel dispatches originate from this session. When multi-agent work is needed, spawn all agents directly from here.
 
 ---
 
-## Available Integrations
+## Active Integrations
 
-Active MCP servers (verify with `claude mcp list`):
+Configured MCP servers (verify with `claude mcp list`):
 
-| Server | Type | Use case |
-|---|---|---|
-| claude.ai Google Drive | OAuth (claude.ai connector) | Drive file access |
-| episodic-memory (plugin) | local stdio | Cross-session conversation search |
-| playwright (plugin) | local stdio | Browser automation, QA testing |
-| context7 | local stdio (npx) | Live library documentation lookup |
-| agent-pool | local stdio (npx) | Multi-agent delegation via Gemini CLI workers |
+| Server | Type | Use case | Auth |
+|---|---|---|---|
+| Google Drive | OAuth (claude.ai) | Drive file ops (`mcp__claude_ai_Google_Drive__*` tools) | Manage at claude.ai/customize/connectors |
+| episodic-memory | Plugin (local stdio) | Cross-session conversation search (`episodic-memory:search-conversations` agent) | Persistent; reads `~/.claude/projects/` |
+| playwright | Plugin (local stdio) | Browser automation, QA testing | Persistent |
+| context7 | Local stdio (npx) | Live library docs lookup (React, Next.js, etc.) | Free tier requires no auth |
+| agent-pool | Local stdio (npx) | Delegate tasks to Gemini CLI workers (access to `gemini-router` skill) | Persistent |
 
-Re-authenticate claude.ai connectors at https://claude.ai/customize/connectors when needed.
-
-### Cross-tool prompts (Gemini CLI)
-
-Custom Gemini skills live at `~/.gemini/skills/`:
-
-- `tdd-planner` — TDD-style implementation plans with checkboxes, exact code, and commit steps
-- `strict-reviewer` — code review with severity buckets (Critical / Important / Suggestions) and an Approve / Request Changes / Major Rework verdict
-
-Invoke from Claude Code via `agent-pool`'s `delegate_task` (full access), `delegate_task_readonly` (sandboxed), or `consult_peer` (cross-model review). Skill files are auto-discovered per task.
-
-The `mcp__agent-pool__schedule_task` tool is **denied** in `~/.claude/settings.json` to prevent collision with the Scheduled Agents below; use the `schedule` skill (CronCreate / Routines) instead.
+**Re-authenticate OAuth servers:** https://claude.ai/customize/connectors
 
 ---
 
 ## Scheduled Agents
 
+Active scheduled agents (register new ones via the `schedule` skill):
+
 | Agent | Schedule | Purpose |
 |-------|----------|---------|
-| Morning Briefing | Weekdays 8:00 AM local | Linear inbox + Calendar + Gmail → daily plan |
-| Memory Consolidation | Nightly 11:00 PM | Consolidate beads memory: dedupe `bd remember` keys, prune stale entries, fix relative dates |
+| morning-briefing | Weekdays 8:00 AM local (`0 8 * * 1-5`) | bd ready queue + due/overdue + calendar/email/issues MCPs (degrades gracefully if optional integrations missing) |
+| memory-consolidation | Nightly 11:00 PM (`0 23 * * *`) | Consolidate `bd remember` keys: dedupe, prune stale entries, fix relative dates to ISO format |
 
-Agent prompts are in `.claude/agents/` (130+ specialist subagents available, plus the two scheduled ones above).
+Agent prompts live in `agents/*.md` (55 active agents + 78 archived).
+
+---
+
+## Gemini CLI Integration
+
+The `agent-pool` MCP provides cross-tool skill delegation to Gemini CLI workers. Custom skills are in `gemini/skills/`:
+
+- **tdd-planner** — TDD-style implementation plans with checkboxes, exact code, and commit steps
+- **strict-reviewer** — Code review: severity buckets (Critical / Important / Suggestions) + verdict (Approve / Request Changes / Major Rework)
+
+Invoke via `agent-pool`'s `delegate_task`, `delegate_task_readonly`, or `consult_peer` tools.
+
+**Note:** `mcp__agent-pool__schedule_task` is **denied** in `~/.claude/settings.json` to prevent collision with Claude Code's `schedule` skill. Use the `schedule` skill instead.
+
+---
+
+## Beads Memory and Issue Tracking
+
+**Config:** `~/.beads/` (separate from this repo). Pushed to Dolt remote via `bd dolt push`.
+
+**Workflow:**
+```bash
+bd ready              # Find available work
+bd show <id>          # View issue details
+bd update <id> --claim  # Claim atomically
+bd close <id>         # Complete work
+bd remember --key "<type>.<slug>" "..."  # Save persistent knowledge
+bd dolt push          # Push at session close
+bd dolt pull          # Pull on different machine
+```
+
+**Rules:**
+- Use `bd` for ALL task tracking — never use TodoWrite, TaskCreate, or .md TODO files
+- Use `bd remember` for persistent knowledge (not MEMORY.md files)
+- Run `bd prime` for full workflow context and session close protocol
+
+---
+
+## Repository Layout
+
+| Path | Purpose |
+|---|---|
+| `CLAUDE.md` | This file — Claude Code constitution, integrations, scheduled agents |
+| `README.md` | Quick start: install, repository layout, deployment model |
+| `AGENTS.md` | Cross-tool universal instructions (read by Copilot, Gemini CLI, Aider, etc.) |
+| `VIOLATIONS.md` | Behavioral lessons logged when rules are broken |
+| `agents/` | 55 active specialist subagent prompts (e.g., morning-briefing, memory-consolidation) |
+| `agents/archived/` | 78 archived agents — preserved but not loaded by default |
+| `skills/` | 25+ reusable skill definitions (code-review, docker, nextjs, testing, etc.) |
+| `workflows/` | Multi-step workflow definitions (plan-compound, review-compound, work.md, explore.md, etc.) |
+| `workflows/archived/` | Archived workflows |
+| `gemini/skills/` | Skills consumed by agent-pool MCP for Gemini CLI workers |
+| `scripts/` | Install + verification scripts (Linux + Windows cross-platform) |
 
 ---
 
 ## How to Expand This OS
 
-- **Add an integration:** Re-auth via `/mcp auth`, then update the integrations table above.
-- **Add a scheduled agent:** Write a prompt in `.claude/agents/`, register with the `schedule` skill, add a row to the table above.
-- **Update the constitution:** Edit this file, commit, push. Changes take effect next session.
-- **Inspect memory:** `bd remember --list` for all keys, `bd remember --key <key>` for one entry. For cross-session conversation search use the `episodic-memory:search-conversations` agent.
-- **Add persistent knowledge:** `bd remember --key "{type}.{slug}" "..."` from anywhere inside this repo (`~/` on Linux, `~/OneDrive/Documents/atbfuture` on Windows).
-- **Clone on new machine:** `git clone https://github.com/lostforwurdz/agenticOS.git ~/agenticOS`
+- **Add an integration:** Re-auth via `/mcp auth`, update the integrations table above, commit + push.
+- **Add a scheduled agent:** Write prompt in `agents/`, register via `schedule` skill, add row to Scheduled Agents table, commit + push.
+- **Inspect persistent memory:** `bd remember --list` (all keys) or `bd remember --key <key>` (one entry).
+- **Search cross-session conversations:** Use `episodic-memory:search-conversations` agent (semantic or text search).
+- **Update constitution:** Edit this file, commit, push. Changes take effect next session.
+- **Clone on new machine:** `git clone https://github.com/lostforwurdz/agenticOS.git ~/agenticOS`, then run `~/agenticOS/scripts/install-linux.sh` or `install-windows.ps1`.
 
+---
 
-<!-- BEGIN BEADS INTEGRATION v:1 profile:minimal hash:ca08a54f -->
-## Beads Issue Tracker
+## Session Completion Protocol
 
-This project uses **bd (beads)** for issue tracking. Run `bd prime` to see full workflow context and commands.
+**When ending a session, complete ALL steps. Work is NOT done until `git push` succeeds.**
 
-### Quick Reference
-
-```bash
-bd ready              # Find available work
-bd show <id>          # View issue details
-bd update <id> --claim  # Claim work
-bd close <id>         # Complete work
-```
-
-### Rules
-
-- Use `bd` for ALL task tracking — do NOT use TodoWrite, TaskCreate, or markdown TODO lists
-- Run `bd prime` for detailed command reference and session close protocol
-- Use `bd remember` for persistent knowledge — do NOT use MEMORY.md files
-
-## Session Completion
-
-**When ending a work session**, you MUST complete ALL steps below. Work is NOT complete until `git push` succeeds.
-
-**MANDATORY WORKFLOW:**
-
-1. **File issues for remaining work** - Create issues for anything that needs follow-up
-2. **Run quality gates** (if code changed) - Tests, linters, builds
-3. **Update issue status** - Close finished work, update in-progress items
-4. **PUSH TO REMOTE** - This is MANDATORY:
+1. **File issues** — Create `bd` issues for remaining work
+2. **Quality gates** — Run tests/linters/builds if code changed
+3. **Update status** — Close finished work, update in-progress items
+4. **PUSH** (mandatory):
    ```bash
    git pull --rebase
    bd dolt push
    git push
    git status  # MUST show "up to date with origin"
    ```
-5. **Clean up** - Clear stashes, prune remote branches
-6. **Verify** - All changes committed AND pushed
-7. **Hand off** - Provide context for next session
+5. **Clean up** — Clear stashes, prune remote branches
+6. **Verify** — All changes committed AND pushed
+7. **Hand off** — Document context for next session via `bd remember`
 
-**CRITICAL RULES:**
-- Work is NOT complete until `git push` succeeds
-- NEVER stop before pushing - that leaves work stranded locally
-- NEVER say "ready to push when you are" - YOU must push
-- If push fails, resolve and retry until it succeeds
-<!-- END BEADS INTEGRATION -->
+**CRITICAL:** Work is NOT complete until `git push` succeeds. Never stop before pushing — that strands work locally.
+
+---
+
+## References
+
+- [README.md](README.md) — Install and quick start
+- [AGENTS.md](AGENTS.md) — Cross-tool instructions and bd workflow
+- [VIOLATIONS.md](VIOLATIONS.md) — Behavioral corrections and lessons learned
+- [agents/morning-briefing.md](agents/morning-briefing.md) — Scheduled agent for daily planning
