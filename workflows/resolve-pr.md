@@ -2,7 +2,7 @@
 description: Handle PR comments and review feedback efficiently. Use when addressing reviewer feedback.
 ---
 
-# /resolve_pr - Address PR Feedback
+# /resolve-pr - Address PR Feedback
 
 Work through PR comments and review feedback systematically.
 

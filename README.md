@@ -56,7 +56,7 @@ Static check: `~/.claude/settings.json` has expected hooks wired. Prints live-te
 | [`agents/`](agents/) | 55 active specialist subagent definitions (e.g., morning-briefing, memory-consolidation, react-specialist, fastapi-developer) |
 | [`agents/archived/`](agents/archived/) | 78 archived agents — preserved but not loaded by default |
 | [`skills/`](skills/) | 25+ reusable skill definitions (code-review, docker, nextjs, security, testing, etc.) plus subdirectories (codeql, differential-review, semgrep, sarif-parsing, supply-chain-risk-auditor, insecure-defaults) |
-| [`workflows/`](workflows/) | Multi-step workflow definitions (plan-compound.md, review-compound.md, work.md, explore.md, cycle.md, resolve_pr.md) |
+| [`workflows/`](workflows/) | Multi-step workflow definitions (plan-compound.md, review-compound.md, work.md, explore.md, cycle.md, resolve-pr.md) |
 | [`workflows/archived/`](workflows/archived/) | Archived workflows |
 | [`gemini/skills/`](gemini/skills/) | Skills for Gemini CLI workers (tdd-planner, strict-reviewer) — consumed by agent-pool MCP |
 | [`scripts/`](scripts/) | Install + verification (bash + PowerShell, cross-platform) |

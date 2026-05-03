@@ -13,7 +13,7 @@ A systematic approach to code review that moves beyond "it looks good" to rigoro
 ## When To Use
 
 - **Self-Review**: Before submitting a PR or finishing `/work`
-- **Peer Review**: When reviewing another agent's or human's code (`/resolve_pr`)
+- **Peer Review**: When reviewing another agent's or human's code (`/resolve-pr`)
 - **Plan Review**: When validating an implementation plan (`/plan_review`)
 
 ## Instrumentation
