@@ -10,18 +10,18 @@ Fix bugs with a test-first approach to prevent regressions. Provide the bug desc
 ## Execution (Sequential)
 
 ### Step 1: Reproduce with Test
-Spawn `test-writer` with the bug description:
+Spawn `tester` with the bug description:
 - Create a test that fails (reproduces the bug)
 - Test should pass after the fix is applied
 
 ### Step 2: Fix the Bug
-Spawn `code-fixer` with the bug description and test file:
+Spawn `coder` with the bug description and test file:
 - Find root cause
 - Implement minimal fix
 - Don't refactor unrelated code
 
 ### Step 3: Verify
-Spawn `test-runner`:
+Spawn `tester`:
 - New test passes (bug is fixed)
 - All existing tests pass (no regressions)
 
