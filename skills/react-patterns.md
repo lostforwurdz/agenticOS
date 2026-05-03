@@ -1,3 +1,8 @@
+---
+name: react-patterns
+description: Modern React patterns covering component composition, custom hooks, state management, performance optimizations, and effect rules.
+---
+
 # React Patterns Skill
 
 ## Overview
