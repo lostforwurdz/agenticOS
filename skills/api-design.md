@@ -1,3 +1,8 @@
+---
+name: api-design
+description: API design guidance covering REST resource modeling, HTTP status codes, GraphQL schema patterns, versioning, and error response conventions.
+---
+
 # API Design Skill
 
 ## Overview
