@@ -1,3 +1,8 @@
+---
+name: tailwind
+description: Tailwind CSS v4 patterns covering utility-first composition, responsive design, design tokens, and component styling conventions.
+---
+
 # Tailwind CSS Skill
 
 ## Overview
