@@ -1,0 +1,1653 @@
+[
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/perf-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "perf-auditor",
+      "description": "Performance auditor and optimizer. Finds bottlenecks (bundle, queries, rendering, memory) and implements fixes. Absorbs performance-optimizer.",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 82,
+    "char_count": 2655,
+    "sha256": "12c814186cd5",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/deploy-checker.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "deploy-checker",
+      "description": "Pre-deployment validation gate. Checks build, environment, dependencies, migrations, and infrastructure config. Absorbs env-validator, dep-auditor, infra-auditor.",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 91,
+    "char_count": 2498,
+    "sha256": "a98b9de3a0d5",
+    "mtime": 1776378668
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/database-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "database-admin",
+      "description": "Schema design, migrations, query optimization, and database auditing. Absorbs db-auditor.",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 71,
+    "char_count": 2279,
+    "sha256": "bad6cee48f00",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/debugger.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "debugger",
+      "description": "Root cause analysis and fix planning. Diagnoses bugs systematically then produces a prioritized FIXES.md. Absorbs fix-planner.",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 79,
+    "char_count": 2301,
+    "sha256": "03df734127b3",
+    "mtime": 1776376220
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/planner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "planner",
+      "description": "\"Create detailed implementation plans for complex tasks.\"",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 280,
+    "char_count": 7099,
+    "sha256": "deedcbe71e18",
+    "mtime": 1776376226
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/bug-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "bug-auditor",
+      "description": "Runtime bug scanner. Finds error handling gaps, race conditions, memory leaks, null refs.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 319,
+    "char_count": 8236,
+    "sha256": "dc63cbdc3ad6",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "researcher",
+      "description": "\"Research external resources, APIs, and documentation.\"",
+      "tools": "Read, Glob, Grep, WebFetch, WebSearch",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 135,
+    "char_count": 4496,
+    "sha256": "a4eafc874ab3",
+    "mtime": 1776379284
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/devops-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "devops-engineer",
+      "description": "\"Infrastructure & CI/CD expert for Docker, Kubernetes, GitHub Actions, and deployment automation.\"",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 174,
+    "char_count": 5148,
+    "sha256": "c1da1f39198b",
+    "mtime": 1776379284
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/copywriter.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "copywriter",
+      "description": "\"Create marketing content with CRO optimization.\"",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "line_count": 159,
+    "char_count": 4457,
+    "sha256": "23c4347e67ce",
+    "mtime": 1776379284
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/reviewer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "reviewer",
+      "description": "Pre-merge code review and architecture sign-off. Reviews quality, correctness, patterns, and architecture. Absorbs architect-reviewer and code-auditor.",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 89,
+    "char_count": 2909,
+    "sha256": "21d185c238b2",
+    "mtime": 1776378668
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/penetration-tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "penetration-tester",
+      "description": "\"Expert in penetration testing, vulnerability assessment, and security testing.\"",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 180,
+    "char_count": 4256,
+    "sha256": "3ddce4c2439b",
+    "mtime": 1776378668
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/seed-generator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "seed-generator",
+      "description": "Test data generator. Creates realistic seed data based on schema.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 257,
+    "char_count": 5663,
+    "sha256": "a8a1206336b5",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/api-tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-tester",
+      "description": "API endpoint testing. Discovery, validation, auth flows, error handling.",
+      "tools": "Read, Bash, Glob, Grep",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 345,
+    "char_count": 9976,
+    "sha256": "81e8285e45fb",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/security-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "security-auditor",
+      "description": "Comprehensive security analysis. OWASP Top 10, injection, auth, secrets, headers.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 361,
+    "char_count": 9997,
+    "sha256": "e4dba627c321",
+    "mtime": 1776378668
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "tester",
+      "description": "Write tests for new or existing code AND run the full test suite to validate. Unit, integration, API, edge cases. Vitest/Jest patterns.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 167,
+    "char_count": 4063,
+    "sha256": "d91b2381311e",
+    "mtime": 1776376222
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/ui-designer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ui-designer",
+      "description": "\"Design user interface and experience.\"",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "line_count": 254,
+    "char_count": 6012,
+    "sha256": "822b7d1ba7c1",
+    "mtime": 1776379284
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/orchestrator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "orchestrator",
+      "description": "Coordinates multi-agent work, translates requirements into execution plans, tracks progress. Absorbs product-owner and project-manager roles.",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 96,
+    "char_count": 3975,
+    "sha256": "d96a81b4b195",
+    "mtime": 1776376259
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/seo-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "seo-auditor",
+      "description": "SEO and GEO (Generative Engine Optimization) auditor. Meta tags, OpenGraph, sitemap, structured data, AI search visibility.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "line_count": 176,
+    "char_count": 4424,
+    "sha256": "3fd9d93527a8",
+    "mtime": 1776379284
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/browser-qa-agent.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "browser-qa-agent",
+      "description": "Browser-based QA \u2014 navigates the running app, finds UI bugs, console errors, and visual regressions. Absorbs fullstack-qa-orchestrator, console-monitor, visual-diff.",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 85,
+    "char_count": 2331,
+    "sha256": "5f4fc7000d24",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/scout.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scout",
+      "description": "\"Explore and search code in the current codebase.\"",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "line_count": 228,
+    "char_count": 5028,
+    "sha256": "c3b16139e60d",
+    "mtime": 1775933241
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/git-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "git-manager",
+      "description": "Git operations and pull request description generation. Commits, branches, merges, conflict resolution, PR writeups. Absorbs pr-writer.",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "line_count": 79,
+    "char_count": 1985,
+    "sha256": "59f8a99cb039",
+    "mtime": 1776376237
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/docs-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "docs-manager",
+      "description": "Documentation generation and gap analysis. Writes and updates READMEs, API docs, changelogs, and inline comments. Absorbs doc-auditor.",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "line_count": 60,
+    "char_count": 1905,
+    "sha256": "871bed6fc3fd",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/ui-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ui-auditor",
+      "description": "UI/UX consistency and accessibility checker. Design patterns, a11y issues.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 129,
+    "char_count": 3144,
+    "sha256": "6bb552eac617",
+    "mtime": 1776378762
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/code-archaeologist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "code-archaeologist",
+      "description": "\"Expert in legacy code, refactoring, and understanding undocumented systems.\"",
+      "model": "claude-opus-4-6"
+    },
+    "line_count": 118,
+    "char_count": 3203,
+    "sha256": "6c048855bb53",
+    "mtime": 1775933241
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/brainstormer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "brainstormer",
+      "description": "\"Generate creative ideas and solutions.\"",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 108,
+    "char_count": 2273,
+    "sha256": "3e244aceff1b",
+    "mtime": 1776376215
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/coder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "coder",
+      "description": "Writes and edits code across all layers \u2014 backend, frontend, mobile, infra. Follows existing patterns exactly. Absorbs fullstack-developer, backend-specialist, frontend-specialist, mobile-developer, code-fixer.",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 66,
+    "char_count": 2283,
+    "sha256": "431445eff8a0",
+    "mtime": 1776376242
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/agents/semgrep-scanner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "semgrep-scanner",
+      "description": "\"Executes Semgrep CLI scans for a specific language category and produces SARIF output. Spawned by the semgrep skill as a parallel worker \u2014 one agent per detected language.\"",
+      "tools": "Bash(semgrep scan:*), Bash",
+      "model": "claude-sonnet-4-6"
+    },
+    "line_count": 92,
+    "char_count": 2831,
+    "sha256": "1e332644d1a5",
+    "mtime": 1776378668
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/explore.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Deep investigation before planning. Use for best practices, implications, and systematic analysis."
+    },
+    "line_count": 141,
+    "char_count": 3997,
+    "sha256": "6050af8fa99b",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/review-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Perform comprehensive multi-pass code review with security, performance, and architecture checks."
+    },
+    "line_count": 353,
+    "char_count": 8662,
+    "sha256": "3442f8df3d86",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/full-audit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 128,
+    "char_count": 4339,
+    "sha256": "0cb8439d8577",
+    "mtime": 1776378944
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/new-feature.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 3464,
+    "sha256": "278d3c172c03",
+    "mtime": 1776378357
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/pre-deploy.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 96,
+    "char_count": 2568,
+    "sha256": "4ca58f872e58",
+    "mtime": 1776378944
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/pre-commit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 97,
+    "char_count": 2135,
+    "sha256": "6fb19bffcca2",
+    "mtime": 1776378944
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/work.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Execute work plans systematically while maintaining quality. Use after /plan to implement features."
+    },
+    "line_count": 391,
+    "char_count": 9463,
+    "sha256": "64bb63979f44",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/resolve_pr.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Handle PR comments and review feedback efficiently. Use when addressing reviewer feedback."
+    },
+    "line_count": 131,
+    "char_count": 2417,
+    "sha256": "8cce9f7db0cf",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/cycle.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Orchestrate the full \"plan \u2192 review \u2192 work \u2192 review \u2192 compound\" lifecycle for small tasks."
+    },
+    "line_count": 141,
+    "char_count": 2822,
+    "sha256": "36a996d40e76",
+    "mtime": 1776378578
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/plan-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Transform feature descriptions into well-structured project plans with solution search and pattern checks."
+    },
+    "line_count": 429,
+    "char_count": 11564,
+    "sha256": "896ed8141942",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/release-prep.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 3623,
+    "sha256": "d8f4b5e37cb3",
+    "mtime": 1776378944
+  },
+  {
+    "path": "/home/kobramaz/Documents/antigravity/.claude/workflows/bug-fix.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 159,
+    "char_count": 3845,
+    "sha256": "48c6d4516c72",
+    "mtime": 1776378357
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/code-review.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "code-review",
+      "description": "Systematic multi-perspective code review with consistent quality gates.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 38,
+    "char_count": 1354,
+    "sha256": "2898c62511b2",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/session-resume.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "session-resume",
+      "description": "Resume context from previous session"
+    },
+    "line_count": 97,
+    "char_count": 1640,
+    "sha256": "3c2f9523ba4b",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/full-audit.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "full-audit",
+      "description": "Run all 11 audit agents in parallel, then consolidate findings with fix-planner"
+    },
+    "line_count": 44,
+    "char_count": 1780,
+    "sha256": "d32dd38afb14",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/security.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 115,
+    "char_count": 2091,
+    "sha256": "e8c807e56c8b",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/mobile.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 141,
+    "char_count": 2897,
+    "sha256": "6c33efbc723e",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/new-feature.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "new-feature",
+      "description": "Develop new features with test-first approach (TDD)"
+    },
+    "line_count": 53,
+    "char_count": 1177,
+    "sha256": "c514e7abdd97",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/nextjs.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 102,
+    "char_count": 2385,
+    "sha256": "75eaf948bd5d",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/consolidate-memory.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 4077,
+    "sha256": "b723666fc747",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/pre-deploy.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "pre-deploy",
+      "description": "Validate build, environment, and dependencies before deployment"
+    },
+    "line_count": 50,
+    "char_count": 1162,
+    "sha256": "9a15e9106d74",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/pre-commit.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "pre-commit",
+      "description": "Run code quality checks and tests before committing"
+    },
+    "line_count": 45,
+    "char_count": 879,
+    "sha256": "a9b6bf91eb46",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/file-todos.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "file-todos",
+      "description": "Manage file-based todo tracking in the todos/ directory"
+    },
+    "line_count": 89,
+    "char_count": 1725,
+    "sha256": "01f82ff356ae",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/testing.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "testing",
+      "description": "Unified testing commands and patterns across frontend and backend.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 44,
+    "char_count": 1035,
+    "sha256": "4cbf9d7ea393",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/tailwind.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 2913,
+    "sha256": "713d013b68ca",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/docker.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 127,
+    "char_count": 2282,
+    "sha256": "6b5f3fee4412",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/compound-docs.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "compound-docs",
+      "description": "Document solved problems for knowledge persistence"
+    },
+    "line_count": 134,
+    "char_count": 3038,
+    "sha256": "1c3b6401c330",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/release-prep.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "release-prep",
+      "description": "Full audit + fixes + deploy validation for production release"
+    },
+    "line_count": 63,
+    "char_count": 1428,
+    "sha256": "cecb6bea575e",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/react-patterns.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 84,
+    "char_count": 1874,
+    "sha256": "1ea58787a6b7",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/api-design.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 135,
+    "char_count": 2527,
+    "sha256": "287680c27aa1",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/performance.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 2658,
+    "sha256": "414720f85879",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/bug-fix.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "bug-fix",
+      "description": "Fix bugs with regression prevention using test-first approach"
+    },
+    "line_count": 54,
+    "char_count": 1225,
+    "sha256": "c785a02fcc24",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/debug.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "debug",
+      "description": "Systematic debugging with structured reproduction and root cause analysis.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 41,
+    "char_count": 1204,
+    "sha256": "3562e9bb26b8",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/differential-review/patterns.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 301,
+    "char_count": 6999,
+    "sha256": "52abb18abbc7",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/differential-review/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "differential-review",
+      "description": ">",
+      "allowed-tools": ""
+    },
+    "line_count": 221,
+    "char_count": 6504,
+    "sha256": "72a1e8dc98d5",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/differential-review/methodology.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 235,
+    "char_count": 6716,
+    "sha256": "16b335d24cf2",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/differential-review/adversarial.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 204,
+    "char_count": 5062,
+    "sha256": "3cb823f38c6e",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/differential-review/reporting.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 370,
+    "char_count": 6956,
+    "sha256": "0016876dc6f1",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/insecure-defaults/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "insecure-defaults",
+      "description": "\"Detects fail-open insecure defaults (hardcoded secrets, weak auth, permissive security) that allow apps to run insecurely in production. Use when auditing security, reviewing config management, or analyzing environment variable handling.\"",
+      "allowed-tools": ""
+    },
+    "line_count": 118,
+    "char_count": 5209,
+    "sha256": "6c6c54ab48dc",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/insecure-defaults/references/examples.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 410,
+    "char_count": 10649,
+    "sha256": "1d47703f84b6",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/retro/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "retro",
+      "description": "Run a session retrospective and route each finding to the right destination (GitHub issue / VIOLATIONS.md entry / episodic-memory MCP / direct fix / docs/SYSTEM.md). Use at session end, after a milestone, or whenever the session corrected/broke/learned something worth capturing. The value of this skill over un-aided reasoning is the destinations table \u2014 which prevents the most common failure mode of dumping cross-session facts (credentials, hostnames, ports) into VIOLATIONS.md instead of episodic memory.",
+      "allowed-tools": "Read, Grep, Glob, Edit, Write, Bash(gh *)"
+    },
+    "line_count": 51,
+    "char_count": 3779,
+    "sha256": "ce5cecf0481a",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/semgrep/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "semgrep",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 213,
+    "char_count": 9720,
+    "sha256": "b12e2130745f",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/semgrep/workflows/scan-workflow.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 312,
+    "char_count": 11382,
+    "sha256": "de63106a5254",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/semgrep/references/rulesets.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 163,
+    "char_count": 7695,
+    "sha256": "e641bf7b2f32",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/semgrep/references/scan-modes.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 111,
+    "char_count": 4466,
+    "sha256": "76c8d41c8fc2",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/semgrep/references/scanner-task-prompt.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 141,
+    "char_count": 5907,
+    "sha256": "67ae9626627c",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "codeql",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 283,
+    "char_count": 15527,
+    "sha256": "0f340fbd3335",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/workflows/build-database.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 281,
+    "char_count": 9565,
+    "sha256": "7fb24c47ffe4",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/workflows/create-data-extensions.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 262,
+    "char_count": 9912,
+    "sha256": "2210ce1466a8",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/workflows/run-analysis.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 303,
+    "char_count": 11466,
+    "sha256": "6a489cfc57eb",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/performance-tuning.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 112,
+    "char_count": 3352,
+    "sha256": "d725aef573fd",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/build-fixes.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 91,
+    "char_count": 2632,
+    "sha256": "9d74eaef2a75",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/extension-yaml-format.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 210,
+    "char_count": 7838,
+    "sha256": "a263fa41dc78",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/run-all-suite.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 101,
+    "char_count": 4257,
+    "sha256": "cde0d37d23f4",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/quality-assessment.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 173,
+    "char_count": 7002,
+    "sha256": "1dabaec584cc",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/macos-arm64e-workaround.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 180,
+    "char_count": 6796,
+    "sha256": "2b4e18ae0924",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/diagnostic-query-templates.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 340,
+    "char_count": 10017,
+    "sha256": "d9f72ace8865",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/language-details.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 208,
+    "char_count": 5091,
+    "sha256": "1d6db4a45a88",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/threat-models.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 52,
+    "char_count": 3056,
+    "sha256": "8855d4907b39",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/sarif-processing.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 80,
+    "char_count": 3117,
+    "sha256": "abde04ca479a",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/important-only-suite.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 154,
+    "char_count": 5767,
+    "sha256": "27823a2553db",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/codeql/references/ruleset-catalog.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 66,
+    "char_count": 2197,
+    "sha256": "2b139ae59386",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/sarif-parsing/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "sarif-parsing",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 484,
+    "char_count": 15153,
+    "sha256": "bebc9ea0083f",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/sarif-parsing/resources/jq-queries.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 163,
+    "char_count": 5267,
+    "sha256": "d7fb98ee8859",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/supply-chain-risk-auditor/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "supply-chain-risk-auditor",
+      "description": "\"Identifies dependencies at heightened risk of exploitation or takeover. Use when assessing supply chain attack surface, evaluating dependency health, or scoping security engagements.\"",
+      "allowed-tools": ""
+    },
+    "line_count": 68,
+    "char_count": 5786,
+    "sha256": "4d81229cac98",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/skills/supply-chain-risk-auditor/resources/results-template.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 42,
+    "char_count": 1172,
+    "sha256": "39ae26b3d55f",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/templates/protocol-examples.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 94,
+    "char_count": 3486,
+    "sha256": "c364bd16de44",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/perf-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "perf-auditor",
+      "description": "Performance auditor and optimizer. Finds bottlenecks (bundle, queries, rendering, memory) and implements fixes. Absorbs performance-optimizer.",
+      "model": "opus",
+      "skills": "[performance, full-audit]",
+      "workflows": "[full-audit, work]"
+    },
+    "line_count": 84,
+    "char_count": 2708,
+    "sha256": "587c89698b88",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/quant-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "quant-analyst",
+      "description": "\"Use this agent when you need to develop quantitative trading strategies, build financial models with rigorous mathematical foundations, or conduct advanced risk analytics for derivatives and portfolios. Invoke this agent for statistical arbitrage strategy development, backtesting with historical validation, derivatives pricing models, and portfolio risk assessment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[performance]",
+      "workflows": "[explore, work]"
+    },
+    "line_count": 289,
+    "char_count": 6884,
+    "sha256": "7dc2b67b91d5",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/react-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "react-specialist",
+      "description": "\"Use when optimizing existing React applications for performance, implementing advanced React 18+ features, or solving complex state management and architectural challenges within React codebases.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[react-patterns, nextjs, performance]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 289,
+    "char_count": 6807,
+    "sha256": "f5df698f03b7",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/deploy-checker.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "deploy-checker",
+      "description": "Pre-deployment validation gate. Checks build, environment, dependencies, migrations, and infrastructure config. Absorbs env-validator, dep-auditor, infra-auditor.",
+      "model": "sonnet",
+      "skills": "[pre-deploy, pre-commit]",
+      "workflows": "[pre-deploy, release-prep]"
+    },
+    "line_count": 93,
+    "char_count": 2558,
+    "sha256": "db6b8b16b849",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/database-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "database-admin",
+      "description": "Schema design, migrations, query optimization, and database auditing. Absorbs db-auditor.",
+      "model": "sonnet",
+      "skills": "[new-feature, performance, bug-fix]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 73,
+    "char_count": 2343,
+    "sha256": "38af0437cf17",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/websocket-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "websocket-engineer",
+      "description": "\"Use this agent when implementing real-time bidirectional communication features using WebSockets, Socket.IO, or similar technologies at scale.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[api-design, performance, new-feature]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 152,
+    "char_count": 4377,
+    "sha256": "baa8394b5bf8",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/debugger.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "debugger",
+      "description": "Root cause analysis and fix planning. Diagnoses bugs systematically then produces a prioritized FIXES.md. Absorbs fix-planner.",
+      "model": "opus",
+      "skills": "[debug, bug-fix]",
+      "workflows": "[bug-fix, explore]"
+    },
+    "line_count": 81,
+    "char_count": 2345,
+    "sha256": "807fd88c6bed",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/fastapi-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "fastapi-developer",
+      "description": "\"Use when building modern async Python APIs with FastAPI, implementing Pydantic v2 validation, dependency injection patterns, or deploying high-performance ASGI applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[api-design, testing, new-feature]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 290,
+    "char_count": 6960,
+    "sha256": "42474cfc5916",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/data-scientist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-scientist",
+      "description": "\"Use this agent when you need to analyze data patterns, build predictive models, or extract statistical insights from datasets. Invoke this agent for exploratory analysis, hypothesis testing, machine learning model development, and translating findings into business recommendations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[new-feature]",
+      "workflows": "[explore, work]"
+    },
+    "line_count": 289,
+    "char_count": 6923,
+    "sha256": "80bacea22502",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/reviewer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "reviewer",
+      "description": "Pre-merge code review and architecture sign-off. Reviews quality, correctness, patterns, and architecture. Absorbs architect-reviewer and code-auditor.",
+      "model": "opus",
+      "skills": "[code-review, differential-review, pre-commit, security]",
+      "workflows": "[pre-commit, review-compound, pre-deploy]"
+    },
+    "line_count": 91,
+    "char_count": 3016,
+    "sha256": "c9b8a37c20aa",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/security-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "security-auditor",
+      "description": "Comprehensive security analysis. OWASP Top 10, injection, auth, secrets, headers.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "opus",
+      "skills": "[security, codeql, semgrep, insecure-defaults, supply-chain-risk-auditor, sarif-parsing, full-audit]",
+      "workflows": "[full-audit]"
+    },
+    "line_count": 363,
+    "char_count": 10119,
+    "sha256": "ec1849bd645b",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "tester",
+      "description": "Write tests for new or existing code AND run the full test suite to validate. Unit, integration, API, edge cases. Vitest/Jest patterns.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[testing, bug-fix]",
+      "workflows": "[pre-commit, pre-deploy, bug-fix]"
+    },
+    "line_count": 169,
+    "char_count": 4124,
+    "sha256": "259a7b31d3a3",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/dx-optimizer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dx-optimizer",
+      "description": "\"Use this agent when optimizing the complete developer workflow including build times, feedback loops, testing efficiency, and developer satisfaction metrics across the entire development environment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[file-todos, performance]",
+      "workflows": "[work]"
+    },
+    "line_count": 288,
+    "char_count": 6645,
+    "sha256": "8d29e8b03238",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/orchestrator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "orchestrator",
+      "description": "Coordinates multi-agent work, translates requirements into execution plans, tracks progress. Absorbs product-owner and project-manager roles.",
+      "model": "opus",
+      "skills": "[new-feature, bug-fix, full-audit, pre-commit, pre-deploy, release-prep, session-resume]",
+      "workflows": "[cycle, new-feature, bug-fix, full-audit, plan-compound, pre-commit, pre-deploy, release-prep, resolve_pr, review-compound, work]"
+    },
+    "line_count": 98,
+    "char_count": 4202,
+    "sha256": "7dbe9fa350c6",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/security-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "security-engineer",
+      "description": "\"Use this agent when implementing comprehensive security solutions across infrastructure, building automated security controls into CI/CD pipelines, or establishing compliance and vulnerability management programs. Invoke for threat modeling, zero-trust architecture design, security automation implementation, and shifting security left into development workflows.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[security, codeql, semgrep, insecure-defaults, new-feature]",
+      "workflows": "[new-feature, full-audit]"
+    },
+    "line_count": 279,
+    "char_count": 7990,
+    "sha256": "66fae3455b75",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/llm-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "llm-architect",
+      "description": "\"Use when designing LLM systems for production, implementing fine-tuning or RAG architectures, optimizing inference serving infrastructure, or managing multi-model deployments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[new-feature, api-design]",
+      "workflows": "[new-feature, plan-compound]"
+    },
+    "line_count": 289,
+    "char_count": 6591,
+    "sha256": "54c79cdb7f82",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/nextjs-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "nextjs-developer",
+      "description": "\"Use this agent when building production Next.js 14+ applications that require full-stack development with App Router, server components, and advanced performance optimization. Invoke when you need to architect or implement complete Next.js applications, optimize Core Web Vitals, implement server actions and mutations, or deploy SEO-optimized applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[nextjs, react-patterns, tailwind, new-feature]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 289,
+    "char_count": 6713,
+    "sha256": "a85ab0ea0169",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/sql-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sql-pro",
+      "description": "\"Use this agent when you need to optimize complex SQL queries, design efficient database schemas, or solve performance issues across PostgreSQL, MySQL, SQL Server, and Oracle requiring advanced query optimization, index strategies, or data warehouse patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[performance, bug-fix]",
+      "workflows": "[bug-fix, work]"
+    },
+    "line_count": 289,
+    "char_count": 7468,
+    "sha256": "da971894d3b4",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/incident-responder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "incident-responder",
+      "description": "\"Use this agent when an active security breach, service outage, or operational incident requires immediate response, evidence preservation, and coordinated recovery.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[debug, security]",
+      "workflows": "[bug-fix, explore]"
+    },
+    "line_count": 289,
+    "char_count": 7096,
+    "sha256": "23b84a5119fa",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/ml-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ml-engineer",
+      "description": "\"Use this agent when building production ML systems requiring model training pipelines, model serving infrastructure, performance optimization, and automated retraining.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[new-feature, performance]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 289,
+    "char_count": 6527,
+    "sha256": "61026356e616",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/python-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "python-pro",
+      "description": "\"Use this agent when you need to build type-safe, production-ready Python code for web APIs, system utilities, or complex applications requiring modern async patterns and extensive type coverage.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[new-feature, bug-fix, testing]",
+      "workflows": "[new-feature, bug-fix, work]"
+    },
+    "line_count": 279,
+    "char_count": 8616,
+    "sha256": "79c154d1035d",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/git-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "git-manager",
+      "description": "Git operations and pull request description generation. Commits, branches, merges, conflict resolution, PR writeups. Absorbs pr-writer.",
+      "model": "haiku",
+      "skills": "[pre-commit, pre-deploy, release-prep]",
+      "workflows": "[pre-commit, pre-deploy, release-prep, resolve_pr]"
+    },
+    "line_count": 81,
+    "char_count": 2074,
+    "sha256": "e24be98b309f",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/mcp-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "mcp-developer",
+      "description": "\"Use this agent when you need to build, debug, or optimize Model Context Protocol (MCP) servers and clients that connect AI systems to external tools and data sources.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[new-feature, api-design, testing]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 277,
+    "char_count": 7014,
+    "sha256": "2f313c3909c7",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/docs-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "docs-manager",
+      "description": "Documentation generation and gap analysis. Writes and updates READMEs, API docs, changelogs, and inline comments. Absorbs doc-auditor.",
+      "model": "sonnet",
+      "skills": "[compound-docs]",
+      "workflows": "[release-prep]"
+    },
+    "line_count": 62,
+    "char_count": 1936,
+    "sha256": "8760e7cf6fd8",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/compliance-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "compliance-auditor",
+      "description": "\"Use this agent when you need to achieve regulatory compliance, implement compliance controls, or prepare for audits across frameworks like GDPR, HIPAA, PCI DSS, SOC 2, and ISO standards.\"",
+      "tools": "Read, Grep, Glob",
+      "model": "opus",
+      "skills": "[security, full-audit, supply-chain-risk-auditor]",
+      "workflows": "[full-audit]"
+    },
+    "line_count": 279,
+    "char_count": 6947,
+    "sha256": "82ad29fa43cd",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/coder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "coder",
+      "description": "Writes and edits code across all layers \u2014 backend, frontend, mobile, infra. Follows existing patterns exactly. Absorbs fullstack-developer, backend-specialist, frontend-specialist, mobile-developer, code-fixer.",
+      "model": "sonnet",
+      "skills": "[new-feature, bug-fix, api-design, testing]",
+      "workflows": "[new-feature, bug-fix, work]"
+    },
+    "line_count": 64,
+    "char_count": 2084,
+    "sha256": "8c0343c0ed0d",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/semgrep-scanner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "semgrep-scanner",
+      "description": "\"Executes Semgrep CLI scans for a specific language category and produces SARIF output. Spawned by the semgrep skill as a parallel worker \u2014 one agent per detected language.\"",
+      "tools": "Bash(semgrep scan:*), Bash",
+      "model": "haiku",
+      "skills": "[semgrep, sarif-parsing]",
+      "workflows": "[]"
+    },
+    "line_count": 94,
+    "char_count": 2866,
+    "sha256": "530c4ceb39f6",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/typescript-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "typescript-pro",
+      "description": "\"Use when implementing TypeScript code requiring advanced type system patterns, complex generics, type-level programming, or end-to-end type safety across full-stack applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[new-feature, bug-fix, testing]",
+      "workflows": "[new-feature, bug-fix, work]"
+    },
+    "line_count": 279,
+    "char_count": 7461,
+    "sha256": "5c821681b45b",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/prompt-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "prompt-engineer",
+      "description": "\"Use this agent when you need to design, optimize, test, or evaluate prompts for large language models in production systems.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet",
+      "skills": "[new-feature]",
+      "workflows": "[new-feature, work]"
+    },
+    "line_count": 289,
+    "char_count": 6470,
+    "sha256": "30d859881090",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/agents/risk-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "risk-manager",
+      "description": "\"Use this agent when you need to identify, quantify, and mitigate enterprise-level risks across financial, operational, regulatory, and strategic domains. Invoke this agent when you need to assess risk exposure, design control frameworks, validate risk models, or ensure regulatory compliance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus",
+      "skills": "[full-audit]",
+      "workflows": "[full-audit, explore]"
+    },
+    "line_count": 289,
+    "char_count": 6673,
+    "sha256": "97c70aefad4e",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/hooks/README.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 48,
+    "char_count": 2640,
+    "sha256": "b0c1552012b2",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/explore.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Deep investigation before planning. Use for best practices, implications, and systematic analysis."
+    },
+    "line_count": 141,
+    "char_count": 3997,
+    "sha256": "6050af8fa99b",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/review-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Perform comprehensive multi-pass code review with security, performance, and architecture checks."
+    },
+    "line_count": 353,
+    "char_count": 8662,
+    "sha256": "3442f8df3d86",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/full-audit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 128,
+    "char_count": 4339,
+    "sha256": "0cb8439d8577",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/new-feature.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 3464,
+    "sha256": "278d3c172c03",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/pre-deploy.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 96,
+    "char_count": 2568,
+    "sha256": "4ca58f872e58",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/pre-commit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 97,
+    "char_count": 2135,
+    "sha256": "6fb19bffcca2",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/work.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Execute work plans systematically while maintaining quality. Use after /plan to implement features."
+    },
+    "line_count": 391,
+    "char_count": 9447,
+    "sha256": "3defa30cf883",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/resolve_pr.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Handle PR comments and review feedback efficiently. Use when addressing reviewer feedback."
+    },
+    "line_count": 131,
+    "char_count": 2417,
+    "sha256": "8cce9f7db0cf",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/cycle.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Orchestrate the full \"plan \u2192 review \u2192 work \u2192 review \u2192 compound\" lifecycle for small tasks."
+    },
+    "line_count": 141,
+    "char_count": 2822,
+    "sha256": "36a996d40e76",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/plan-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Transform feature descriptions into well-structured project plans with solution search and pattern checks."
+    },
+    "line_count": 429,
+    "char_count": 11564,
+    "sha256": "896ed8141942",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/release-prep.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 3623,
+    "sha256": "d8f4b5e37cb3",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/workflows/bug-fix.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 159,
+    "char_count": 3845,
+    "sha256": "48c6d4516c72",
+    "mtime": 1777596655
+  },
+  {
+    "path": "/home/kobramaz/Documents/atbfuture/.claude/audits/TEST_REPORT.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 378,
+    "char_count": 17555,
+    "sha256": "8c010985d350",
+    "mtime": 1777596655
+  }
+]
