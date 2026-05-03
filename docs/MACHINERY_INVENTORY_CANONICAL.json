@@ -1,0 +1,5134 @@
+[
+  {
+    "path": "/home/kobramaz/.claude/AGENTS.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 87,
+    "char_count": 3191,
+    "sha256": "b8bd9366a2ef",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/.claude/VIOLATIONS.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 27,
+    "char_count": 1787,
+    "sha256": "ef2a3826bdbd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/.claude/CLAUDE.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 155,
+    "char_count": 7610,
+    "sha256": "5e914a046194",
+    "mtime": 1777829549
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/AGENTS.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 87,
+    "char_count": 3191,
+    "sha256": "b8bd9366a2ef",
+    "mtime": 1777778727
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/VIOLATIONS.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 27,
+    "char_count": 1787,
+    "sha256": "ef2a3826bdbd",
+    "mtime": 1776541756
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/CLAUDE.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 126,
+    "char_count": 6076,
+    "sha256": "6a88640f9ed2",
+    "mtime": 1777778909
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/code-review.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "code-review",
+      "description": "Systematic multi-perspective code review with consistent quality gates.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 38,
+    "char_count": 1354,
+    "sha256": "2898c62511b2",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/session-resume.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "session-resume",
+      "description": "Resume context from previous session"
+    },
+    "line_count": 97,
+    "char_count": 1640,
+    "sha256": "3c2f9523ba4b",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/full-audit.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "full-audit",
+      "description": "Run all 11 audit agents in parallel, then consolidate findings with fix-planner"
+    },
+    "line_count": 44,
+    "char_count": 1780,
+    "sha256": "d32dd38afb14",
+    "mtime": 1775931945
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/security.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 115,
+    "char_count": 2091,
+    "sha256": "e8c807e56c8b",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/mobile.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 141,
+    "char_count": 2897,
+    "sha256": "6c33efbc723e",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/new-feature.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "new-feature",
+      "description": "Develop new features with test-first approach (TDD)"
+    },
+    "line_count": 53,
+    "char_count": 1177,
+    "sha256": "c514e7abdd97",
+    "mtime": 1775931945
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/nextjs.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 102,
+    "char_count": 2385,
+    "sha256": "75eaf948bd5d",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/pre-deploy.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "pre-deploy",
+      "description": "Validate build, environment, and dependencies before deployment"
+    },
+    "line_count": 50,
+    "char_count": 1162,
+    "sha256": "9a15e9106d74",
+    "mtime": 1775931946
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/pre-commit.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "pre-commit",
+      "description": "Run code quality checks and tests before committing"
+    },
+    "line_count": 45,
+    "char_count": 879,
+    "sha256": "a9b6bf91eb46",
+    "mtime": 1775931945
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/file-todos.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "file-todos",
+      "description": "Manage file-based todo tracking in the todos/ directory"
+    },
+    "line_count": 89,
+    "char_count": 1725,
+    "sha256": "01f82ff356ae",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/testing.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "testing",
+      "description": "Unified testing commands and patterns across frontend and backend.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 44,
+    "char_count": 1035,
+    "sha256": "4cbf9d7ea393",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/tailwind.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 2913,
+    "sha256": "713d013b68ca",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/docker.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 127,
+    "char_count": 2282,
+    "sha256": "6b5f3fee4412",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/compound-docs.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "compound-docs",
+      "description": "Document solved problems for knowledge persistence"
+    },
+    "line_count": 134,
+    "char_count": 3038,
+    "sha256": "1c3b6401c330",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/release-prep.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "release-prep",
+      "description": "Full audit + fixes + deploy validation for production release"
+    },
+    "line_count": 63,
+    "char_count": 1428,
+    "sha256": "cecb6bea575e",
+    "mtime": 1775931946
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/react-patterns.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 84,
+    "char_count": 1874,
+    "sha256": "1ea58787a6b7",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/api-design.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 135,
+    "char_count": 2527,
+    "sha256": "287680c27aa1",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/performance.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 2658,
+    "sha256": "414720f85879",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/bug-fix.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "bug-fix",
+      "description": "Fix bugs with regression prevention using test-first approach"
+    },
+    "line_count": 54,
+    "char_count": 1225,
+    "sha256": "c785a02fcc24",
+    "mtime": 1775931945
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/debug.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "debug",
+      "description": "Systematic debugging with structured reproduction and root cause analysis.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 41,
+    "char_count": 1204,
+    "sha256": "3562e9bb26b8",
+    "mtime": 1775932924
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/differential-review/patterns.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 301,
+    "char_count": 6999,
+    "sha256": "52abb18abbc7",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/differential-review/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "differential-review",
+      "description": ">",
+      "allowed-tools": ""
+    },
+    "line_count": 221,
+    "char_count": 6504,
+    "sha256": "72a1e8dc98d5",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/differential-review/methodology.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 235,
+    "char_count": 6716,
+    "sha256": "16b335d24cf2",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/differential-review/adversarial.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 204,
+    "char_count": 5062,
+    "sha256": "3cb823f38c6e",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/differential-review/reporting.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 370,
+    "char_count": 6956,
+    "sha256": "0016876dc6f1",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/insecure-defaults/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "insecure-defaults",
+      "description": "\"Detects fail-open insecure defaults (hardcoded secrets, weak auth, permissive security) that allow apps to run insecurely in production. Use when auditing security, reviewing config management, or analyzing environment variable handling.\"",
+      "allowed-tools": ""
+    },
+    "line_count": 118,
+    "char_count": 5209,
+    "sha256": "6c6c54ab48dc",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/insecure-defaults/references/examples.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 410,
+    "char_count": 10649,
+    "sha256": "1d47703f84b6",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/semgrep/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "semgrep",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 213,
+    "char_count": 9720,
+    "sha256": "b12e2130745f",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/semgrep/workflows/scan-workflow.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 312,
+    "char_count": 11382,
+    "sha256": "de63106a5254",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/semgrep/references/rulesets.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 163,
+    "char_count": 7695,
+    "sha256": "e641bf7b2f32",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/semgrep/references/scan-modes.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 111,
+    "char_count": 4466,
+    "sha256": "76c8d41c8fc2",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/semgrep/references/scanner-task-prompt.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 141,
+    "char_count": 5907,
+    "sha256": "67ae9626627c",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "codeql",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 283,
+    "char_count": 15527,
+    "sha256": "0f340fbd3335",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/workflows/build-database.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 281,
+    "char_count": 9565,
+    "sha256": "7fb24c47ffe4",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/workflows/create-data-extensions.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 262,
+    "char_count": 9912,
+    "sha256": "2210ce1466a8",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/workflows/run-analysis.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 303,
+    "char_count": 11466,
+    "sha256": "6a489cfc57eb",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/performance-tuning.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 112,
+    "char_count": 3352,
+    "sha256": "d725aef573fd",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/build-fixes.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 91,
+    "char_count": 2632,
+    "sha256": "9d74eaef2a75",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/extension-yaml-format.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 210,
+    "char_count": 7838,
+    "sha256": "a263fa41dc78",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/run-all-suite.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 101,
+    "char_count": 4257,
+    "sha256": "cde0d37d23f4",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/quality-assessment.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 173,
+    "char_count": 7002,
+    "sha256": "1dabaec584cc",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/macos-arm64e-workaround.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 180,
+    "char_count": 6796,
+    "sha256": "2b4e18ae0924",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/diagnostic-query-templates.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 340,
+    "char_count": 10017,
+    "sha256": "d9f72ace8865",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/language-details.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 208,
+    "char_count": 5091,
+    "sha256": "1d6db4a45a88",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/threat-models.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 52,
+    "char_count": 3056,
+    "sha256": "8855d4907b39",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/sarif-processing.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 80,
+    "char_count": 3117,
+    "sha256": "abde04ca479a",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/important-only-suite.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 154,
+    "char_count": 5767,
+    "sha256": "27823a2553db",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/codeql/references/ruleset-catalog.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 66,
+    "char_count": 2197,
+    "sha256": "2b139ae59386",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/sarif-parsing/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "sarif-parsing",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 484,
+    "char_count": 15153,
+    "sha256": "bebc9ea0083f",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/sarif-parsing/resources/jq-queries.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 163,
+    "char_count": 5267,
+    "sha256": "d7fb98ee8859",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/supply-chain-risk-auditor/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "supply-chain-risk-auditor",
+      "description": "\"Identifies dependencies at heightened risk of exploitation or takeover. Use when assessing supply chain attack surface, evaluating dependency health, or scoping security engagements.\"",
+      "allowed-tools": ""
+    },
+    "line_count": 68,
+    "char_count": 5786,
+    "sha256": "4d81229cac98",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/skills/supply-chain-risk-auditor/resources/results-template.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 42,
+    "char_count": 1172,
+    "sha256": "39ae26b3d55f",
+    "mtime": 1776377636
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/gemini-skills/tdd-planner.md",
+    "type": "other",
+    "frontmatter": {
+      "name": "tdd-planner",
+      "description": "Write detailed TDD implementation plans with checkboxes, exact code, and commit steps. Use for any non-trivial feature, refactor, or multi-file change."
+    },
+    "line_count": 20,
+    "char_count": 861,
+    "sha256": "cad460d1ad21",
+    "mtime": 1777777499
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/gemini-skills/strict-reviewer.md",
+    "type": "other",
+    "frontmatter": {
+      "name": "strict-reviewer",
+      "description": "Thorough code review covering correctness, security, performance, code quality, and error handling. Returns Approve / Request Changes / Needs Major Rework verdict."
+    },
+    "line_count": 23,
+    "char_count": 1062,
+    "sha256": "6f88a4bcbe8a",
+    "mtime": 1777777507
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/powershell-7-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-7-expert",
+      "description": "\"Use when building cross-platform cloud automation scripts, Azure infrastructure orchestration, or CI/CD pipelines requiring PowerShell 7+ with modern .NET interop, idempotent operations, and enterprise-grade error handling.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 58,
+    "char_count": 2303,
+    "sha256": "f49babe8c570",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/ad-security-reviewer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ad-security-reviewer",
+      "description": "\"Use this agent when you need to audit Active Directory security posture, evaluate privilege escalation risks, review identity delegation patterns, or assess authentication protocol hardening.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 57,
+    "char_count": 2354,
+    "sha256": "ae01db57f35d",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/perf-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "perf-auditor",
+      "description": "Performance auditor and optimizer. Finds bottlenecks (bundle, queries, rendering, memory) and implements fixes. Absorbs performance-optimizer.",
+      "model": "opus"
+    },
+    "line_count": 82,
+    "char_count": 2644,
+    "sha256": "558940478593",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/quant-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "quant-analyst",
+      "description": "\"Use this agent when you need to develop quantitative trading strategies, build financial models with rigorous mathematical foundations, or conduct advanced risk analytics for derivatives and portfolios. Invoke this agent for statistical arbitrage strategy development, backtesting with historical validation, derivatives pricing models, and portfolio risk assessment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6835,
+    "sha256": "fd8ed7714299",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/react-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "react-specialist",
+      "description": "\"Use when optimizing existing React applications for performance, implementing advanced React 18+ features, or solving complex state management and architectural challenges within React codebases.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6730,
+    "sha256": "dc65bfdaf4f4",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/deploy-checker.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "deploy-checker",
+      "description": "Pre-deployment validation gate. Checks build, environment, dependencies, migrations, and infrastructure config. Absorbs env-validator, dep-auditor, infra-auditor.",
+      "model": "sonnet"
+    },
+    "line_count": 91,
+    "char_count": 2487,
+    "sha256": "1085a3b8d793",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/windows-infra-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "windows-infra-admin",
+      "description": "\"Use when managing Windows Server infrastructure, Active Directory, DNS, DHCP, and Group Policy configurations, especially for enterprise-scale deployments requiring safe automation and compliance validation.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 53,
+    "char_count": 1963,
+    "sha256": "00a7e1650682",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/microservices-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "microservices-architect",
+      "description": "\"Use when designing distributed system architecture, decomposing monolithic applications into independent microservices, or establishing communication patterns between services at scale.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 239,
+    "char_count": 6381,
+    "sha256": "0ddbe7f8d574",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/database-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "database-admin",
+      "description": "Schema design, migrations, query optimization, and database auditing. Absorbs db-auditor.",
+      "model": "sonnet"
+    },
+    "line_count": 114,
+    "char_count": 4050,
+    "sha256": "451562a69cc5",
+    "mtime": 1777339202
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/docker-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "docker-expert",
+      "description": "\"Use this agent when you need to build, optimize, or secure Docker container images and orchestration for production environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 279,
+    "char_count": 8150,
+    "sha256": "42aacc5f7e9c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/websocket-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "websocket-engineer",
+      "description": "\"Use this agent when implementing real-time bidirectional communication features using WebSockets, Socket.IO, or similar technologies at scale.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 150,
+    "char_count": 4299,
+    "sha256": "c0d4ac6f3f87",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/debugger.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "debugger",
+      "description": "Root cause analysis and fix planning. Diagnoses bugs systematically then produces a prioritized FIXES.md. Absorbs fix-planner.",
+      "model": "opus"
+    },
+    "line_count": 79,
+    "char_count": 2290,
+    "sha256": "39965da4a6d9",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/terragrunt-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "terragrunt-expert",
+      "description": "Expert Terragrunt specialist mastering infrastructure orchestration, DRY configurations, and multi-environment deployments. Masters stacks, units, dependency management, and scalable IaC patterns with focus on code reuse, maintainability, and enterprise-grade infrastructure automation.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 308,
+    "char_count": 8226,
+    "sha256": "2be6aa489efd",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/fastapi-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "fastapi-developer",
+      "description": "\"Use when building modern async Python APIs with FastAPI, implementing Pydantic v2 validation, dependency injection patterns, or deploying high-performance ASGI applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 288,
+    "char_count": 6886,
+    "sha256": "d446608d9510",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/planner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "planner",
+      "description": "\"Create detailed implementation plans for complex tasks.\"",
+      "model": "opus"
+    },
+    "line_count": 280,
+    "char_count": 7088,
+    "sha256": "81738517ee08",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/customer-success-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "customer-success-manager",
+      "description": "\"Use this agent when you need to assess customer health, develop retention strategies, identify upsell opportunities, or maximize customer lifetime value. Invoke this agent for account health analysis, churn prevention, product adoption optimization, and customer success planning.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6908,
+    "sha256": "d37cbaed5c9e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/trend-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "trend-analyst",
+      "description": "\"Use when analyzing emerging patterns, predicting industry shifts, or developing future scenarios to inform strategic planning and competitive positioning.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6697,
+    "sha256": "1092503308f9",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/bug-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "bug-auditor",
+      "description": "Runtime bug scanner. Finds error handling gaps, race conditions, memory leaks, null refs.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "sonnet"
+    },
+    "line_count": 319,
+    "char_count": 8225,
+    "sha256": "c144e83ed79a",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/platform-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "platform-engineer",
+      "description": "\"Use when building or improving internal developer platforms (IDPs), designing self-service infrastructure, or optimizing developer workflows to reduce friction and accelerate delivery. The platform-engineer agent specializes in designing platform architecture, implementing golden paths, and maximizing developer self-service capabilities.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 7552,
+    "sha256": "bfd19f8cf57e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/flutter-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "flutter-expert",
+      "description": "\"Use when building cross-platform mobile applications with Flutter 3+ that require custom UI implementation, complex state management, native platform integrations, or performance optimization across iOS/Android/Web.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6533,
+    "sha256": "43ba411bdeca",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/network-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "network-engineer",
+      "description": "\"Use this agent when designing, optimizing, or troubleshooting cloud and hybrid network infrastructures, or when addressing network security, performance, or reliability challenges.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6827,
+    "sha256": "b7a84bf95e3d",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/rails-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "rails-expert",
+      "description": "\"Use when building or modernizing Rails applications requiring API development, Hotwire reactivity, real-time features, background job processing, deployment automation, or Rails-idiomatic patterns for maximum productivity. Version-aware: adapts to Rails 7.x and 8.x projects.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 359,
+    "char_count": 13459,
+    "sha256": "71f849ecdf12",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/competitive-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "competitive-analyst",
+      "description": "\"Use when you need to analyze direct and indirect competitors, benchmark against market leaders, or develop strategies to strengthen competitive positioning and market advantage.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6914,
+    "sha256": "6cd3f3d1b46b",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/api-designer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-designer",
+      "description": "\"Use this agent when designing new APIs, creating API specifications, or refactoring existing API architecture for scalability and developer experience. Invoke when you need REST/GraphQL endpoint design, OpenAPI documentation, authentication patterns, or API versioning strategies.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 237,
+    "char_count": 6115,
+    "sha256": "dc8547318598",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/devops-incident-responder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "devops-incident-responder",
+      "description": "\"Use when actively responding to production incidents, diagnosing critical service failures, or conducting incident postmortems to implement permanent fixes and preventative measures.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6801,
+    "sha256": "e9e980f71c74",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/powershell-5.1-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-5.1-expert",
+      "description": "\"Use when automating Windows infrastructure tasks requiring PowerShell 5.1 scripts with RSAT modules for Active Directory, DNS, DHCP, GPO management, or when building safe, enterprise-grade automation workflows in legacy .NET Framework environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 60,
+    "char_count": 2459,
+    "sha256": "aa18330ea42c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/data-scientist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-scientist",
+      "description": "\"Use this agent when you need to analyze data patterns, build predictive models, or extract statistical insights from datasets. Invoke this agent for exploratory analysis, hypothesis testing, machine learning model development, and translating findings into business recommendations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6876,
+    "sha256": "d5d51ae2ac59",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/readme-generator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "readme-generator",
+      "description": "\"Use this agent when you need a maintainer-ready README built from exact repository reality, with deep codebase scanning, zero hallucination, and optional git commit/push only when explicitly requested.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 239,
+    "char_count": 6749,
+    "sha256": "c8e92f3f2f85",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/sales-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sales-engineer",
+      "description": "\"Use this agent when you need to conduct technical pre-sales activities including solution architecture, proof-of-concept development, and technical demonstrations for complex sales deals.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6990,
+    "sha256": "0fdae9f694d2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/devops-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "devops-engineer",
+      "description": "\"Infrastructure & CI/CD expert for Docker, Kubernetes, GitHub Actions, and deployment automation.\"",
+      "model": "sonnet"
+    },
+    "line_count": 174,
+    "char_count": 5137,
+    "sha256": "309c56537bd2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/api-documenter.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-documenter",
+      "description": "\"Use this agent when creating or improving API documentation, writing OpenAPI specifications, building interactive documentation portals, or generating code examples for APIs.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 277,
+    "char_count": 6328,
+    "sha256": "7644ec4a1b45",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/copywriter.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "copywriter",
+      "description": "\"Create marketing content with CRO optimization.\"",
+      "model": "haiku"
+    },
+    "line_count": 159,
+    "char_count": 4437,
+    "sha256": "588083f1563e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/reviewer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "reviewer",
+      "description": "Pre-merge code review and architecture sign-off. Reviews quality, correctness, patterns, and architecture. Absorbs architect-reviewer and code-auditor.",
+      "model": "opus"
+    },
+    "line_count": 89,
+    "char_count": 2898,
+    "sha256": "094439b4361b",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/cli-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "cli-developer",
+      "description": "\"Use this agent when building command-line tools and terminal applications that require intuitive command design, cross-platform compatibility, and optimized developer experience.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 286,
+    "char_count": 6641,
+    "sha256": "50039283bacd",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/seed-generator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "seed-generator",
+      "description": "Test data generator. Creates realistic seed data based on schema.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 257,
+    "char_count": 5652,
+    "sha256": "8cc5efb574b2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/product-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "product-manager",
+      "description": "\"Use this agent when you need to make product strategy decisions, prioritize features, or define roadmap plans based on user needs and business goals.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 287,
+    "char_count": 6541,
+    "sha256": "88977cfebc36",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/expo-react-native-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "expo-react-native-expert",
+      "description": "\"Use when building mobile applications with Expo and React Native that require native module integration, navigation setup, performant animations, push notifications, OTA updates, or App Store/Play Store deployment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 269,
+    "char_count": 9735,
+    "sha256": "b4303c0e3191",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/cloud-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "cloud-architect",
+      "description": "\"Use this agent when you need to design, evaluate, or optimize cloud infrastructure architecture at scale. Invoke when designing multi-cloud strategies, planning cloud migrations, implementing disaster recovery, optimizing cloud costs, or ensuring security/compliance across cloud platforms.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 277,
+    "char_count": 7089,
+    "sha256": "d38974ed9685",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/slack-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "slack-expert",
+      "description": "\"Use this agent when developing Slack applications, implementing Slack API integrations, or reviewing Slack bot code for security and best practices.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 233,
+    "char_count": 6608,
+    "sha256": "aa53ee110564",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/nlp-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "nlp-engineer",
+      "description": "\"Use when building production NLP systems, implementing text processing pipelines, developing language models, or solving domain-specific NLP tasks like named entity recognition, sentiment analysis, or machine translation.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6635,
+    "sha256": "2eb4f75904b4",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/api-tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-tester",
+      "description": "API endpoint testing. Discovery, validation, auth flows, error handling.",
+      "tools": "Read, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 345,
+    "char_count": 9965,
+    "sha256": "4d9bee5efc97",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/java-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "java-architect",
+      "description": "\"Use this agent when designing enterprise Java architectures, migrating Spring Boot applications, or establishing microservices patterns for scalable cloud-native systems.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7653,
+    "sha256": "8518572de76b",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/wordpress-master.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "wordpress-master",
+      "description": "\"Use this agent when you need to architect, optimize, or troubleshoot WordPress implementations ranging from custom theme/plugin development to enterprise-scale multisite platforms. Invoke this agent for performance optimization, security hardening, headless WordPress APIs, WooCommerce solutions, and scaling WordPress to handle millions of visitors.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 316,
+    "char_count": 7559,
+    "sha256": "ba940576cba1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/security-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "security-auditor",
+      "description": "Comprehensive security analysis. OWASP Top 10, injection, auth, secrets, headers.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "opus"
+    },
+    "line_count": 395,
+    "char_count": 11517,
+    "sha256": "77adac5d8def",
+    "mtime": 1777339171
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/accessibility-tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "accessibility-tester",
+      "description": "\"Use this agent when you need comprehensive accessibility testing, WCAG compliance verification, or assessment of assistive technology support.\"",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "haiku"
+    },
+    "line_count": 277,
+    "char_count": 7056,
+    "sha256": "70812302dd16",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "tester",
+      "description": "Write tests for new or existing code AND run the full test suite to validate. Unit, integration, API, edge cases. Vitest/Jest patterns.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 167,
+    "char_count": 4052,
+    "sha256": "45c40e2e66bd",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/ui-designer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ui-designer",
+      "description": "\"Design user interface and experience.\"",
+      "model": "haiku"
+    },
+    "line_count": 254,
+    "char_count": 5992,
+    "sha256": "4ce2c564918a",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/business-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "business-analyst",
+      "description": "\"Use when analyzing business processes, gathering requirements from stakeholders, or identifying process improvement opportunities to drive operational efficiency and measurable business value.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6705,
+    "sha256": "d7aa88028703",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/project-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "project-manager",
+      "description": "\"Use this agent when you need to establish project plans, track execution progress, manage risks, control budget/schedule, and coordinate stakeholders across complex initiatives.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 287,
+    "char_count": 6504,
+    "sha256": "dcba1095b8ca",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/game-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "game-developer",
+      "description": "\"Use this agent when implementing game systems, optimizing graphics rendering, building multiplayer networking, or developing gameplay mechanics for games targeting specific platforms.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6431,
+    "sha256": "1a5ba5347880",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/dx-optimizer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dx-optimizer",
+      "description": "\"Use this agent when optimizing the complete developer workflow including build times, feedback loops, testing efficiency, and developer satisfaction metrics across the entire development environment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 286,
+    "char_count": 6593,
+    "sha256": "02919bfababc",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/spring-boot-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "spring-boot-engineer",
+      "description": "\"Use this agent when building enterprise Spring Boot 3+ applications requiring microservices architecture, cloud-native deployment, or reactive programming patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6590,
+    "sha256": "b09a4d457549",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/fintech-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "fintech-engineer",
+      "description": "\"Use when building payment systems, financial integrations, or compliance-heavy financial applications that require secure transaction processing, regulatory adherence, and high transaction accuracy.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6858,
+    "sha256": "9bc3828b342a",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/electron-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "electron-pro",
+      "description": "\"Use this agent when building Electron desktop applications that require native OS integration, cross-platform distribution, security hardening, and performance optimization. Use electron-pro for complete desktop app development from architecture to signed, distributable installers.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 240,
+    "char_count": 6389,
+    "sha256": "64c460c0f4ff",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/orchestrator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "orchestrator",
+      "description": "Coordinates multi-agent work, translates requirements into execution plans, tracks progress. Absorbs product-owner and project-manager roles.",
+      "model": "opus"
+    },
+    "line_count": 96,
+    "char_count": 3964,
+    "sha256": "53482e6ba2f0",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/payment-integration.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "payment-integration",
+      "description": "\"Use this agent when implementing payment systems, integrating payment gateways, or handling financial transactions that require PCI compliance, fraud prevention, and secure transaction processing.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6741,
+    "sha256": "d5eb9de88497",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/swift-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "swift-expert",
+      "description": "\"Use this agent when building native iOS, macOS, or server-side Swift applications requiring advanced concurrency patterns, protocol-oriented architecture, and Swift-specific optimizations. Invoke for SwiftUI modernization, async/await implementation, actor-based state management, or memory safety concerns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7451,
+    "sha256": "38e2fd4af846",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/powershell-module-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-module-architect",
+      "description": "\"Use this agent when architecting and refactoring PowerShell modules, designing profile systems, or creating cross-version compatible automation libraries. Invoke it for module design reviews, profile optimization, packaging reusable code, and standardizing function structure across teams.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 59,
+    "char_count": 2146,
+    "sha256": "c302b56cfaf2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/knowledge-synthesizer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "knowledge-synthesizer",
+      "description": "\"Use when you need to extract actionable patterns from agent interactions, synthesize insights across multiple workflows, and enable organizational learning from collective experience.\"",
+      "tools": "Read, Write, Edit, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7041,
+    "sha256": "8eb49ec3bad6",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/seo-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "seo-auditor",
+      "description": "SEO and GEO (Generative Engine Optimization) auditor. Meta tags, OpenGraph, sitemap, structured data, AI search visibility.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "haiku"
+    },
+    "line_count": 176,
+    "char_count": 4404,
+    "sha256": "edc27676ba7e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/reinforcement-learning-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "reinforcement-learning-engineer",
+      "description": "\"Use when designing RL environments, training agents with reward optimization, implementing policy gradient methods, or deploying decision-making systems for robotics, gaming, and autonomous operations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 278,
+    "char_count": 7162,
+    "sha256": "bbef7a246a6e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/machine-learning-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "machine-learning-engineer",
+      "description": "\"Use this agent when you need to deploy, optimize, or serve machine learning models at scale in production environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 6502,
+    "sha256": "3f3eb9348772",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/azure-infra-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "azure-infra-engineer",
+      "description": "\"Use when designing, deploying, or managing Azure infrastructure with focus on network architecture, Entra ID integration, PowerShell automation, and Bicep IaC.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 54,
+    "char_count": 1924,
+    "sha256": "8785897b269f",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/browser-qa-agent.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "browser-qa-agent",
+      "description": "Browser-based QA \u2014 navigates the running app, finds UI bugs, console errors, and visual regressions. Absorbs fullstack-qa-orchestrator, console-monitor, visual-diff.",
+      "model": "sonnet"
+    },
+    "line_count": 85,
+    "char_count": 2320,
+    "sha256": "a5bc9a61b743",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/ai-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ai-engineer",
+      "description": "\"Use this agent when architecting, implementing, or optimizing end-to-end AI systems\u2014from model selection and training pipelines to production deployment and monitoring.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6727,
+    "sha256": "cd9697d47080",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/graphql-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "graphql-architect",
+      "description": "\"Use this agent when designing or evolving GraphQL schemas across microservices, implementing federation architectures, or optimizing query performance in distributed graphs.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 238,
+    "char_count": 6550,
+    "sha256": "bac53417290d",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/dotnet-core-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dotnet-core-expert",
+      "description": "\"Use when building .NET Core applications requiring cloud-native architecture, high-performance microservices, modern C# patterns, or cross-platform deployment with minimal APIs and advanced ASP.NET Core features.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 288,
+    "char_count": 6438,
+    "sha256": "5ee0a29de401",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/git-workflow-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "git-workflow-manager",
+      "description": "\"Use this agent when you need to design, establish, or optimize Git workflows, branching strategies, and merge management for a project or team.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "haiku"
+    },
+    "line_count": 286,
+    "char_count": 6681,
+    "sha256": "78f0a3080c60",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/tooling-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "tooling-engineer",
+      "description": "\"Use this agent when you need to build or enhance developer tools including CLIs, code generators, build tools, and IDE extensions.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 286,
+    "char_count": 6428,
+    "sha256": "99e5d54b89fc",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/llm-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "llm-architect",
+      "description": "\"Use when designing LLM systems for production, implementing fine-tuning or RAG architectures, optimizing inference serving infrastructure, or managing multi-model deployments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6517,
+    "sha256": "b77ac009de2c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/data-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-analyst",
+      "description": "\"Use when you need to extract insights from business data, create dashboards and reports, or perform statistical analysis to support decision-making.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "haiku"
+    },
+    "line_count": 277,
+    "char_count": 6876,
+    "sha256": "ca0937b865f8",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/scrum-master.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scrum-master",
+      "description": "\"Use when teams need facilitation, process optimization, velocity improvement, or agile ceremony management\u2014especially for sprint planning, retrospectives, impediment removal, and scaling agile practices across multiple teams.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 287,
+    "char_count": 6749,
+    "sha256": "3d01b0d355b7",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/memory-consolidation.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "memory-consolidation",
+      "description": "Nightly scheduled agent \u2014 merges duplicate memories, prunes stale entries, fixes relative dates, keeps MEMORY.md under 200 lines.",
+      "model": "haiku"
+    },
+    "line_count": 33,
+    "char_count": 1319,
+    "sha256": "d68bf1526a6e",
+    "mtime": 1777342133
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/symfony-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "symfony-specialist",
+      "description": "\"Use when building Symfony 6+/7+/8+ applications, architecting Doctrine ORM entities with complex relationships, implementing Messenger component for async processing, or optimizing API Platform performance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 355,
+    "char_count": 10663,
+    "sha256": "786259a67df1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/elixir-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "elixir-expert",
+      "description": "\"Use this agent when you need to build fault-tolerant, concurrent systems leveraging OTP patterns, GenServer architectures, and Phoenix framework for real-time applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 312,
+    "char_count": 8134,
+    "sha256": "f765f3c9b30d",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/scout.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scout",
+      "description": "\"Explore and search code in the current codebase.\"",
+      "model": "haiku"
+    },
+    "line_count": 228,
+    "char_count": 5008,
+    "sha256": "73fdc44e6e5d",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/embedded-systems.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "embedded-systems",
+      "description": "\"Use when developing firmware for resource-constrained microcontrollers, implementing RTOS-based applications, or optimizing real-time systems where hardware constraints, latency guarantees, and reliability are critical.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6396,
+    "sha256": "6e8a2123f7b1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/ai-writing-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ai-writing-auditor",
+      "description": "\"Use this agent when you need to audit content for AI writing patterns and rewrite text to remove them.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 78,
+    "char_count": 4232,
+    "sha256": "028274f769ca",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/morning-briefing.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "morning-briefing",
+      "description": "Scheduled weekday morning agent \u2014 pulls Calendar, Gmail, Linear, and bd ready into a prioritized daily plan.",
+      "model": "sonnet"
+    },
+    "line_count": 54,
+    "char_count": 1536,
+    "sha256": "75b36a736a20",
+    "mtime": 1777342130
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/vue-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "vue-expert",
+      "description": "\"Use this agent when building Vue 3 applications that require Composition API mastery, reactivity optimization, or Nuxt 3 development with enterprise-scale performance concerns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6502,
+    "sha256": "e6955b3e60f1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/nextjs-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "nextjs-developer",
+      "description": "\"Use this agent when building production Next.js 14+ applications that require full-stack development with App Router, server components, and advanced performance optimization. Invoke when you need to architect or implement complete Next.js applications, optimize Core Web Vitals, implement server actions and mutations, or deploy SEO-optimized applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6626,
+    "sha256": "435a9c43ef69",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/project-idea-validator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "project-idea-validator",
+      "description": "\"Use this agent when you need an idea pressure-tested with brutal honesty, competitor teardown, market validation, and clear go/no-go guidance before building.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 270,
+    "char_count": 6880,
+    "sha256": "b71305b01782",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/sql-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sql-pro",
+      "description": "\"Use this agent when you need to optimize complex SQL queries, design efficient database schemas, or solve performance issues across PostgreSQL, MySQL, SQL Server, and Oracle requiring advanced query optimization, index strategies, or data warehouse patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7410,
+    "sha256": "58e44f20f89e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/php-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "php-pro",
+      "description": "\"Use this agent when working with PHP 8.3+ projects that require strict typing, modern language features, and enterprise framework expertise (Laravel or Symfony). Use when building scalable applications, optimizing performance, or requiring async/Fiber patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7030,
+    "sha256": "ef94e49952e0",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/csharp-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "csharp-developer",
+      "description": "\"Use this agent when building ASP.NET Core web APIs, cloud-native .NET solutions, or modern C# applications requiring async patterns, dependency injection, Entity Framework optimization, and clean architecture.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7221,
+    "sha256": "9218f747ffe2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/incident-responder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "incident-responder",
+      "description": "\"Use this agent when an active security breach, service outage, or operational incident requires immediate response, evidence preservation, and coordinated recovery.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7042,
+    "sha256": "46d74353536e",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/iot-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "iot-engineer",
+      "description": "\"Use when designing and deploying IoT solutions requiring expertise in device management, edge computing, cloud integration, and handling challenges like massive device scale, complex connectivity scenarios, or real-time data pipelines.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6363,
+    "sha256": "a614b8cfa393",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/sre-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sre-engineer",
+      "description": "\"Use this agent when you need to establish or improve system reliability through SLO definition, error budget management, and automation. Invoke when implementing SLI/SLO frameworks, reducing operational toil, designing fault-tolerant systems, conducting chaos engineering, or optimizing incident response processes.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 293,
+    "char_count": 7541,
+    "sha256": "38dc8779b17a",
+    "mtime": 1777339183
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/powershell-security-hardening.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-security-hardening",
+      "description": "\"Use this agent when you need to harden PowerShell automation, secure remoting configuration, enforce least-privilege design, or align scripts with enterprise security baselines and compliance frameworks.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 55,
+    "char_count": 2471,
+    "sha256": "9502f8b436d5",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/laravel-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "laravel-specialist",
+      "description": "\"Use when building Laravel 10+ applications, architecting Eloquent models with complex relationships, implementing queue systems for async processing, or optimizing API performance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6172,
+    "sha256": "6d70b32a1b42",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/python-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "python-pro",
+      "description": "\"Use this agent when you need to build type-safe, production-ready Python code for web APIs, system utilities, or complex applications requiring modern async patterns and extensive type coverage.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 8536,
+    "sha256": "b87dba6a73d6",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/ux-researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ux-researcher",
+      "description": "\"Use this agent when you need to conduct user research, analyze user behavior, or generate actionable insights to validate design decisions and uncover user needs. Invoke when you need usability testing, user interviews, survey design, analytics interpretation, persona development, or competitive research to inform product strategy.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6807,
+    "sha256": "09643537d6d9",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/chaos-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "chaos-engineer",
+      "description": "\"Use this agent when you need to design and execute controlled failure experiments, validate system resilience before incidents occur, or conduct game day exercises to test your team's incident response capabilities.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 6515,
+    "sha256": "5cb0bfda8256",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/git-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "git-manager",
+      "description": "Git operations and pull request description generation. Commits, branches, merges, conflict resolution, PR writeups. Absorbs pr-writer.",
+      "model": "haiku"
+    },
+    "line_count": 79,
+    "char_count": 1965,
+    "sha256": "e12354c28a90",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/mcp-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "mcp-developer",
+      "description": "\"Use this agent when you need to build, debug, or optimize Model Context Protocol (MCP) servers and clients that connect AI systems to external tools and data sources.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 275,
+    "char_count": 6940,
+    "sha256": "7ab6fa183609",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/docs-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "docs-manager",
+      "description": "Documentation generation and gap analysis. Writes and updates READMEs, API docs, changelogs, and inline comments. Absorbs doc-auditor.",
+      "model": "haiku"
+    },
+    "line_count": 60,
+    "char_count": 1885,
+    "sha256": "2979620985f1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/compliance-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "compliance-auditor",
+      "description": "\"Use this agent when you need to achieve regulatory compliance, implement compliance controls, or prepare for audits across frameworks like GDPR, HIPAA, PCI DSS, SOC 2, and ISO standards.\"",
+      "tools": "Read, Grep, Glob",
+      "model": "opus"
+    },
+    "line_count": 277,
+    "char_count": 6865,
+    "sha256": "27f2f9f9f2aa",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/angular-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "angular-architect",
+      "description": "\"Use when architecting enterprise Angular 15+ applications with complex state management, optimizing RxJS patterns, designing micro-frontend systems, or solving performance and scalability challenges in large codebases.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6656,
+    "sha256": "70455b225603",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/rust-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "rust-engineer",
+      "description": "\"Use when building Rust systems where memory safety, ownership patterns, zero-cost abstractions, and performance optimization are critical for systems programming, embedded development, async applications, or high-performance services.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7626,
+    "sha256": "246fa5cd281c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/postgres-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "postgres-pro",
+      "description": "\"Use when you need to optimize PostgreSQL performance, design high-availability replication, or troubleshoot database issues at scale. Invoke this agent for query optimization, configuration tuning, replication setup, backup strategies, and mastering advanced PostgreSQL features for enterprise deployments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6537,
+    "sha256": "968eb330cd63",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/blockchain-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "blockchain-developer",
+      "description": "\"Use this agent when building smart contracts, DApps, and blockchain protocols that require expertise in Solidity, gas optimization, security auditing, and Web3 integration.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6358,
+    "sha256": "63e0e8cde238",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/django-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "django-developer",
+      "description": "\"Use when building Django 4+ web applications, REST APIs, or modernizing existing Django projects with async views and enterprise patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6432,
+    "sha256": "cf287d2fa430",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/powershell-ui-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-ui-architect",
+      "description": "\"Use when designing or building desktop graphical interfaces (WinForms, WPF, Metro-style dashboards) or terminal user interfaces (TUIs) for PowerShell automation tools that need clean separation between UI and business logic.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 136,
+    "char_count": 5585,
+    "sha256": "f19d468c9ca1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/market-researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "market-researcher",
+      "description": "\"Use this agent when you need to analyze markets, understand consumer behavior, assess competitive landscapes, and size opportunities to inform business strategy and market entry decisions.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6758,
+    "sha256": "5ee6d345b5a8",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/qa-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "qa-expert",
+      "description": "\"Use this agent when you need comprehensive quality assurance strategy, test planning across the entire development cycle, or quality metrics analysis to improve overall software quality.\"",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6689,
+    "sha256": "26e34e3ef018",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/agent-installer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "agent-installer",
+      "description": "\"Use this agent when the user wants to discover, browse, or install Claude Code agents from the awesome-claude-code-subagents repository.\"",
+      "tools": "Bash, WebFetch, Read, Write, Glob",
+      "model": "haiku"
+    },
+    "line_count": 98,
+    "char_count": 3555,
+    "sha256": "2fc0554b2a37",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/javascript-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "javascript-pro",
+      "description": "\"Use this agent when you need to build, optimize, or refactor modern JavaScript code for browser, Node.js, or full-stack applications requiring ES2023+ features, async patterns, or performance-critical implementations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7369,
+    "sha256": "9dd9a27f2e2c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/ui-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ui-auditor",
+      "description": "UI/UX consistency and accessibility checker. Design patterns, a11y issues.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "sonnet"
+    },
+    "line_count": 129,
+    "char_count": 3133,
+    "sha256": "430d8aeefc90",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/research-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "research-analyst",
+      "description": "\"Use this agent when you need comprehensive research across multiple sources with synthesis of findings into actionable insights, trend identification, and detailed reporting.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6751,
+    "sha256": "027369ebe4e2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/legal-advisor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "legal-advisor",
+      "description": "\"Use this agent when you need to draft contracts, review compliance requirements, develop IP protection strategies, or assess legal risks for technology businesses.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6646,
+    "sha256": "d7e34fabac4c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/license-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "license-engineer",
+      "description": "\"Use this agent when architecting, implementing, or optimizing end-to-end legal licensing systems\u2014from OSI standard selection and dependency compliance pipelines to proprietary deployment and risk monitoring.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "opus"
+    },
+    "line_count": 296,
+    "char_count": 8361,
+    "sha256": "b302a1f4af25",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/code-archaeologist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "code-archaeologist",
+      "description": "\"Expert in legacy code, refactoring, and understanding undocumented systems.\"",
+      "model": "opus"
+    },
+    "line_count": 118,
+    "char_count": 3192,
+    "sha256": "bdbef8207013",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/data-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-engineer",
+      "description": "\"Use this agent when you need to design, build, or optimize data pipelines, ETL/ELT processes, and data infrastructure. Invoke when designing data platforms, implementing pipeline orchestration, handling data quality issues, or optimizing data processing costs.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6548,
+    "sha256": "4337bd149e47",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/m365-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "m365-admin",
+      "description": "\"Use when automating Microsoft 365 administrative tasks including Exchange Online mailbox provisioning, Teams collaboration management, SharePoint site configuration, license lifecycle management, and Graph API-driven identity automation.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 49,
+    "char_count": 1825,
+    "sha256": "b6623e288bb6",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/brainstormer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "brainstormer",
+      "description": "\"Generate creative ideas and solutions.\"",
+      "model": "sonnet"
+    },
+    "line_count": 108,
+    "char_count": 2262,
+    "sha256": "ca92c32a43a8",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/coder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "coder",
+      "description": "Writes and edits code across all layers \u2014 backend, frontend, mobile, infra. Follows existing patterns exactly. Absorbs fullstack-developer, backend-specialist, frontend-specialist, mobile-developer, code-fixer.",
+      "model": "sonnet"
+    },
+    "line_count": 62,
+    "char_count": 1992,
+    "sha256": "089ca383933a",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/semgrep-scanner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "semgrep-scanner",
+      "description": "\"Executes Semgrep CLI scans for a specific language category and produces SARIF output. Spawned by the semgrep skill as a parallel worker \u2014 one agent per detected language.\"",
+      "tools": "Bash(semgrep scan:*), Bash",
+      "model": "sonnet"
+    },
+    "line_count": 92,
+    "char_count": 2820,
+    "sha256": "4f220ec00d0b",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/dotnet-framework-4.8-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dotnet-framework-4.8-expert",
+      "description": "\"Use this agent when working on legacy .NET Framework 4.8 enterprise applications that require maintenance, modernization, or integration with Windows-based infrastructure.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 306,
+    "char_count": 7565,
+    "sha256": "2da0ccc817ad",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/terraform-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "terraform-engineer",
+      "description": "\"Use when building, refactoring, or scaling infrastructure as code using Terraform with focus on multi-cloud deployments, module architecture, and enterprise-grade state management.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6898,
+    "sha256": "3486da207e3c",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/cpp-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "cpp-pro",
+      "description": "\"Use this agent when building high-performance C++ systems requiring modern C++20/23 features, template metaprogramming, or zero-overhead abstractions for systems programming, embedded systems, or performance-critical applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7539,
+    "sha256": "44a45b090fb2",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/typescript-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "typescript-pro",
+      "description": "\"Use when implementing TypeScript code requiring advanced type system patterns, complex generics, type-level programming, or end-to-end type safety across full-stack applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7381,
+    "sha256": "c0a7334e2bf0",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/kotlin-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "kotlin-specialist",
+      "description": "\"Use when building Kotlin applications requiring advanced coroutine patterns, multiplatform code sharing, or Android/server-side development with functional programming principles.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7347,
+    "sha256": "554c9af506dd",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/golang-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "golang-pro",
+      "description": "\"Use when building Go applications requiring concurrent programming, high-performance systems, microservices, or cloud-native architectures where idiomatic patterns, error handling excellence, and efficiency are critical.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7896,
+    "sha256": "43c9d075601b",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/scientific-literature-researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scientific-literature-researcher",
+      "description": "\"Use when you need to search scientific literature and retrieve structured experimental data from published studies. Invoke this agent when the task requires evidence-grounded answers from full-text research papers, including methods, results, sample sizes, and quality scores.\"",
+      "tools": "Read, WebFetch, WebSearch, mcp__bgpt__search_papers",
+      "model": "sonnet"
+    },
+    "line_count": 152,
+    "char_count": 5250,
+    "sha256": "84c2657b9715",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/design-bridge.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "design-bridge",
+      "description": "\"Use this agent when you need to translate a DESIGN.md from the VoltAgent/awesome-design-md repository into polished Claude Code instructions for building user interfaces that faithfully match the chosen brand. Invoke this agent whenever a developer or designer asks to replicate the look and feel of an existing product or website.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "opus"
+    },
+    "line_count": 128,
+    "char_count": 4527,
+    "sha256": "cb64c59c35fb",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/prompt-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "prompt-engineer",
+      "description": "\"Use this agent when you need to design, optimize, test, or evaluate prompts for large language models in production systems.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6417,
+    "sha256": "a98c1b13f0a1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/kubernetes-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "kubernetes-specialist",
+      "description": "\"Use this agent when you need to design, deploy, configure, or troubleshoot Kubernetes clusters and workloads in production environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6912,
+    "sha256": "516f32371c52",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/risk-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "risk-manager",
+      "description": "\"Use this agent when you need to identify, quantify, and mitigate enterprise-level risks across financial, operational, regulatory, and strategic domains. Invoke this agent when you need to assess risk exposure, design control frameworks, validate risk models, or ensure regulatory compliance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6619,
+    "sha256": "ed8e74bcb2d1",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/agents/dependency-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dependency-manager",
+      "description": "\"Use this agent when you need to audit dependencies for vulnerabilities, resolve version conflicts, optimize bundle sizes, or implement automated dependency updates.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "haiku"
+    },
+    "line_count": 286,
+    "char_count": 6870,
+    "sha256": "2bd6fa26a4e4",
+    "mtime": 1776483032
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/explore.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Deep investigation before planning. Use for best practices, implications, and systematic analysis."
+    },
+    "line_count": 141,
+    "char_count": 3997,
+    "sha256": "6050af8fa99b",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/review-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Perform comprehensive multi-pass code review with security, performance, and architecture checks."
+    },
+    "line_count": 353,
+    "char_count": 8662,
+    "sha256": "3442f8df3d86",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/full-audit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 128,
+    "char_count": 4339,
+    "sha256": "0cb8439d8577",
+    "mtime": 1776378869
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/new-feature.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 3464,
+    "sha256": "278d3c172c03",
+    "mtime": 1776378357
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/pre-deploy.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 96,
+    "char_count": 2568,
+    "sha256": "4ca58f872e58",
+    "mtime": 1776378906
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/pre-commit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 97,
+    "char_count": 2135,
+    "sha256": "6fb19bffcca2",
+    "mtime": 1776378888
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/work.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Execute work plans systematically while maintaining quality. Use after /plan to implement features."
+    },
+    "line_count": 391,
+    "char_count": 9463,
+    "sha256": "64bb63979f44",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/resolve_pr.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Handle PR comments and review feedback efficiently. Use when addressing reviewer feedback."
+    },
+    "line_count": 131,
+    "char_count": 2417,
+    "sha256": "8cce9f7db0cf",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/cycle.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Orchestrate the full \"plan \u2192 review \u2192 work \u2192 review \u2192 compound\" lifecycle for small tasks."
+    },
+    "line_count": 141,
+    "char_count": 2822,
+    "sha256": "36a996d40e76",
+    "mtime": 1776378568
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/plan-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Transform feature descriptions into well-structured project plans with solution search and pattern checks."
+    },
+    "line_count": 429,
+    "char_count": 11564,
+    "sha256": "896ed8141942",
+    "mtime": 1776378513
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/release-prep.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 3623,
+    "sha256": "d8f4b5e37cb3",
+    "mtime": 1776378934
+  },
+  {
+    "path": "/home/kobramaz/.claude/_pre-symlink-backup-2026-05-02/workflows/bug-fix.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 159,
+    "char_count": 3845,
+    "sha256": "48c6d4516c72",
+    "mtime": 1776378357
+  },
+  {
+    "path": "/home/kobramaz/.claude/.beads/README.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 82,
+    "char_count": 2243,
+    "sha256": "4f3ffddade7b",
+    "mtime": 1777177520
+  },
+  {
+    "path": "/home/kobramaz/.claude/cache/changelog.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 3091,
+    "char_count": 234788,
+    "sha256": "b9db282b7f25",
+    "mtime": 1776374955
+  },
+  {
+    "path": "/home/kobramaz/.claude/audits/DOC_AUDIT_2026-05-03.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 415,
+    "char_count": 22252,
+    "sha256": "be91162ce073",
+    "mtime": 1777828515
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/AGENTS.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 87,
+    "char_count": 3191,
+    "sha256": "b8bd9366a2ef",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/REWRITE_LOG.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 86,
+    "char_count": 3579,
+    "sha256": "5f0afcad5fc8",
+    "mtime": 1777829628
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/VIOLATIONS.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 27,
+    "char_count": 1787,
+    "sha256": "ef2a3826bdbd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/CLAUDE.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 155,
+    "char_count": 7610,
+    "sha256": "5e914a046194",
+    "mtime": 1777829549
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/README.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 232,
+    "char_count": 8483,
+    "sha256": "e7504dc24256",
+    "mtime": 1777829588
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/DELETION_LOG.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 10,
+    "char_count": 359,
+    "sha256": "2f6a1528465b",
+    "mtime": 1777829613
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/code-review.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "code-review",
+      "description": "Systematic multi-perspective code review with consistent quality gates.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 38,
+    "char_count": 1354,
+    "sha256": "2898c62511b2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/session-resume.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "session-resume",
+      "description": "Resume context from previous session"
+    },
+    "line_count": 97,
+    "char_count": 1640,
+    "sha256": "3c2f9523ba4b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/full-audit.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "full-audit",
+      "description": "Run all 11 audit agents in parallel, then consolidate findings with fix-planner"
+    },
+    "line_count": 44,
+    "char_count": 1780,
+    "sha256": "d32dd38afb14",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/security.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 115,
+    "char_count": 2091,
+    "sha256": "e8c807e56c8b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/mobile.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 141,
+    "char_count": 2897,
+    "sha256": "6c33efbc723e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/new-feature.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "new-feature",
+      "description": "Develop new features with test-first approach (TDD)"
+    },
+    "line_count": 53,
+    "char_count": 1177,
+    "sha256": "c514e7abdd97",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/nextjs.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 102,
+    "char_count": 2385,
+    "sha256": "75eaf948bd5d",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/gemini-router.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "gemini-router",
+      "description": "Decision policy for when and how to invoke Gemini via agent-pool. Use whenever you're considering calling delegate_task, delegate_task_readonly, or consult_peer. Picks the right Gemini-side skill (tdd-planner / strict-reviewer / no skill) based on task shape, and tells you when NOT to delegate."
+    },
+    "line_count": 66,
+    "char_count": 3437,
+    "sha256": "8eedac822319",
+    "mtime": 1777825456
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/pre-deploy.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "pre-deploy",
+      "description": "Validate build, environment, and dependencies before deployment"
+    },
+    "line_count": 50,
+    "char_count": 1162,
+    "sha256": "9a15e9106d74",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/pre-commit.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "pre-commit",
+      "description": "Run code quality checks and tests before committing"
+    },
+    "line_count": 45,
+    "char_count": 879,
+    "sha256": "a9b6bf91eb46",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/file-todos.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "file-todos",
+      "description": "Manage file-based todo tracking in the todos/ directory"
+    },
+    "line_count": 89,
+    "char_count": 1725,
+    "sha256": "01f82ff356ae",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/testing.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "testing",
+      "description": "Unified testing commands and patterns across frontend and backend.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 44,
+    "char_count": 1035,
+    "sha256": "4cbf9d7ea393",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/tailwind.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 2913,
+    "sha256": "713d013b68ca",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/docker.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 127,
+    "char_count": 2282,
+    "sha256": "6b5f3fee4412",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/compound-docs.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "compound-docs",
+      "description": "Document solved problems for knowledge persistence"
+    },
+    "line_count": 134,
+    "char_count": 3038,
+    "sha256": "1c3b6401c330",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/release-prep.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "release-prep",
+      "description": "Full audit + fixes + deploy validation for production release"
+    },
+    "line_count": 63,
+    "char_count": 1428,
+    "sha256": "cecb6bea575e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/react-patterns.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 84,
+    "char_count": 1874,
+    "sha256": "1ea58787a6b7",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/api-design.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 135,
+    "char_count": 2527,
+    "sha256": "287680c27aa1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/performance.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 2658,
+    "sha256": "414720f85879",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/bug-fix.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "bug-fix",
+      "description": "Fix bugs with regression prevention using test-first approach"
+    },
+    "line_count": 54,
+    "char_count": 1225,
+    "sha256": "c785a02fcc24",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/debug.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "debug",
+      "description": "Systematic debugging with structured reproduction and root cause analysis.",
+      "last_updated": "2025-12-20"
+    },
+    "line_count": 41,
+    "char_count": 1204,
+    "sha256": "3562e9bb26b8",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/differential-review/patterns.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 301,
+    "char_count": 6999,
+    "sha256": "52abb18abbc7",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/differential-review/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "differential-review",
+      "description": ">",
+      "allowed-tools": ""
+    },
+    "line_count": 221,
+    "char_count": 6504,
+    "sha256": "72a1e8dc98d5",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/differential-review/methodology.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 235,
+    "char_count": 6716,
+    "sha256": "16b335d24cf2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/differential-review/adversarial.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 204,
+    "char_count": 5062,
+    "sha256": "3cb823f38c6e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/differential-review/reporting.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 370,
+    "char_count": 6956,
+    "sha256": "0016876dc6f1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/insecure-defaults/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "insecure-defaults",
+      "description": "\"Detects fail-open insecure defaults (hardcoded secrets, weak auth, permissive security) that allow apps to run insecurely in production. Use when auditing security, reviewing config management, or analyzing environment variable handling.\"",
+      "allowed-tools": ""
+    },
+    "line_count": 118,
+    "char_count": 5209,
+    "sha256": "6c6c54ab48dc",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/insecure-defaults/references/examples.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 410,
+    "char_count": 10649,
+    "sha256": "1d47703f84b6",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/semgrep/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "semgrep",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 213,
+    "char_count": 9720,
+    "sha256": "b12e2130745f",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/semgrep/workflows/scan-workflow.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 312,
+    "char_count": 11382,
+    "sha256": "de63106a5254",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/semgrep/references/rulesets.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 163,
+    "char_count": 7695,
+    "sha256": "e641bf7b2f32",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/semgrep/references/scan-modes.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 111,
+    "char_count": 4466,
+    "sha256": "76c8d41c8fc2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/semgrep/references/scanner-task-prompt.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 141,
+    "char_count": 5907,
+    "sha256": "67ae9626627c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "codeql",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 283,
+    "char_count": 15527,
+    "sha256": "0f340fbd3335",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/workflows/build-database.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 281,
+    "char_count": 9565,
+    "sha256": "7fb24c47ffe4",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/workflows/create-data-extensions.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 262,
+    "char_count": 9912,
+    "sha256": "2210ce1466a8",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/workflows/run-analysis.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 303,
+    "char_count": 11466,
+    "sha256": "6a489cfc57eb",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/performance-tuning.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 112,
+    "char_count": 3352,
+    "sha256": "d725aef573fd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/build-fixes.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 91,
+    "char_count": 2632,
+    "sha256": "9d74eaef2a75",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/extension-yaml-format.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 210,
+    "char_count": 7838,
+    "sha256": "a263fa41dc78",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/run-all-suite.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 101,
+    "char_count": 4257,
+    "sha256": "cde0d37d23f4",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/quality-assessment.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 173,
+    "char_count": 7002,
+    "sha256": "1dabaec584cc",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/macos-arm64e-workaround.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 180,
+    "char_count": 6796,
+    "sha256": "2b4e18ae0924",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/diagnostic-query-templates.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 340,
+    "char_count": 10017,
+    "sha256": "d9f72ace8865",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/language-details.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 208,
+    "char_count": 5091,
+    "sha256": "1d6db4a45a88",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/threat-models.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 52,
+    "char_count": 3056,
+    "sha256": "8855d4907b39",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/sarif-processing.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 80,
+    "char_count": 3117,
+    "sha256": "abde04ca479a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/important-only-suite.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 154,
+    "char_count": 5767,
+    "sha256": "27823a2553db",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/codeql/references/ruleset-catalog.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 66,
+    "char_count": 2197,
+    "sha256": "2b139ae59386",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/sarif-parsing/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "sarif-parsing",
+      "description": ">-",
+      "allowed-tools": ""
+    },
+    "line_count": 484,
+    "char_count": 15153,
+    "sha256": "bebc9ea0083f",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/sarif-parsing/resources/jq-queries.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 163,
+    "char_count": 5267,
+    "sha256": "d7fb98ee8859",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/supply-chain-risk-auditor/SKILL.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "supply-chain-risk-auditor",
+      "description": "\"Identifies dependencies at heightened risk of exploitation or takeover. Use when assessing supply chain attack surface, evaluating dependency health, or scoping security engagements.\"",
+      "allowed-tools": ""
+    },
+    "line_count": 68,
+    "char_count": 5786,
+    "sha256": "4d81229cac98",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/skills/supply-chain-risk-auditor/resources/results-template.md",
+    "type": "skill",
+    "frontmatter": null,
+    "line_count": 42,
+    "char_count": 1172,
+    "sha256": "39ae26b3d55f",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/perf-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "perf-auditor",
+      "description": "Performance auditor and optimizer. Finds bottlenecks (bundle, queries, rendering, memory) and implements fixes. Absorbs performance-optimizer.",
+      "model": "opus"
+    },
+    "line_count": 82,
+    "char_count": 2644,
+    "sha256": "558940478593",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/quant-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "quant-analyst",
+      "description": "\"Use this agent when you need to develop quantitative trading strategies, build financial models with rigorous mathematical foundations, or conduct advanced risk analytics for derivatives and portfolios. Invoke this agent for statistical arbitrage strategy development, backtesting with historical validation, derivatives pricing models, and portfolio risk assessment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6835,
+    "sha256": "fd8ed7714299",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/react-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "react-specialist",
+      "description": "\"Use when optimizing existing React applications for performance, implementing advanced React 18+ features, or solving complex state management and architectural challenges within React codebases.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6730,
+    "sha256": "dc65bfdaf4f4",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/deploy-checker.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "deploy-checker",
+      "description": "Pre-deployment validation gate. Checks build, environment, dependencies, migrations, and infrastructure config. Absorbs env-validator, dep-auditor, infra-auditor.",
+      "model": "sonnet"
+    },
+    "line_count": 91,
+    "char_count": 2487,
+    "sha256": "1085a3b8d793",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/websocket-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "websocket-engineer",
+      "description": "\"Use this agent when implementing real-time bidirectional communication features using WebSockets, Socket.IO, or similar technologies at scale.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 150,
+    "char_count": 4299,
+    "sha256": "c0d4ac6f3f87",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/debugger.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "debugger",
+      "description": "Root cause analysis and fix planning. Diagnoses bugs systematically then produces a prioritized FIXES.md. Absorbs fix-planner.",
+      "model": "opus"
+    },
+    "line_count": 79,
+    "char_count": 2290,
+    "sha256": "39965da4a6d9",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/fastapi-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "fastapi-developer",
+      "description": "\"Use when building modern async Python APIs with FastAPI, implementing Pydantic v2 validation, dependency injection patterns, or deploying high-performance ASGI applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 288,
+    "char_count": 6886,
+    "sha256": "d446608d9510",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/planner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "planner",
+      "description": "\"Create detailed implementation plans for complex tasks.\"",
+      "model": "opus"
+    },
+    "line_count": 280,
+    "char_count": 7088,
+    "sha256": "81738517ee08",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/bug-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "bug-auditor",
+      "description": "Runtime bug scanner. Finds error handling gaps, race conditions, memory leaks, null refs.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "sonnet"
+    },
+    "line_count": 319,
+    "char_count": 8225,
+    "sha256": "c144e83ed79a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/vps-sync.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "vps-sync",
+      "description": "Pre-session synchronization for cross-machine work. Pulls the agenticOS repo and beads database, surfaces divergence, verifies symlinks/junctions resolve, and reports environment parity. Use proactively at the start of any session when working across Windows local and Linux VPS.",
+      "model": "haiku"
+    },
+    "line_count": 69,
+    "char_count": 2418,
+    "sha256": "fa56a2df9940",
+    "mtime": 1777825365
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/flutter-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "flutter-expert",
+      "description": "\"Use when building cross-platform mobile applications with Flutter 3+ that require custom UI implementation, complex state management, native platform integrations, or performance optimization across iOS/Android/Web.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6533,
+    "sha256": "43ba411bdeca",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/violations-enforcer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "violations-enforcer",
+      "description": "Reads VIOLATIONS.md before any plan or major decision, identifies which past lessons apply to the current task, and surfaces them. Treats VIOLATIONS.md as active behavioral guardrails, not passive documentation. Invoke before EnterPlanMode for non-trivial tasks, before committing to a major architectural decision, or when a \"should I X?\" question resembles a logged pattern.",
+      "model": "haiku"
+    },
+    "line_count": 72,
+    "char_count": 3009,
+    "sha256": "d06cfb6ad5c9",
+    "mtime": 1777825407
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/klipper-ops.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "klipper-ops",
+      "description": "3D printer operations using the Klipper firmware stack (Klipper + Mainsail + Moonraker, optionally OctoPrint). Use for printer.cfg tweaks, troubleshooting from logs, slicer profile decisions, kinematics/sensor changes, kiauh updates, and validating config changes before hot-reloading on the live printer.",
+      "model": "sonnet"
+    },
+    "line_count": 62,
+    "char_count": 3063,
+    "sha256": "1dcb32ca6801",
+    "mtime": 1777825429
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/api-designer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-designer",
+      "description": "\"Use this agent when designing new APIs, creating API specifications, or refactoring existing API architecture for scalability and developer experience. Invoke when you need REST/GraphQL endpoint design, OpenAPI documentation, authentication patterns, or API versioning strategies.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 237,
+    "char_count": 6115,
+    "sha256": "dc8547318598",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/data-scientist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-scientist",
+      "description": "\"Use this agent when you need to analyze data patterns, build predictive models, or extract statistical insights from datasets. Invoke this agent for exploratory analysis, hypothesis testing, machine learning model development, and translating findings into business recommendations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6876,
+    "sha256": "d5d51ae2ac59",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/devops-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "devops-engineer",
+      "description": "\"Infrastructure & CI/CD expert for Docker, Kubernetes, GitHub Actions, and deployment automation.\"",
+      "model": "sonnet"
+    },
+    "line_count": 174,
+    "char_count": 5137,
+    "sha256": "309c56537bd2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/reviewer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "reviewer",
+      "description": "Pre-merge code review and architecture sign-off. Reviews quality, correctness, patterns, and architecture. Absorbs architect-reviewer and code-auditor.",
+      "model": "opus"
+    },
+    "line_count": 89,
+    "char_count": 2898,
+    "sha256": "094439b4361b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/expo-react-native-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "expo-react-native-expert",
+      "description": "\"Use when building mobile applications with Expo and React Native that require native module integration, navigation setup, performant animations, push notifications, OTA updates, or App Store/Play Store deployment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 269,
+    "char_count": 9735,
+    "sha256": "b4303c0e3191",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/wordpress-master.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "wordpress-master",
+      "description": "\"Use this agent when you need to architect, optimize, or troubleshoot WordPress implementations ranging from custom theme/plugin development to enterprise-scale multisite platforms. Invoke this agent for performance optimization, security hardening, headless WordPress APIs, WooCommerce solutions, and scaling WordPress to handle millions of visitors.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 316,
+    "char_count": 7559,
+    "sha256": "ba940576cba1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/security-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "security-auditor",
+      "description": "Comprehensive security analysis. OWASP Top 10, injection, auth, secrets, headers.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "opus"
+    },
+    "line_count": 395,
+    "char_count": 11517,
+    "sha256": "77adac5d8def",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/accessibility-tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "accessibility-tester",
+      "description": "\"Use this agent when you need comprehensive accessibility testing, WCAG compliance verification, or assessment of assistive technology support.\"",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "haiku"
+    },
+    "line_count": 277,
+    "char_count": 7056,
+    "sha256": "70812302dd16",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "tester",
+      "description": "Write tests for new or existing code AND run the full test suite to validate. Unit, integration, API, edge cases. Vitest/Jest patterns.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 167,
+    "char_count": 4052,
+    "sha256": "45c40e2e66bd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/ui-designer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ui-designer",
+      "description": "\"Design user interface and experience.\"",
+      "model": "haiku"
+    },
+    "line_count": 254,
+    "char_count": 5992,
+    "sha256": "4ce2c564918a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/fintech-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "fintech-engineer",
+      "description": "\"Use when building payment systems, financial integrations, or compliance-heavy financial applications that require secure transaction processing, regulatory adherence, and high transaction accuracy.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6858,
+    "sha256": "9bc3828b342a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/electron-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "electron-pro",
+      "description": "\"Use this agent when building Electron desktop applications that require native OS integration, cross-platform distribution, security hardening, and performance optimization. Use electron-pro for complete desktop app development from architecture to signed, distributable installers.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 240,
+    "char_count": 6389,
+    "sha256": "64c460c0f4ff",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/orchestrator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "orchestrator",
+      "description": "Coordinates multi-agent work, translates requirements into execution plans, tracks progress. Absorbs product-owner and project-manager roles.",
+      "model": "opus"
+    },
+    "line_count": 96,
+    "char_count": 3964,
+    "sha256": "53482e6ba2f0",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/payment-integration.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "payment-integration",
+      "description": "\"Use this agent when implementing payment systems, integrating payment gateways, or handling financial transactions that require PCI compliance, fraud prevention, and secure transaction processing.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6741,
+    "sha256": "d5eb9de88497",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/swift-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "swift-expert",
+      "description": "\"Use this agent when building native iOS, macOS, or server-side Swift applications requiring advanced concurrency patterns, protocol-oriented architecture, and Swift-specific optimizations. Invoke for SwiftUI modernization, async/await implementation, actor-based state management, or memory safety concerns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7451,
+    "sha256": "38e2fd4af846",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/seo-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "seo-auditor",
+      "description": "SEO and GEO (Generative Engine Optimization) auditor. Meta tags, OpenGraph, sitemap, structured data, AI search visibility.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "haiku"
+    },
+    "line_count": 176,
+    "char_count": 4404,
+    "sha256": "edc27676ba7e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/browser-qa-agent.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "browser-qa-agent",
+      "description": "Browser-based QA \u2014 navigates the running app, finds UI bugs, console errors, and visual regressions. Absorbs fullstack-qa-orchestrator, console-monitor, visual-diff.",
+      "model": "sonnet"
+    },
+    "line_count": 85,
+    "char_count": 2320,
+    "sha256": "a5bc9a61b743",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/graphql-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "graphql-architect",
+      "description": "\"Use this agent when designing or evolving GraphQL schemas across microservices, implementing federation architectures, or optimizing query performance in distributed graphs.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 238,
+    "char_count": 6550,
+    "sha256": "bac53417290d",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/memory-consolidation.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "memory-consolidation",
+      "description": "Nightly scheduled agent \u2014 audits the beads memory store, identifies duplicates, stale entries, and relative-date drift, and proposes consolidation. Read-only by default; destructive operations require explicit user approval per item.",
+      "model": "haiku"
+    },
+    "line_count": 77,
+    "char_count": 3126,
+    "sha256": "47fcc9acb13c",
+    "mtime": 1777826055
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/scout.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scout",
+      "description": "\"Explore and search code in the current codebase.\"",
+      "model": "haiku"
+    },
+    "line_count": 228,
+    "char_count": 5008,
+    "sha256": "73fdc44e6e5d",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/morning-briefing.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "morning-briefing",
+      "description": "Scheduled weekday morning agent \u2014 pulls bd ready, episodic memory, and any connected calendar/email/issue-tracker MCPs into a prioritized daily plan. Degrades gracefully when optional integrations are not connected.",
+      "model": "sonnet"
+    },
+    "line_count": 89,
+    "char_count": 2962,
+    "sha256": "94a0de03f734",
+    "mtime": 1777826440
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/vue-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "vue-expert",
+      "description": "\"Use this agent when building Vue 3 applications that require Composition API mastery, reactivity optimization, or Nuxt 3 development with enterprise-scale performance concerns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6502,
+    "sha256": "e6955b3e60f1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/nextjs-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "nextjs-developer",
+      "description": "\"Use this agent when building production Next.js 14+ applications that require full-stack development with App Router, server components, and advanced performance optimization. Invoke when you need to architect or implement complete Next.js applications, optimize Core Web Vitals, implement server actions and mutations, or deploy SEO-optimized applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6626,
+    "sha256": "435a9c43ef69",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/python-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "python-pro",
+      "description": "\"Use this agent when you need to build type-safe, production-ready Python code for web APIs, system utilities, or complex applications requiring modern async patterns and extensive type coverage.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 8536,
+    "sha256": "b87dba6a73d6",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/git-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "git-manager",
+      "description": "Git operations and pull request description generation. Commits, branches, merges, conflict resolution, PR writeups. Absorbs pr-writer.",
+      "model": "haiku"
+    },
+    "line_count": 79,
+    "char_count": 1965,
+    "sha256": "e12354c28a90",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/mcp-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "mcp-developer",
+      "description": "\"Use this agent when you need to build, debug, or optimize Model Context Protocol (MCP) servers and clients that connect AI systems to external tools and data sources.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 275,
+    "char_count": 6940,
+    "sha256": "7ab6fa183609",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/docs-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "docs-manager",
+      "description": "Documentation generation and gap analysis. Writes and updates READMEs, API docs, changelogs, and inline comments. Absorbs doc-auditor.",
+      "model": "haiku"
+    },
+    "line_count": 60,
+    "char_count": 1885,
+    "sha256": "2979620985f1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/compliance-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "compliance-auditor",
+      "description": "\"Use this agent when you need to achieve regulatory compliance, implement compliance controls, or prepare for audits across frameworks like GDPR, HIPAA, PCI DSS, SOC 2, and ISO standards.\"",
+      "tools": "Read, Grep, Glob",
+      "model": "opus"
+    },
+    "line_count": 277,
+    "char_count": 6865,
+    "sha256": "27f2f9f9f2aa",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/angular-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "angular-architect",
+      "description": "\"Use when architecting enterprise Angular 15+ applications with complex state management, optimizing RxJS patterns, designing micro-frontend systems, or solving performance and scalability challenges in large codebases.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6656,
+    "sha256": "70455b225603",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/postgres-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "postgres-pro",
+      "description": "\"Use when you need to optimize PostgreSQL performance, design high-availability replication, or troubleshoot database issues at scale. Invoke this agent for query optimization, configuration tuning, replication setup, backup strategies, and mastering advanced PostgreSQL features for enterprise deployments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6537,
+    "sha256": "968eb330cd63",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/django-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "django-developer",
+      "description": "\"Use when building Django 4+ web applications, REST APIs, or modernizing existing Django projects with async views and enterprise patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6432,
+    "sha256": "cf287d2fa430",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/agent-installer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "agent-installer",
+      "description": "\"Use this agent when the user wants to discover, browse, or install Claude Code agents from the awesome-claude-code-subagents repository.\"",
+      "tools": "Bash, WebFetch, Read, Write, Glob",
+      "model": "haiku"
+    },
+    "line_count": 98,
+    "char_count": 3555,
+    "sha256": "2fc0554b2a37",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/ui-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ui-auditor",
+      "description": "UI/UX consistency and accessibility checker. Design patterns, a11y issues.",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "sonnet"
+    },
+    "line_count": 129,
+    "char_count": 3133,
+    "sha256": "430d8aeefc90",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/research-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "research-analyst",
+      "description": "\"Use this agent when you need comprehensive research across multiple sources with synthesis of findings into actionable insights, trend identification, and detailed reporting.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6751,
+    "sha256": "027369ebe4e2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/bd-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "bd-manager",
+      "description": "Beads (bd) database expert. Knows the Dolt-backed schema, runs `bd query` for meta-analysis, dedupes near-duplicate memory keys, identifies stale issues and orphaned dependencies, and generates reports on issue/memory state. Use for periodic cleanup, work-tracking analytics, or when memory feels noisy.",
+      "model": "sonnet"
+    },
+    "line_count": 60,
+    "char_count": 2759,
+    "sha256": "3b764363f999",
+    "mtime": 1777825385
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/code-archaeologist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "code-archaeologist",
+      "description": "\"Expert in legacy code, refactoring, and understanding undocumented systems.\"",
+      "model": "opus"
+    },
+    "line_count": 118,
+    "char_count": 3192,
+    "sha256": "bdbef8207013",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/data-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-engineer",
+      "description": "\"Use this agent when you need to design, build, or optimize data pipelines, ETL/ELT processes, and data infrastructure. Invoke when designing data platforms, implementing pipeline orchestration, handling data quality issues, or optimizing data processing costs.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6548,
+    "sha256": "4337bd149e47",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/coder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "coder",
+      "description": "Writes and edits code across all layers \u2014 backend, frontend, mobile, infra. Follows existing patterns exactly. Absorbs fullstack-developer, backend-specialist, frontend-specialist, mobile-developer, code-fixer.",
+      "model": "sonnet"
+    },
+    "line_count": 62,
+    "char_count": 1992,
+    "sha256": "089ca383933a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/typescript-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "typescript-pro",
+      "description": "\"Use when implementing TypeScript code requiring advanced type system patterns, complex generics, type-level programming, or end-to-end type safety across full-stack applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7381,
+    "sha256": "c0a7334e2bf0",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/kotlin-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "kotlin-specialist",
+      "description": "\"Use when building Kotlin applications requiring advanced coroutine patterns, multiplatform code sharing, or Android/server-side development with functional programming principles.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7347,
+    "sha256": "554c9af506dd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/prompt-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "prompt-engineer",
+      "description": "\"Use this agent when you need to design, optimize, test, or evaluate prompts for large language models in production systems.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6417,
+    "sha256": "a98c1b13f0a1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/dependency-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dependency-manager",
+      "description": "\"Use this agent when you need to audit dependencies for vulnerabilities, resolve version conflicts, optimize bundle sizes, or implement automated dependency updates.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "haiku"
+    },
+    "line_count": 286,
+    "char_count": 6870,
+    "sha256": "2bd6fa26a4e4",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/powershell-7-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-7-expert",
+      "description": "\"Use when building cross-platform cloud automation scripts, Azure infrastructure orchestration, or CI/CD pipelines requiring PowerShell 7+ with modern .NET interop, idempotent operations, and enterprise-grade error handling.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 58,
+    "char_count": 2303,
+    "sha256": "f49babe8c570",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/ad-security-reviewer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ad-security-reviewer",
+      "description": "\"Use this agent when you need to audit Active Directory security posture, evaluate privilege escalation risks, review identity delegation patterns, or assess authentication protocol hardening.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 57,
+    "char_count": 2354,
+    "sha256": "ae01db57f35d",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/windows-infra-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "windows-infra-admin",
+      "description": "\"Use when managing Windows Server infrastructure, Active Directory, DNS, DHCP, and Group Policy configurations, especially for enterprise-scale deployments requiring safe automation and compliance validation.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 53,
+    "char_count": 1963,
+    "sha256": "00a7e1650682",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/microservices-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "microservices-architect",
+      "description": "\"Use when designing distributed system architecture, decomposing monolithic applications into independent microservices, or establishing communication patterns between services at scale.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 239,
+    "char_count": 6381,
+    "sha256": "0ddbe7f8d574",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/database-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "database-admin",
+      "description": "Schema design, migrations, query optimization, and database auditing. Absorbs db-auditor.",
+      "model": "sonnet"
+    },
+    "line_count": 114,
+    "char_count": 4050,
+    "sha256": "451562a69cc5",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/docker-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "docker-expert",
+      "description": "\"Use this agent when you need to build, optimize, or secure Docker container images and orchestration for production environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 279,
+    "char_count": 8150,
+    "sha256": "42aacc5f7e9c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/terragrunt-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "terragrunt-expert",
+      "description": "Expert Terragrunt specialist mastering infrastructure orchestration, DRY configurations, and multi-environment deployments. Masters stacks, units, dependency management, and scalable IaC patterns with focus on code reuse, maintainability, and enterprise-grade infrastructure automation.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 308,
+    "char_count": 8226,
+    "sha256": "2be6aa489efd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/customer-success-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "customer-success-manager",
+      "description": "\"Use this agent when you need to assess customer health, develop retention strategies, identify upsell opportunities, or maximize customer lifetime value. Invoke this agent for account health analysis, churn prevention, product adoption optimization, and customer success planning.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6908,
+    "sha256": "d37cbaed5c9e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/trend-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "trend-analyst",
+      "description": "\"Use when analyzing emerging patterns, predicting industry shifts, or developing future scenarios to inform strategic planning and competitive positioning.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6697,
+    "sha256": "1092503308f9",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/platform-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "platform-engineer",
+      "description": "\"Use when building or improving internal developer platforms (IDPs), designing self-service infrastructure, or optimizing developer workflows to reduce friction and accelerate delivery. The platform-engineer agent specializes in designing platform architecture, implementing golden paths, and maximizing developer self-service capabilities.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 7552,
+    "sha256": "bfd19f8cf57e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/network-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "network-engineer",
+      "description": "\"Use this agent when designing, optimizing, or troubleshooting cloud and hybrid network infrastructures, or when addressing network security, performance, or reliability challenges.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6827,
+    "sha256": "b7a84bf95e3d",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/rails-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "rails-expert",
+      "description": "\"Use when building or modernizing Rails applications requiring API development, Hotwire reactivity, real-time features, background job processing, deployment automation, or Rails-idiomatic patterns for maximum productivity. Version-aware: adapts to Rails 7.x and 8.x projects.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 359,
+    "char_count": 13459,
+    "sha256": "71f849ecdf12",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/competitive-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "competitive-analyst",
+      "description": "\"Use when you need to analyze direct and indirect competitors, benchmark against market leaders, or develop strategies to strengthen competitive positioning and market advantage.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6914,
+    "sha256": "6cd3f3d1b46b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/devops-incident-responder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "devops-incident-responder",
+      "description": "\"Use when actively responding to production incidents, diagnosing critical service failures, or conducting incident postmortems to implement permanent fixes and preventative measures.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6801,
+    "sha256": "e9e980f71c74",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/powershell-5.1-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-5.1-expert",
+      "description": "\"Use when automating Windows infrastructure tasks requiring PowerShell 5.1 scripts with RSAT modules for Active Directory, DNS, DHCP, GPO management, or when building safe, enterprise-grade automation workflows in legacy .NET Framework environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 60,
+    "char_count": 2459,
+    "sha256": "aa18330ea42c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/readme-generator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "readme-generator",
+      "description": "\"Use this agent when you need a maintainer-ready README built from exact repository reality, with deep codebase scanning, zero hallucination, and optional git commit/push only when explicitly requested.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 239,
+    "char_count": 6749,
+    "sha256": "c8e92f3f2f85",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/sales-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sales-engineer",
+      "description": "\"Use this agent when you need to conduct technical pre-sales activities including solution architecture, proof-of-concept development, and technical demonstrations for complex sales deals.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6990,
+    "sha256": "0fdae9f694d2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/api-documenter.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-documenter",
+      "description": "\"Use this agent when creating or improving API documentation, writing OpenAPI specifications, building interactive documentation portals, or generating code examples for APIs.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 277,
+    "char_count": 6328,
+    "sha256": "7644ec4a1b45",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/copywriter.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "copywriter",
+      "description": "\"Create marketing content with CRO optimization.\"",
+      "model": "haiku"
+    },
+    "line_count": 159,
+    "char_count": 4437,
+    "sha256": "588083f1563e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/cli-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "cli-developer",
+      "description": "\"Use this agent when building command-line tools and terminal applications that require intuitive command design, cross-platform compatibility, and optimized developer experience.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 286,
+    "char_count": 6641,
+    "sha256": "50039283bacd",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/seed-generator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "seed-generator",
+      "description": "Test data generator. Creates realistic seed data based on schema.",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 257,
+    "char_count": 5652,
+    "sha256": "8cc5efb574b2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/product-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "product-manager",
+      "description": "\"Use this agent when you need to make product strategy decisions, prioritize features, or define roadmap plans based on user needs and business goals.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 287,
+    "char_count": 6541,
+    "sha256": "88977cfebc36",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/cloud-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "cloud-architect",
+      "description": "\"Use this agent when you need to design, evaluate, or optimize cloud infrastructure architecture at scale. Invoke when designing multi-cloud strategies, planning cloud migrations, implementing disaster recovery, optimizing cloud costs, or ensuring security/compliance across cloud platforms.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 277,
+    "char_count": 7089,
+    "sha256": "d38974ed9685",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/slack-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "slack-expert",
+      "description": "\"Use this agent when developing Slack applications, implementing Slack API integrations, or reviewing Slack bot code for security and best practices.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 233,
+    "char_count": 6608,
+    "sha256": "aa53ee110564",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/nlp-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "nlp-engineer",
+      "description": "\"Use when building production NLP systems, implementing text processing pipelines, developing language models, or solving domain-specific NLP tasks like named entity recognition, sentiment analysis, or machine translation.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6635,
+    "sha256": "2eb4f75904b4",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/api-tester.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "api-tester",
+      "description": "API endpoint testing. Discovery, validation, auth flows, error handling.",
+      "tools": "Read, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 345,
+    "char_count": 9965,
+    "sha256": "4d9bee5efc97",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/java-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "java-architect",
+      "description": "\"Use this agent when designing enterprise Java architectures, migrating Spring Boot applications, or establishing microservices patterns for scalable cloud-native systems.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7653,
+    "sha256": "8518572de76b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/business-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "business-analyst",
+      "description": "\"Use when analyzing business processes, gathering requirements from stakeholders, or identifying process improvement opportunities to drive operational efficiency and measurable business value.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6705,
+    "sha256": "d7aa88028703",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/project-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "project-manager",
+      "description": "\"Use this agent when you need to establish project plans, track execution progress, manage risks, control budget/schedule, and coordinate stakeholders across complex initiatives.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 287,
+    "char_count": 6504,
+    "sha256": "dcba1095b8ca",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/game-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "game-developer",
+      "description": "\"Use this agent when implementing game systems, optimizing graphics rendering, building multiplayer networking, or developing gameplay mechanics for games targeting specific platforms.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6431,
+    "sha256": "1a5ba5347880",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/dx-optimizer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dx-optimizer",
+      "description": "\"Use this agent when optimizing the complete developer workflow including build times, feedback loops, testing efficiency, and developer satisfaction metrics across the entire development environment.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 286,
+    "char_count": 6593,
+    "sha256": "02919bfababc",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/spring-boot-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "spring-boot-engineer",
+      "description": "\"Use this agent when building enterprise Spring Boot 3+ applications requiring microservices architecture, cloud-native deployment, or reactive programming patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6590,
+    "sha256": "b09a4d457549",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/powershell-module-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-module-architect",
+      "description": "\"Use this agent when architecting and refactoring PowerShell modules, designing profile systems, or creating cross-version compatible automation libraries. Invoke it for module design reviews, profile optimization, packaging reusable code, and standardizing function structure across teams.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 59,
+    "char_count": 2146,
+    "sha256": "c302b56cfaf2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/knowledge-synthesizer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "knowledge-synthesizer",
+      "description": "\"Use when you need to extract actionable patterns from agent interactions, synthesize insights across multiple workflows, and enable organizational learning from collective experience.\"",
+      "tools": "Read, Write, Edit, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7041,
+    "sha256": "8eb49ec3bad6",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/reinforcement-learning-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "reinforcement-learning-engineer",
+      "description": "\"Use when designing RL environments, training agents with reward optimization, implementing policy gradient methods, or deploying decision-making systems for robotics, gaming, and autonomous operations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 278,
+    "char_count": 7162,
+    "sha256": "bbef7a246a6e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/machine-learning-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "machine-learning-engineer",
+      "description": "\"Use this agent when you need to deploy, optimize, or serve machine learning models at scale in production environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 6502,
+    "sha256": "3f3eb9348772",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/azure-infra-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "azure-infra-engineer",
+      "description": "\"Use when designing, deploying, or managing Azure infrastructure with focus on network architecture, Entra ID integration, PowerShell automation, and Bicep IaC.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 54,
+    "char_count": 1924,
+    "sha256": "8785897b269f",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/ai-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ai-engineer",
+      "description": "\"Use this agent when architecting, implementing, or optimizing end-to-end AI systems\u2014from model selection and training pipelines to production deployment and monitoring.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6727,
+    "sha256": "cd9697d47080",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/dotnet-core-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dotnet-core-expert",
+      "description": "\"Use when building .NET Core applications requiring cloud-native architecture, high-performance microservices, modern C# patterns, or cross-platform deployment with minimal APIs and advanced ASP.NET Core features.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 288,
+    "char_count": 6438,
+    "sha256": "5ee0a29de401",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/git-workflow-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "git-workflow-manager",
+      "description": "\"Use this agent when you need to design, establish, or optimize Git workflows, branching strategies, and merge management for a project or team.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "haiku"
+    },
+    "line_count": 286,
+    "char_count": 6681,
+    "sha256": "78f0a3080c60",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/tooling-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "tooling-engineer",
+      "description": "\"Use this agent when you need to build or enhance developer tools including CLIs, code generators, build tools, and IDE extensions.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 286,
+    "char_count": 6428,
+    "sha256": "99e5d54b89fc",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/llm-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "llm-architect",
+      "description": "\"Use when designing LLM systems for production, implementing fine-tuning or RAG architectures, optimizing inference serving infrastructure, or managing multi-model deployments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6517,
+    "sha256": "b77ac009de2c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/data-analyst.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "data-analyst",
+      "description": "\"Use when you need to extract insights from business data, create dashboards and reports, or perform statistical analysis to support decision-making.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "haiku"
+    },
+    "line_count": 277,
+    "char_count": 6876,
+    "sha256": "ca0937b865f8",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/scrum-master.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scrum-master",
+      "description": "\"Use when teams need facilitation, process optimization, velocity improvement, or agile ceremony management\u2014especially for sprint planning, retrospectives, impediment removal, and scaling agile practices across multiple teams.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "haiku"
+    },
+    "line_count": 287,
+    "char_count": 6749,
+    "sha256": "3d01b0d355b7",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/symfony-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "symfony-specialist",
+      "description": "\"Use when building Symfony 6+/7+/8+ applications, architecting Doctrine ORM entities with complex relationships, implementing Messenger component for async processing, or optimizing API Platform performance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 355,
+    "char_count": 10663,
+    "sha256": "786259a67df1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/elixir-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "elixir-expert",
+      "description": "\"Use this agent when you need to build fault-tolerant, concurrent systems leveraging OTP patterns, GenServer architectures, and Phoenix framework for real-time applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 312,
+    "char_count": 8134,
+    "sha256": "f765f3c9b30d",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/embedded-systems.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "embedded-systems",
+      "description": "\"Use when developing firmware for resource-constrained microcontrollers, implementing RTOS-based applications, or optimizing real-time systems where hardware constraints, latency guarantees, and reliability are critical.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6396,
+    "sha256": "6e8a2123f7b1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/ai-writing-auditor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ai-writing-auditor",
+      "description": "\"Use this agent when you need to audit content for AI writing patterns and rewrite text to remove them.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 78,
+    "char_count": 4232,
+    "sha256": "028274f769ca",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/project-idea-validator.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "project-idea-validator",
+      "description": "\"Use this agent when you need an idea pressure-tested with brutal honesty, competitor teardown, market validation, and clear go/no-go guidance before building.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 270,
+    "char_count": 6880,
+    "sha256": "b71305b01782",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/sql-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sql-pro",
+      "description": "\"Use this agent when you need to optimize complex SQL queries, design efficient database schemas, or solve performance issues across PostgreSQL, MySQL, SQL Server, and Oracle requiring advanced query optimization, index strategies, or data warehouse patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7410,
+    "sha256": "58e44f20f89e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/php-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "php-pro",
+      "description": "\"Use this agent when working with PHP 8.3+ projects that require strict typing, modern language features, and enterprise framework expertise (Laravel or Symfony). Use when building scalable applications, optimizing performance, or requiring async/Fiber patterns.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7030,
+    "sha256": "ef94e49952e0",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/csharp-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "csharp-developer",
+      "description": "\"Use this agent when building ASP.NET Core web APIs, cloud-native .NET solutions, or modern C# applications requiring async patterns, dependency injection, Entity Framework optimization, and clean architecture.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7221,
+    "sha256": "9218f747ffe2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/incident-responder.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "incident-responder",
+      "description": "\"Use this agent when an active security breach, service outage, or operational incident requires immediate response, evidence preservation, and coordinated recovery.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7042,
+    "sha256": "46d74353536e",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/iot-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "iot-engineer",
+      "description": "\"Use when designing and deploying IoT solutions requiring expertise in device management, edge computing, cloud integration, and handling challenges like massive device scale, complex connectivity scenarios, or real-time data pipelines.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6363,
+    "sha256": "a614b8cfa393",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/sre-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "sre-engineer",
+      "description": "\"Use this agent when you need to establish or improve system reliability through SLO definition, error budget management, and automation. Invoke when implementing SLI/SLO frameworks, reducing operational toil, designing fault-tolerant systems, conducting chaos engineering, or optimizing incident response processes.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 293,
+    "char_count": 7541,
+    "sha256": "38dc8779b17a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/powershell-security-hardening.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-security-hardening",
+      "description": "\"Use this agent when you need to harden PowerShell automation, secure remoting configuration, enforce least-privilege design, or align scripts with enterprise security baselines and compliance frameworks.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 55,
+    "char_count": 2471,
+    "sha256": "9502f8b436d5",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/laravel-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "laravel-specialist",
+      "description": "\"Use when building Laravel 10+ applications, architecting Eloquent models with complex relationships, implementing queue systems for async processing, or optimizing API performance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6172,
+    "sha256": "6d70b32a1b42",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/ux-researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "ux-researcher",
+      "description": "\"Use this agent when you need to conduct user research, analyze user behavior, or generate actionable insights to validate design decisions and uncover user needs. Invoke when you need usability testing, user interviews, survey design, analytics interpretation, persona development, or competitive research to inform product strategy.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6807,
+    "sha256": "09643537d6d9",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/chaos-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "chaos-engineer",
+      "description": "\"Use this agent when you need to design and execute controlled failure experiments, validate system resilience before incidents occur, or conduct game day exercises to test your team's incident response capabilities.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 6515,
+    "sha256": "5cb0bfda8256",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/rust-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "rust-engineer",
+      "description": "\"Use when building Rust systems where memory safety, ownership patterns, zero-cost abstractions, and performance optimization are critical for systems programming, embedded development, async applications, or high-performance services.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 7626,
+    "sha256": "246fa5cd281c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/blockchain-developer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "blockchain-developer",
+      "description": "\"Use this agent when building smart contracts, DApps, and blockchain protocols that require expertise in Solidity, gas optimization, security auditing, and Web3 integration.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6358,
+    "sha256": "63e0e8cde238",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/powershell-ui-architect.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "powershell-ui-architect",
+      "description": "\"Use when designing or building desktop graphical interfaces (WinForms, WPF, Metro-style dashboards) or terminal user interfaces (TUIs) for PowerShell automation tools that need clean separation between UI and business logic.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 136,
+    "char_count": 5585,
+    "sha256": "f19d468c9ca1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/market-researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "market-researcher",
+      "description": "\"Use this agent when you need to analyze markets, understand consumer behavior, assess competitive landscapes, and size opportunities to inform business strategy and market entry decisions.\"",
+      "tools": "Read, Grep, Glob, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6758,
+    "sha256": "5ee6d345b5a8",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/qa-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "qa-expert",
+      "description": "\"Use this agent when you need comprehensive quality assurance strategy, test planning across the entire development cycle, or quality metrics analysis to improve overall software quality.\"",
+      "tools": "Read, Grep, Glob, Bash",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6689,
+    "sha256": "26e34e3ef018",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/javascript-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "javascript-pro",
+      "description": "\"Use this agent when you need to build, optimize, or refactor modern JavaScript code for browser, Node.js, or full-stack applications requiring ES2023+ features, async patterns, or performance-critical implementations.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7369,
+    "sha256": "9dd9a27f2e2c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/legal-advisor.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "legal-advisor",
+      "description": "\"Use this agent when you need to draft contracts, review compliance requirements, develop IP protection strategies, or assess legal risks for technology businesses.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6646,
+    "sha256": "d7e34fabac4c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/license-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "license-engineer",
+      "description": "\"Use this agent when architecting, implementing, or optimizing end-to-end legal licensing systems\u2014from OSI standard selection and dependency compliance pipelines to proprietary deployment and risk monitoring.\"",
+      "tools": "Read, Write, Edit, Glob, Grep, WebFetch, WebSearch",
+      "model": "opus"
+    },
+    "line_count": 296,
+    "char_count": 8361,
+    "sha256": "b302a1f4af25",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/m365-admin.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "m365-admin",
+      "description": "\"Use when automating Microsoft 365 administrative tasks including Exchange Online mailbox provisioning, Teams collaboration management, SharePoint site configuration, license lifecycle management, and Graph API-driven identity automation.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 49,
+    "char_count": 1825,
+    "sha256": "b6623e288bb6",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/brainstormer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "brainstormer",
+      "description": "\"Generate creative ideas and solutions.\"",
+      "model": "sonnet"
+    },
+    "line_count": 108,
+    "char_count": 2262,
+    "sha256": "ca92c32a43a8",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/semgrep-scanner.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "semgrep-scanner",
+      "description": "\"Executes Semgrep CLI scans for a specific language category and produces SARIF output. Spawned by the semgrep skill as a parallel worker \u2014 one agent per detected language.\"",
+      "tools": "Bash(semgrep scan:*), Bash",
+      "model": "sonnet"
+    },
+    "line_count": 92,
+    "char_count": 2820,
+    "sha256": "4f220ec00d0b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/dotnet-framework-4.8-expert.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "dotnet-framework-4.8-expert",
+      "description": "\"Use this agent when working on legacy .NET Framework 4.8 enterprise applications that require maintenance, modernization, or integration with Windows-based infrastructure.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 306,
+    "char_count": 7565,
+    "sha256": "2da0ccc817ad",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/terraform-engineer.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "terraform-engineer",
+      "description": "\"Use when building, refactoring, or scaling infrastructure as code using Terraform with focus on multi-cloud deployments, module architecture, and enterprise-grade state management.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6898,
+    "sha256": "3486da207e3c",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/cpp-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "cpp-pro",
+      "description": "\"Use this agent when building high-performance C++ systems requiring modern C++20/23 features, template metaprogramming, or zero-overhead abstractions for systems programming, embedded systems, or performance-critical applications.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7539,
+    "sha256": "44a45b090fb2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/golang-pro.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "golang-pro",
+      "description": "\"Use when building Go applications requiring concurrent programming, high-performance systems, microservices, or cloud-native architectures where idiomatic patterns, error handling excellence, and efficiency are critical.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 277,
+    "char_count": 7896,
+    "sha256": "43c9d075601b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/scientific-literature-researcher.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "scientific-literature-researcher",
+      "description": "\"Use when you need to search scientific literature and retrieve structured experimental data from published studies. Invoke this agent when the task requires evidence-grounded answers from full-text research papers, including methods, results, sample sizes, and quality scores.\"",
+      "tools": "Read, WebFetch, WebSearch, mcp__bgpt__search_papers",
+      "model": "sonnet"
+    },
+    "line_count": 152,
+    "char_count": 5250,
+    "sha256": "84c2657b9715",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/design-bridge.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "design-bridge",
+      "description": "\"Use this agent when you need to translate a DESIGN.md from the VoltAgent/awesome-design-md repository into polished Claude Code instructions for building user interfaces that faithfully match the chosen brand. Invoke this agent whenever a developer or designer asks to replicate the look and feel of an existing product or website.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep, WebFetch, WebSearch",
+      "model": "opus"
+    },
+    "line_count": 128,
+    "char_count": 4527,
+    "sha256": "cb64c59c35fb",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/kubernetes-specialist.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "kubernetes-specialist",
+      "description": "\"Use this agent when you need to design, deploy, configure, or troubleshoot Kubernetes clusters and workloads in production environments.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "sonnet"
+    },
+    "line_count": 287,
+    "char_count": 6912,
+    "sha256": "516f32371c52",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/agents/archived/risk-manager.md",
+    "type": "agent",
+    "frontmatter": {
+      "name": "risk-manager",
+      "description": "\"Use this agent when you need to identify, quantify, and mitigate enterprise-level risks across financial, operational, regulatory, and strategic domains. Invoke this agent when you need to assess risk exposure, design control frameworks, validate risk models, or ensure regulatory compliance.\"",
+      "tools": "Read, Write, Edit, Bash, Glob, Grep",
+      "model": "opus"
+    },
+    "line_count": 287,
+    "char_count": 6619,
+    "sha256": "ed8e74bcb2d1",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/explore.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Deep investigation before planning. Use for best practices, implications, and systematic analysis."
+    },
+    "line_count": 141,
+    "char_count": 3997,
+    "sha256": "6050af8fa99b",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/review-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Perform comprehensive multi-pass code review with security, performance, and architecture checks."
+    },
+    "line_count": 353,
+    "char_count": 8662,
+    "sha256": "3442f8df3d86",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/work.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Execute work plans systematically while maintaining quality. Use after /plan to implement features."
+    },
+    "line_count": 391,
+    "char_count": 9463,
+    "sha256": "64bb63979f44",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/resolve_pr.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Handle PR comments and review feedback efficiently. Use when addressing reviewer feedback."
+    },
+    "line_count": 131,
+    "char_count": 2417,
+    "sha256": "8cce9f7db0cf",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/cycle.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "Orchestrate the full \"plan \u2192 review \u2192 work \u2192 review \u2192 compound\" lifecycle for small tasks."
+    },
+    "line_count": 141,
+    "char_count": 2822,
+    "sha256": "36a996d40e76",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/plan-compound.md",
+    "type": "workflow",
+    "frontmatter": {
+      "description": "(Compound) Transform feature descriptions into well-structured project plans with solution search and pattern checks."
+    },
+    "line_count": 429,
+    "char_count": 11564,
+    "sha256": "896ed8141942",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/archived/full-audit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 128,
+    "char_count": 4339,
+    "sha256": "0cb8439d8577",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/archived/new-feature.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 140,
+    "char_count": 3464,
+    "sha256": "278d3c172c03",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/archived/pre-deploy.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 96,
+    "char_count": 2568,
+    "sha256": "4ca58f872e58",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/archived/pre-commit.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 97,
+    "char_count": 2135,
+    "sha256": "6fb19bffcca2",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/archived/release-prep.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 131,
+    "char_count": 3623,
+    "sha256": "d8f4b5e37cb3",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/workflows/archived/bug-fix.md",
+    "type": "workflow",
+    "frontmatter": null,
+    "line_count": 159,
+    "char_count": 3845,
+    "sha256": "48c6d4516c72",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/gemini/skills/tdd-planner.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "tdd-planner",
+      "description": "Write detailed TDD implementation plans with checkboxes, exact code, and commit steps. Use for any non-trivial feature, refactor, or multi-file change."
+    },
+    "line_count": 20,
+    "char_count": 861,
+    "sha256": "cad460d1ad21",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/gemini/skills/strict-reviewer.md",
+    "type": "skill",
+    "frontmatter": {
+      "name": "strict-reviewer",
+      "description": "Thorough code review covering correctness, security, performance, code quality, and error handling. Returns Approve / Request Changes / Needs Major Rework verdict."
+    },
+    "line_count": 23,
+    "char_count": 1062,
+    "sha256": "6f88a4bcbe8a",
+    "mtime": 1777779542
+  },
+  {
+    "path": "/home/kobramaz/agenticOS/docs/MACHINERY_TOPOLOGY.md",
+    "type": "other",
+    "frontmatter": null,
+    "line_count": 79,
+    "char_count": 6114,
+    "sha256": "7733405f4516",
+    "mtime": 1777836905
+  }
+]
