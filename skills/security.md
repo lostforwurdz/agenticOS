@@ -1,3 +1,8 @@
+---
+name: security
+description: Security audit guidance covering OWASP Top 10 checks, authentication patterns, input validation, secrets handling, and secure coding practices.
+---
+
 # Security Skill
 
 ## Overview
