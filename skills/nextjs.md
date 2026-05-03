@@ -1,3 +1,8 @@
+---
+name: nextjs
+description: Next.js App Router patterns including Server Components, server actions, routing, data fetching, and metadata API best practices.
+---
+
 # Next.js Best Practices Skill
 
 ## Overview
