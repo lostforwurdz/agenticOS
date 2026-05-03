@@ -1,3 +1,8 @@
+---
+name: mobile
+description: Mobile development guidance for React Native and Flutter covering project structure, navigation, state, and platform best practices.
+---
+
 # Mobile Development Skill
 
 ## Overview
