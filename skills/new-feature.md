@@ -10,18 +10,18 @@ Build features using test-driven development. Provide the feature specification 
 ## Execution (Sequential)
 
 ### Step 1: Write Tests
-Spawn `test-writer` with the feature requirements:
+Spawn `tester` with the feature requirements:
 - Analyze feature specification
 - Write failing tests first
 - Cover happy path + edge cases
 
 ### Step 2: Implement Feature
-Spawn `code-fixer` with the feature requirements and test files:
+Spawn `coder` with the feature requirements and test files:
 - Implement feature following existing patterns
 - Make all new tests pass
 
 ### Step 3: Verify
-Spawn `test-runner`:
+Spawn `tester`:
 - Run all tests (new + existing)
 - Verify no regressions
 
