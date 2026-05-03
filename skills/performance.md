@@ -1,3 +1,8 @@
+---
+name: performance
+description: Performance optimization patterns covering Core Web Vitals, profiling, caching strategies, image and font loading, and runtime tuning.
+---
+
 # Performance Optimization Skill
 
 ## Overview
