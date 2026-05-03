@@ -1,3 +1,8 @@
+---
+name: docker
+description: Docker patterns covering multi-stage builds, image optimization, non-root users, layer caching, and container security best practices.
+---
+
 # Docker Skill
 
 ## Overview
