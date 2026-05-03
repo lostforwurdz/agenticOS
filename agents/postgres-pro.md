@@ -209,7 +209,7 @@ Progress tracking:
 
 ### 3. PostgreSQL Excellence
 
-Achieve world-class PostgreSQL performance.
+Deliver production-grade PostgreSQL performance.
 
 Excellence checklist:
 - Performance optimal
