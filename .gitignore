@@ -1,0 +1,40 @@
+# Defense in depth — repo scope is bounded but block common leak surfaces anyway.
+
+# Secrets and credentials
+*.env
+.env*
+*credentials*
+*secrets*
+*.key
+*.pem
+*.p12
+*.pfx
+*_rsa
+*_dsa
+*_ed25519
+*_ecdsa
+oauth_creds.json
+google_accounts.json
+
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.bak
+*.bak.*
+
+# Runtime / cache
+__pycache__/
+*.pyc
+node_modules/
+.pytest_cache/
+.mypy_cache/
+
+# Anything that should never be tracked even by accident
+**/credentials.json
+**/.credentials.json
+**/auth.json
