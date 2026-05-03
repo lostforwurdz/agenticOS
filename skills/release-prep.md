@@ -14,17 +14,17 @@ Spawn all 11 audit agents in parallel (same as `/full-audit`):
 - All auditors save reports to `.claude/audits/AUDIT_*.md`
 
 ### Phase 2: Fix Planning
-Spawn `fix-planner`:
+Spawn `debugger`:
 - Read all audit reports
 - Create `.claude/audits/FIXES.md` with prioritized action items
 
 ### Phase 3: Critical Fixes
-Spawn `code-fixer`:
+Spawn `coder`:
 - Implement **P1 (critical) fixes only**
 - P2/P3 can wait for next release
 
 ### Phase 4: Verification
-Spawn `test-runner`:
+Spawn `tester`:
 - All tests pass (including after fixes)
 - No regressions introduced
 
@@ -35,7 +35,7 @@ Spawn `deploy-checker`:
 - Dependencies clean
 
 ### Phase 6: PR Generation
-Spawn `pr-writer`:
+Spawn `git-manager`:
 - Generate release PR with summary of all changes
 - Include audit findings and fixes applied
 
