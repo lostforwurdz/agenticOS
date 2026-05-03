@@ -1,7 +1,7 @@
 ---
 name: ui-designer
 description: "Design user interface and experience."
-model: haiku
+model: sonnet
 ---
 # UI/UX Designer Agent
 

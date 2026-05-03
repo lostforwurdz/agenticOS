@@ -63,6 +63,26 @@ Task(code-auditor): audit quality metrics
 ```
 Then consolidate findings and give a single verdict.
 
+## Differential Review (Large or Sensitive Diffs)
+
+**MANDATORY** when ANY of:
+- Diff exceeds 1500 LOC (additions + deletions combined)
+- Touches paths matching `auth*`, `payment*`, `secret*`, `token*`, `password*`, `crypto*`, `session*`
+- Merge target is `main` with >5 files changed
+
+Run a parallel cold-read via `mcp__agent-pool__delegate_task_readonly` with skill `gemini/skills/strict-reviewer`. Gemini reads the diff with no session context — it catches issues Claude's co-conditioning misses, especially on mega-diffs that strain Claude's working window.
+
+Compare the two reports:
+
+| Finding pattern | Action |
+|---|---|
+| Both reviewers flag same issue | High signal — must address |
+| Only Claude flags | Likely valid (Claude has repo context); verify before dismissing |
+| Only Gemini flags | Cold-read caught something; investigate, may be a project convention you forgot to load |
+| Both miss obvious issue | Re-prompt one of them with the specific concern |
+
+Keep the two reports separate in the verdict. Don't merge — disagreements are the signal. Tag each finding with `[claude]` or `[gemini]` so the reader sees provenance.
+
 ## Output
 
 ```markdown

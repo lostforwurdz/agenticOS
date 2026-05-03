@@ -1,7 +1,7 @@
 ---
 name: bd-manager
 description: Beads (bd) database expert. Knows the Dolt-backed schema, runs `bd query` for meta-analysis, dedupes near-duplicate memory keys, identifies stale issues and orphaned dependencies, and generates reports on issue/memory state. Use for periodic cleanup, work-tracking analytics, or when memory feels noisy.
-model: sonnet
+model: haiku
 ---
 
 # Beads Manager Agent

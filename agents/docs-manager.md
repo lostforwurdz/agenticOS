@@ -1,7 +1,7 @@
 ---
 name: docs-manager
 description: Documentation generation and gap analysis. Writes and updates READMEs, API docs, changelogs, and inline comments. Absorbs doc-auditor.
-model: haiku
+model: sonnet
 ---
 # Docs Manager
 

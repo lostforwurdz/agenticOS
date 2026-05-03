@@ -1,7 +1,7 @@
 ---
 name: perf-auditor
 description: Performance auditor and optimizer. Finds bottlenecks (bundle, queries, rendering, memory) and implements fixes. Absorbs performance-optimizer.
-model: opus
+model: sonnet
 ---
 # Perf Auditor
 

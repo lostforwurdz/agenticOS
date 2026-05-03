@@ -55,6 +55,17 @@ Every agent must invoke its required skill before starting work. When reviewing 
 6. security-auditor → final gate (auth/API changes only)
 ```
 
+## Second-Opinion Pattern (Gemini)
+
+For high-stakes decisions where independence matters, consult Gemini via `mcp__agent-pool__consult_peer` (or `delegate_task_readonly` for diff/file analysis). Triggers:
+
+- **Architecture decisions** with no clear best answer — get a non-Claude perspective
+- **Long sessions** where Claude is co-conditioned with you on one direction
+- **Mega-context reads** (>50 files, large legacy codebases) — Gemini's 1M-token window beats Claude's
+- **Pre-merge review of large diffs** — already mandated in `reviewer` agent's differential-review section
+
+Gemini is NOT a default. Use it as a deliberate reach. It can't run tests or navigate the repo — Claude subagents do that better. Use Gemini when fresh eyes or massive context outweigh the loss of agentic capabilities.
+
 ## Agent Boundaries
 
 | Agent | Owns | Does NOT touch |

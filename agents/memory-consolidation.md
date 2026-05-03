@@ -1,7 +1,7 @@
 ---
 name: memory-consolidation
 description: Nightly scheduled agent — audits the beads memory store, identifies duplicates, stale entries, and relative-date drift, and proposes consolidation. Read-only by default; destructive operations require explicit user approval per item.
-model: haiku
+model: sonnet
 ---
 
 # Memory Consolidation Agent
