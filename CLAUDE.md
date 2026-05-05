@@ -28,6 +28,22 @@ These behaviors are always active:
 4. **Proof required** — Never claim "done" without evidence (test output, logs, diffs). No phrases like "should work" or "probably".
 5. **Session close mandatory** — Before ending: `git pull --rebase && bd dolt push && git push`. Verify `git status` shows "up to date with origin".
 6. **Permanent orchestrator** — Top-level Claude Code session orchestrates. Subagents cannot use the Agent tool, so all parallel dispatches originate from this session. When multi-agent work is needed, spawn all agents directly from here.
+7. **Plan + subagent rule** — Multi-step actions require `EnterPlanMode` + a written plan file before execution. Implementation dispatches to specialist subagents from this orchestrator session; the orchestrator handles sequencing, verification, and commits — not file writes. See `workflows/plan-and-execute.md`.
+
+---
+
+## Workflows
+
+Named multi-step procedures live in `workflows/<name>.md`. Each is invoked by the orchestrator at well-defined session points; the orchestrator never improvises a procedure that has a workflow doc.
+
+| Workflow | When to use |
+|----------|-------------|
+| `workflows/session-start.md` | First message of any new session; resuming after compaction. |
+| `workflows/session-close.md` | End of every session. Work is NOT done until `git push` succeeds. |
+| `workflows/code-writing.md` | Any code change. Independent reviewer subagent gates the commit. |
+| `workflows/plan-and-execute.md` | Any multi-step task. Plan first, dispatch specialists per phase. |
+
+Imported boilerplate workflows (no longer active) live in `workflows/archived/` for reference.
 
 ---
 
@@ -53,7 +69,6 @@ Active scheduled agents (register new ones via the `schedule` skill):
 
 | Agent | Schedule | Purpose |
 |-------|----------|---------|
-| morning-briefing | Weekdays 8:00 AM local (`0 8 * * 1-5`) | bd ready queue + due/overdue + calendar/email/issues MCPs (degrades gracefully if optional integrations missing) |
 | memory-consolidation | Nightly 11:00 PM (`0 23 * * *`) | Consolidate `bd remember` keys: dedupe, prune stale entries, fix relative dates to ISO format |
 
 Agent prompts live in `agents/*.md` (55 active agents + 78 archived).
@@ -103,10 +118,10 @@ bd dolt pull          # Pull on different machine
 | `README.md` | Quick start: install, repository layout, deployment model |
 | `AGENTS.md` | Cross-tool universal instructions (read by Copilot, Gemini CLI, Aider, etc.) |
 | `VIOLATIONS.md` | Behavioral lessons logged when rules are broken |
-| `agents/` | 55 active specialist subagent prompts (e.g., morning-briefing, memory-consolidation) |
+| `agents/` | 55 active specialist subagent prompts (e.g., reviewer, memory-consolidation, coder) |
 | `agents/archived/` | 78 archived agents — preserved but not loaded by default |
 | `skills/` | 25+ reusable skill definitions (code-review, docker, nextjs, testing, etc.) |
-| `workflows/` | Multi-step workflow definitions (plan-compound, review-compound, work.md, explore.md, etc.) |
+| `workflows/` | AgenticOS-native procedures: session-start, session-close, code-writing, plan-and-execute. Imported boilerplate retired to workflows/archived/. |
 | `workflows/archived/` | Archived workflows |
 | `gemini/skills/` | Skills consumed by agent-pool MCP for Gemini CLI workers |
 | `scripts/` | Install + verification scripts (Linux + Windows cross-platform) |
@@ -126,23 +141,11 @@ bd dolt pull          # Pull on different machine
 
 ## Session Completion Protocol
 
-**When ending a session, complete ALL steps. Work is NOT done until `git push` succeeds.**
+Full procedure in [`workflows/session-close.md`](workflows/session-close.md).
 
-1. **File issues** — Create `bd` issues for remaining work
-2. **Quality gates** — Run tests/linters/builds if code changed
-3. **Update status** — Close finished work, update in-progress items
-4. **PUSH** (mandatory):
-   ```bash
-   git pull --rebase
-   bd dolt push
-   git push
-   git status  # MUST show "up to date with origin"
-   ```
-5. **Clean up** — Clear stashes, prune remote branches
-6. **Verify** — All changes committed AND pushed
-7. **Hand off** — Document context for next session via `bd remember`
+> **CRITICAL:** Work is NOT complete until `git push` succeeds. Never stop before pushing — that strands work locally.
 
-**CRITICAL:** Work is NOT complete until `git push` succeeds. Never stop before pushing — that strands work locally.
+The mandatory tail of every session: `git pull --rebase && bd dolt push && git push`, then verify `git status` shows "up to date with origin".
 
 ---
 
@@ -151,4 +154,8 @@ bd dolt pull          # Pull on different machine
 - [README.md](README.md) — Install and quick start
 - [AGENTS.md](AGENTS.md) — Cross-tool instructions and bd workflow
 - [VIOLATIONS.md](VIOLATIONS.md) — Behavioral corrections and lessons learned
-- [agents/morning-briefing.md](agents/morning-briefing.md) — Scheduled agent for daily planning
+- [agents/morning-briefing.md](agents/morning-briefing.md) — Scheduled agent for daily planning (prompt dormant — scheduled task deleted 2026-05-05)
+- [workflows/session-start.md](workflows/session-start.md) — Session boot procedure
+- [workflows/session-close.md](workflows/session-close.md) — Session close + push protocol
+- [workflows/code-writing.md](workflows/code-writing.md) — Code change cycle with reviewer gate
+- [workflows/plan-and-execute.md](workflows/plan-and-execute.md) — Multi-step task protocol
