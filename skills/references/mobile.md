@@ -1,3 +1,5 @@
+> General topic reference — read by agents on demand. Not a slash command.
+
 ---
 name: mobile
 description: Mobile development guidance for React Native and Flutter covering project structure, navigation, state, and platform best practices.

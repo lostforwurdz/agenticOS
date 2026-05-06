@@ -1,3 +1,5 @@
+> General topic reference — read by agents on demand. Not a slash command.
+
 ---
 name: security
 description: Security audit guidance covering OWASP Top 10 checks, authentication patterns, input validation, secrets handling, and secure coding practices.

@@ -1,3 +1,5 @@
+> General topic reference — read by agents on demand. Not a slash command.
+
 ---
 name: react-patterns
 description: Modern React patterns covering component composition, custom hooks, state management, performance optimizations, and effect rules.

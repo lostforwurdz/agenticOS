@@ -1,3 +1,5 @@
+> General topic reference — read by agents on demand. Not a slash command.
+
 ---
 name: nextjs
 description: Next.js App Router patterns including Server Components, server actions, routing, data fetching, and metadata API best practices.

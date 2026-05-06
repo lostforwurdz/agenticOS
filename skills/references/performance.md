@@ -1,3 +1,5 @@
+> General topic reference — read by agents on demand. Not a slash command.
+
 ---
 name: performance
 description: Performance optimization patterns covering Core Web Vitals, profiling, caching strategies, image and font loading, and runtime tuning.

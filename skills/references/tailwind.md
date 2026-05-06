@@ -1,3 +1,5 @@
+> General topic reference — read by agents on demand. Not a slash command.
+
 ---
 name: tailwind
 description: Tailwind CSS v4 patterns covering utility-first composition, responsive design, design tokens, and component styling conventions.
