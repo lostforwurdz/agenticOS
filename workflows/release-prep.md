@@ -48,14 +48,14 @@ Follow `workflows/code-writing.md` at each fix boundary (reviewer gate before co
 
 ### Phase 4: Verification (parallel)
 
-Dispatch `tester` and `security-auditor` in a single message:
+Dispatch `tester` and the `security-gate` skill in a single message:
 
-| Agent | Scope |
-|-------|-------|
+| Agent / Skill | Scope |
+|---------------|-------|
 | `tester` | Full suite — tsc + lint + all tests. All must pass. |
-| `security-auditor` | Re-scan changed files only (differential mode since last audit) |
+| `security-gate` (`skills/security-gate/SKILL.md`) | Fans out semgrep + codeql + supply-chain-risk-auditor + insecure-defaults + security-auditor + differential-review in parallel; produces a consolidated SECURITY_GATE report |
 
-**Gate:** 0 test failures + 0 new security findings in changed files.
+**Gate:** 0 test failures + 0 Critical findings in the SECURITY_GATE report. A Critical finding halts the release — do not advance to Phase 5 until it is resolved.
 
 ### Phase 5: Deploy Validation (sequential)
 
@@ -115,4 +115,5 @@ Database: every destructive migration must have a paired rollback migration comm
 - `workflows/full-audit.md` — Phase 1 of this workflow
 - `workflows/code-writing.md` — mandatory at each Phase 3 fix boundary
 - `workflows/plan-and-execute.md` — orchestration protocol for multi-step execution
+- `skills/security-gate/SKILL.md` — Phase 4 parallel security gate (semgrep + codeql + supply-chain + insecure-defaults + security-auditor + differential-review)
 - Agents: `coder`, `tester`, `security-auditor`, `deploy-checker`, `git-manager`, `debugger`

@@ -36,6 +36,10 @@ Dispatch `coder` with the bug description AND the failing test file from Phase 1
 
 Apply `workflows/code-writing.md` before committing: dispatch `reviewer` (and `bug-auditor` if the fix touches error handling, null checks, or async paths).
 
+### Phase 2.5: High-Stakes Escalation (conditional)
+
+If `git diff --name-only` for the fix includes any path matching `auth/`, `lib/auth`, `payment`, `encrypt`, `migrations/`, `schema.ts`, or `*.sql`, dispatch the `dual-review` skill (`skills/dual-review/SKILL.md`) in addition to the standard `reviewer`. `dual-review` runs local `reviewer` + Gemini `strict-reviewer` in parallel and requires both to approve before proceeding. Skip this phase when none of those paths are touched.
+
 ### Phase 3: Verify
 
 Dispatch `tester` (second pass):
@@ -72,4 +76,5 @@ Skip this phase for: API bugs, background jobs, build/compilation issues, test i
 
 - `workflows/code-writing.md` — reviewer gate required at Phase 2 before commit
 - `workflows/new-feature.md` — if the "bug" turns out to be missing behavior, use this instead
+- `skills/dual-review/SKILL.md` — Phase 2.5 high-stakes escalation (auth/payment/encrypt/migrations paths)
 - Agents: `tester`, `coder`, `reviewer`, `bug-auditor`, `browser-qa-agent`
