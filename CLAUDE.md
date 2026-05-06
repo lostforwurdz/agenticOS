@@ -121,6 +121,9 @@ Hook configuration lives in `~/.claude/settings.json` (per-machine, NOT in this 
 | PreCompact | "" | Run `bd prime` |
 | UserPromptSubmit | "" | Pattern-match prompt for multi-step keywords; inject plan-and-execute reminder |
 | PreToolUse | Write\|Edit\|MultiEdit | Block if no plan file exists in `~/.claude/plans/` (Standing Instruction #7 enforcement) |
+| PreToolUse (advisory) | Write\|Edit\|MultiEdit | If file path matches `auth\|payment\|encrypt\|secret`, advise running `/security-gate` before merge |
+| PreToolUse (advisory) | Write\|Edit\|MultiEdit | If file path matches `migrations/\|schema.ts\|drizzle/\|*.sql`, advise running `/schema-change` before merge |
+| PreToolUse (advisory) | Write\|Edit\|MultiEdit | If file path matches `package.json\|requirements.txt\|pyproject.toml\|go.mod\|Cargo.toml`, advise running `/dep-health` |
 | Stop | "" | Warn if uncommitted or unpushed git work (Standing Instruction #5 enforcement) |
 
 `permissions.deny: ["TodoWrite"]` is also set, enforcing Standing Instruction #3.
