@@ -1,12 +1,13 @@
 ---
 name: dual-review
 description: >-
-  High-stakes parallel review. Dispatches local reviewer agent and Gemini
-  consult_peer (strict-reviewer skill) in parallel via gemini-router; the
-  orchestrator synthesizes both verdicts. Invoke manually for auth, payment,
-  encryption, schema migrations, or any change touching production data
-  integrity. Produces a DUAL_REVIEW report with both verdicts side-by-side
-  and an orchestrator synthesis section.
+  Parallel high-stakes review for any diff touching authentication,
+  payment processing, encryption/key management, or database schema
+  migrations. Dispatches local reviewer agent and Gemini strict-reviewer
+  simultaneously; orchestrator synthesizes both verdicts. Invoke
+  automatically for these change categories — do not reduce to single
+  reviewer for high-stakes changes. Produces DUAL_REVIEW report with
+  side-by-side verdicts and synthesis.
 ---
 
 # Dual Review

@@ -1,11 +1,11 @@
 ---
 name: content-pr
 description: >-
-  Sequential gate for content PRs (marketing pages, blog posts, SEO surfaces).
-  Runs seo-auditor → ui-auditor → accessibility-tester → reviewer in order;
-  each phase blocks the next. Any Critical finding halts the chain. Invoke
-  when a PR is labeled "content" or when the diff touches marketing/blog/mdx
-  content. Produces per-phase audit reports and a final reviewer sign-off.
+  Blocking sequential audit gate for content PRs and any diff touching
+  app/(marketing)/, app/blog/, or *.mdx files. Runs seo-auditor,
+  ui-auditor, accessibility-tester, and reviewer in strict order; each
+  phase blocks the next; Critical finding halts the chain. Do not merge
+  content changes without this gate.
 ---
 
 # Content PR Gate

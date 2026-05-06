@@ -1,6 +1,12 @@
 ---
 name: gemini-router
-description: Decision policy for when and how to invoke Gemini via agent-pool. Use whenever you're considering calling delegate_task, delegate_task_readonly, or consult_peer. Picks the right Gemini-side skill (tdd-planner / strict-reviewer / no skill) based on task shape, and tells you when NOT to delegate.
+description: >-
+  Route any code-review, implementation-planning, large-context analysis,
+  or second-opinion request to the correct Gemini-side verb and skill
+  (tdd-planner / strict-reviewer / none). Invoke before calling
+  delegate_task, delegate_task_readonly, or consult_peer to avoid wrong
+  verb/skill mismatches and wasted quota. Required entry point for all
+  agent-pool dispatches.
 ---
 
 # Gemini Router

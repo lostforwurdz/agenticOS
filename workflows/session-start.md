@@ -22,6 +22,19 @@ Every session starts cold. The bd memory layer holds non-obvious decisions, gotc
 2. Run `BEADS_DIR=~/.beads bd ready` — shows the current ready queue: available work, blockers, in-progress issues.
 3. Present the output to the user as a digest: "X issues ready, Y in progress. Key memories: [list relevant ones]. Top blocker: [if any]."
 
+### Phase 1.5: Surface past violations
+
+**Condition:** run when the user's first prompt is non-trivial — more than one sentence, or contains any multi-step keyword (implement, refactor, migrate, add, build, fix, create, update, deploy, design, review).
+
+**Specialist:** `violations-enforcer` agent (`agents/violations-enforcer.md`)
+
+1. Dispatch `violations-enforcer` with the user's prompt as input.
+2. The agent reads `VIOLATIONS.md` and returns any lessons relevant to the current request.
+3. Surface the relevant violations into context before Phase 2. If none apply, note "no relevant violations" and continue.
+
+> [!NOTE]
+> Skip this phase only for trivial single-sentence requests (e.g. "what branch am I on?"). Any substantive request triggers it.
+
 ### Phase 2: Continuity check
 
 1. If the user references prior work, mentions a task by name, or if context appears missing after Phase 1, dispatch the `episodic-memory:search-conversations` agent with the user's terms (or inferred terms from the request).
