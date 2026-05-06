@@ -42,8 +42,37 @@ Named multi-step procedures live in `workflows/<name>.md`. Each is invoked by th
 | `workflows/session-close.md` | End of every session. Work is NOT done until `git push` succeeds. |
 | `workflows/code-writing.md` | Any code change. Independent reviewer subagent gates the commit. |
 | `workflows/plan-and-execute.md` | Any multi-step task. Plan first, dispatch specialists per phase. |
+| `workflows/full-audit.md` | Parallel multi-agent audit (9 agents) → consolidated FIXES.md. |
+| `workflows/release-prep.md` | 6-phase release cycle: full-audit → fixes → tests → security → deploy validation → release PR. |
+| `workflows/bug-fix.md` | TDD bug-fix chain: failing repro test → fix → regression check → optional UI verify. |
+| `workflows/new-feature.md` | TDD feature chain: failing tests → implementation (stack-routed) → regression → optional UI verify. |
+| `workflows/pre-commit.md` | Batch pre-commit gate: parallel reviewer + tester on staged files. |
 
 Imported boilerplate workflows (no longer active) live in `workflows/archived/` for reference.
+
+---
+
+## Skills
+
+Registered skills in three forms:
+
+**Chain skills (in `skills/<name>/SKILL.md` — slash-invocable):**
+- `gemini-router` — when and how to invoke Gemini via agent-pool
+- `security-gate` — parallel security chain (semgrep + codeql + supply-chain + insecure-defaults + security-auditor → differential-review consolidator)
+- `content-pr` — sequential content gate (seo → ui → a11y → reviewer)
+- `dep-health` — parallel dependency audit (dependency-manager + supply-chain + compliance → debugger consolidator)
+- `dual-review` — parallel high-stakes review (local reviewer + Gemini strict-reviewer via gemini-router)
+
+**Security skills (existing, in `skills/<name>/SKILL.md` — slash-invocable):**
+- `codeql`, `semgrep`, `differential-review`, `insecure-defaults`, `sarif-parsing`, `supply-chain-risk-auditor`
+
+**Pointer skills (loose `.md` files at `skills/` root — point to registered `engineering:*` skills):**
+- `code-review` → `engineering:code-review`
+- `debug` → `engineering:debug`
+- `testing` → `engineering:testing-strategy`
+
+**Topic references (in `skills/references/` — not slash commands, general reference material):**
+`api-design`, `docker`, `mobile`, `nextjs`, `performance`, `react-patterns`, `security`, `tailwind`
 
 ---
 
@@ -120,8 +149,8 @@ bd dolt pull          # Pull on different machine
 | `VIOLATIONS.md` | Behavioral lessons logged when rules are broken |
 | `agents/` | 55 active specialist subagent prompts (e.g., reviewer, memory-consolidation, coder) |
 | `agents/archived/` | 78 archived agents — preserved but not loaded by default |
-| `skills/` | 25+ reusable skill definitions (code-review, docker, nextjs, testing, etc.) |
-| `workflows/` | AgenticOS-native procedures: session-start, session-close, code-writing, plan-and-execute. Imported boilerplate retired to workflows/archived/. |
+| `skills/` | Reusable skills in three forms: chain skills (`<name>/SKILL.md` dirs, slash-invocable), pointer `.md` files (point to `engineering:*` registered skills), and `references/` subfolder (topic references, not slash commands). |
+| `workflows/` | AgenticOS-native procedures: session-start, session-close, code-writing, plan-and-execute, full-audit, release-prep, bug-fix, new-feature, pre-commit. Imported boilerplate retired to workflows/archived/. |
 | `workflows/archived/` | Archived workflows |
 | `gemini/skills/` | Skills consumed by agent-pool MCP for Gemini CLI workers |
 | `scripts/` | Install + verification scripts (Linux + Windows cross-platform) |
@@ -159,3 +188,8 @@ The mandatory tail of every session: `git pull --rebase && bd dolt push && git p
 - [workflows/session-close.md](workflows/session-close.md) — Session close + push protocol
 - [workflows/code-writing.md](workflows/code-writing.md) — Code change cycle with reviewer gate
 - [workflows/plan-and-execute.md](workflows/plan-and-execute.md) — Multi-step task protocol
+- [workflows/full-audit.md](workflows/full-audit.md) — Parallel 9-agent audit → consolidated FIXES.md
+- [workflows/release-prep.md](workflows/release-prep.md) — 6-phase release cycle
+- [workflows/bug-fix.md](workflows/bug-fix.md) — TDD bug-fix chain
+- [workflows/new-feature.md](workflows/new-feature.md) — TDD feature chain
+- [workflows/pre-commit.md](workflows/pre-commit.md) — Batch pre-commit gate

@@ -58,3 +58,22 @@ The six security subdirs (`codeql/`, `differential-review/`, `insecure-defaults/
 5. Rewrite `code-review.md`, `compound-docs.md`, `debug.md`, `testing.md` as native (thin pointers to existing agents + `bd` patterns), or delete.
 6. Add a top-of-file note to `nextjs.md`, `tailwind.md`, `react-patterns.md`, `api-design.md`, `docker.md`, `mobile.md`, `performance.md`, `security.md` flagging them as general topic references.
 7. Leave six security subdirs and `gemini-router.md` untouched.
+
+## Cleanup Executed — 2026-05-05
+
+The recommendations in this audit were executed across 5 commits via the
+plan at `~/.claude/plans/eager-percolating-parasol.md`.
+
+| Step | Commit | bd issue | Outcome |
+|------|--------|----------|---------|
+| Phase 2 deletes + thin pointers + ref fixes | a51daeb | kobramaz-byj, kobramaz-uv2 | 4 files deleted, 3 thin pointers, 9 ref substitutions |
+| Phase 3 references/ subfolder | 0881163 | (part of audit follow-through) | 8 files moved with `git mv` |
+| Phase 4 gemini-router promotion + 4 chain skills | 469a530 | (new chain wiring) | 1 promotion, 4 new SKILL.md dirs |
+| Phase 5 workflow promotions | 691b8b4 | kobramaz-e9c | 5 new workflows, 10 source files deleted |
+| Phase 6 docs + bd hygiene | (this commit) | kobramaz-6qk, kobramaz-7kk | CLAUDE.md updated, AUDIT.md stamped |
+
+**Deviations from original recommendations:**
+- `nextjs.md` was demoted to `references/` (not promoted to slash command) per Plan-agent pushback
+- `pre-commit.md` was promoted to a workflow (not deleted) — has parallel-dispatch shape distinct from `code-writing.md`
+- `code-review.md`, `debug.md`, `testing.md` rewritten as thin pointers (not deleted) due to inbound refs
+- 4 NEW chain skills (`security-gate`, `content-pr`, `dep-health`, `dual-review`) created beyond original audit scope
