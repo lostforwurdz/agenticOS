@@ -23,11 +23,9 @@ Perform exhaustive code reviews using multi-perspective analysis to catch issues
 ### Step -1: Resume Context (If New Session)
 
 > [!CAUTION]
-> **BLOCKING STEP.** If this is a NEW CONVERSATION, follow the session-resume skill first.
+> **BLOCKING STEP.** If this is a NEW CONVERSATION, follow the session start workflow first.
 
-```bash
-cat skills/session-resume/SKILL.md
-```
+See `workflows/session-start.md` for the full session boot procedure.
 
 ### Step 0: Load Code Review Skill (MANDATORY)
 
@@ -37,7 +35,7 @@ cat skills/session-resume/SKILL.md
 ```bash
 # Data collection
 
-cat skills/code-review/SKILL.md
+cat skills/code-review.md
 ```
 
 ### Step 1: Determine Review Target
@@ -272,7 +270,7 @@ Before closing the review, ask yourself:
 
 If **yes** to any → Run `/compound` to document the learning.
 
-**See also:** `skills/compound-docs/SKILL.md` for pattern promotion guidelines.
+**See also:** Use `bd remember --key '{type}.{slug}' '...'` for persistent project knowledge. See `~/CLAUDE.md` "Beads Issue Tracker" section.
 
 > [!TIP]
 > Reviews often surface insights that aren't captured in the code itself. Don't let them evaporate.

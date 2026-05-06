@@ -31,7 +31,7 @@ Transform feature descriptions, bug reports, or improvement ideas into well-stru
 ```bash
 ```
 
-**See also:** `skills/compound-docs/SKILL.md` for advanced searching and pattern promotion.
+**See also:** Use `bd remember --key '{type}.{slug}' '...'` for persistent project knowledge. See `~/CLAUDE.md` "Beads Issue Tracker" section.
 
 **Output required:**
 Copy the **table** AND the **update command** from the script output into your plan.
@@ -365,7 +365,7 @@ fi
 - Solutions: `../docs/solutions/{category}/{solution-name}.md`
 - ADRs: `../docs/decisions/{nnn}-{decision}.md`
 
-**See also:** `skills/file-todos/SKILL.md` for full todo management workflows.
+**See also:** Use `bd create` / `bd ready` for task tracking. See `~/CLAUDE.md` "Beads Issue Tracker" section.
 
 ---
 

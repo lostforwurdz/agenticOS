@@ -21,11 +21,9 @@ Execute a work plan efficiently while maintaining quality and finishing features
 ### Step -1: Resume Context (If New Session)
 
 > [!CAUTION]
-> **BLOCKING STEP.** If this is a NEW CONVERSATION, follow the session-resume skill first.
+> **BLOCKING STEP.** If this is a NEW CONVERSATION, follow the session start workflow first.
 
-```bash
-cat skills/session-resume/SKILL.md
-```
+See `workflows/session-start.md` for the full session boot procedure.
 
 ### Step 0: Search Before Solving
 
@@ -36,7 +34,7 @@ Before diving in, check if similar problems were solved:
 
 This 30-second search can save hours of reinventing solutions.
 
-**See also:** `skills/compound-docs/SKILL.md` for solution investigation.
+**See also:** Use `bd remember --key '{type}.{slug}' '...'` for persistent project knowledge. See `~/CLAUDE.md` "Beads Issue Tracker" section.
 
 > [!IMPORTANT]
 > **Implicit Workflow Triggers (Pattern #13)**
@@ -113,7 +111,7 @@ Break the plan into actionable tasks:
 - [ ] Final review
 ```
 
-**Tip:** Use `skills/file-todos/SKILL.md` to manage these tasks if they evolve into standalone work items.
+**Tip:** Use `bd create` / `bd ready` for task tracking. See `~/CLAUDE.md` "Beads Issue Tracker" section.
 
 ### Phase 2: Execute
 
@@ -210,7 +208,7 @@ If any implementation tasks remain unchecked (scope reduced, deferred, etc.):
   "Complete task" "Verify implementation"
 ```
 
-**Note:** Reference `skills/file-todos/SKILL.md` for standard todo statuses and prioritization.
+**Note:** Use `bd create` / `bd ready` for task tracking. See `~/CLAUDE.md` "Beads Issue Tracker" section.
 
 > [!NOTE]
 > Don't close `/work` with unchecked tasks in your inline list. Either complete them or convert to todos.
