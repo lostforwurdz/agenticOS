@@ -66,4 +66,13 @@ else
 fi
 
 echo
+echo "----- Optional: enable nightly stack-health probe -----"
+echo "  mkdir -p ~/.config/systemd/user"
+echo "  cp $REPO/scripts/systemd/stack-health.{service,timer} ~/.config/systemd/user/"
+echo "  systemctl --user daemon-reload"
+echo "  systemctl --user enable --now stack-health.timer"
+echo "  systemctl --user list-timers stack-health.timer"
+echo "(fires 23:30 daily; persistent=true catches missed runs)"
+
+echo
 echo "Done. Edit ~/.claude/CLAUDE.md and changes land in $REPO."

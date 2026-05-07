@@ -1,0 +1,18 @@
+[Unit]
+Description=Run AgenticOS stack-health probe nightly at 23:30 local time
+Documentation=file://%h/agenticOS/scripts/stack-health-cron.py
+
+[Timer]
+# 23:30 every day, local time. Avoids 23:00 (memory-consolidation) and
+# 04:00 (wiki-compile) collision per ~/.claude/CLAUDE.md scheduled-agents
+# table.
+OnCalendar=*-*-* 23:30:00
+# Catch up after suspended/missed runs (laptop sleep).
+Persistent=true
+# Slight randomization so multiple machines don't hit dolt remote at the
+# same instant.
+RandomizedDelaySec=120
+Unit=stack-health.service
+
+[Install]
+WantedBy=timers.target

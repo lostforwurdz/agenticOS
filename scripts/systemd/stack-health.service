@@ -1,0 +1,16 @@
+[Unit]
+Description=AgenticOS memory-stack health probe (cron wrapper)
+Documentation=file://%h/agenticOS/scripts/stack-health-cron.py
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env python3 %h/agenticOS/scripts/stack-health-cron.py
+# Don't fail the unit if the wrapper exits non-zero; the wrapper's job
+# is to report health, not to gate other services.
+SuccessExitStatus=0 1
+# Modest resource caps; the probe is small.
+MemoryMax=256M
+TimeoutStartSec=180
+
+[Install]
+WantedBy=default.target

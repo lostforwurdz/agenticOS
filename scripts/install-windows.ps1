@@ -97,4 +97,14 @@ if (Get-Command claude -ErrorAction SilentlyContinue) {
 }
 
 Write-Host ""
+Write-Host "----- Optional: enable nightly stack-health probe -----"
+Write-Host '  $py = (Get-Command python).Source'
+Write-Host "  `$script = `"$RepoPath\scripts\stack-health-cron.py`""
+Write-Host '  $action = New-ScheduledTaskAction -Execute $py -Argument "`"$script`""'
+Write-Host '  $trigger = New-ScheduledTaskTrigger -Daily -At 11:30PM'
+Write-Host '  $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable'
+Write-Host '  Register-ScheduledTask -TaskName "stack-health-cron" -Action $action -Trigger $trigger -Settings $settings -Description "Nightly memory-stack health probe + auto-bd-issue"'
+Write-Host "(verify: Get-ScheduledTask stack-health-cron | Get-ScheduledTaskInfo)"
+
+Write-Host ""
 Write-Host "Done. Edit `$env:USERPROFILE\.claude\CLAUDE.md and changes land in $RepoPath."

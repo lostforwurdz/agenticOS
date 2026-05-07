@@ -103,6 +103,7 @@ Active scheduled agents (register new ones via the `schedule` skill):
 | Agent | Schedule | Purpose |
 |-------|----------|---------|
 | memory-consolidation | Nightly 11:00 PM (`0 23 * * *`) | Consolidate `bd remember` keys: dedupe, prune stale entries, fix relative dates to ISO format |
+| stack-health-cron | Nightly 11:30 PM (`30 23 * * *`) | Run `scripts/stack-health.py`, persist to `bd remember --key stack-health.<date>`, auto-file bd issue on consecutive red nights |
 | dep-health-weekly | Mondays 09:00 (`0 9 * * 1`) | `/dep-health` chain on active project repos |
 | full-audit-weekly | Sundays 10:00 (`0 10 * * 0`) | `/full-audit` workflow on active project |
 | agent-hygiene-monthly | 1st of month 09:00 (`0 9 1 * *`) | Catalog hygiene scan (broken refs, weak descriptions) |
