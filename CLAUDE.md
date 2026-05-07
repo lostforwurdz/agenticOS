@@ -91,6 +91,7 @@ Configured MCP servers (verify with `claude mcp list`):
 | playwright | Plugin (local stdio) | Browser automation, QA testing | Persistent |
 | context7 | Local stdio (npx) | Live library docs lookup (React, Next.js, etc.) | Free tier requires no auth |
 | agent-pool | Local stdio (npx) | Delegate tasks to Gemini CLI workers (access to `gemini-router` skill) | Persistent |
+| vercel | HTTP OAuth (`https://mcp.vercel.com`) | Vercel project diagnostics: list/get deployments, build logs, runtime logs, project + team metadata, docs search (`mcp__*__list_deployments`, `_get_deployment_build_logs`, etc.) | Run `claude` then `/mcp` → vercel → Authenticate. **At Vercel auth screen, grant team scope (e.g., `lostforwurdzs-projects`) — without it tools 403 against team projects.** |
 
 **Re-authenticate OAuth servers:** https://claude.ai/customize/connectors
 
