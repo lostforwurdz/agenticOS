@@ -20,7 +20,8 @@ Every session starts cold. The bd memory layer holds non-obvious decisions, gotc
 
 1. Run `BEADS_DIR=~/.beads bd prime` — loads all persistent memory keys into context. Read every memory entry relevant to the current project and request.
 2. Run `BEADS_DIR=~/.beads bd ready` — shows the current ready queue: available work, blockers, in-progress issues.
-3. Present the output to the user as a digest: "X issues ready, Y in progress. Key memories: [list relevant ones]. Top blocker: [if any]."
+3. Run `python ~/agenticOS/scripts/stack-health.py --quick` — probe of the 6-layer memory stack (episodic DB, bd memories, wiki-compiler, scheduled run, wiki repo, constitution drift). `--quick` skips slow checks (pytest); the nightly cron runs the full battery.
+4. Present the output to the user as a digest: "X issues ready, Y in progress. Key memories: [list relevant ones]. Top blocker: [if any]. Stack health: [N green / N yellow / N red — if any red, name them]."
 
 ### Phase 1.5: Surface past violations
 
@@ -54,8 +55,10 @@ Every session starts cold. The bd memory layer holds non-obvious decisions, gotc
 
 - MUST: read every memory pointer surfaced by `bd prime` that is relevant to the current request before writing a single line of code or creating a plan.
 - MUST: complete Phase 1 before Phase 2. Do not skip to episodic search if bd has not loaded.
+- MUST: surface any **red** stack-health layer to the user before proceeding to Phase 2. Red means a memory-stack layer is down (no transcript indexing, no bd remote, wiki repo broken, etc.) and may invalidate the session's assumptions about persisted context. Recovery procedure per layer lives in `workflows/memory-stack-recovery.md`.
 - SHOULD: skim the top 5 `bd ready` issues even when the user has a specific request — they may be blocking dependencies or closely related work.
 - SHOULD: if Phase 3 routes to plan-and-execute, do NOT begin `EnterPlanMode` until Phase 1 and Phase 2 are complete. The plan must incorporate persisted context.
+- SHOULD: yellow stack-health layers can be acknowledged and proceed-through unless the work touches that layer. (e.g. yellow `wiki_repo` is fine for a coding task, blocking for a wiki-compiler change.)
 
 ## References
 
