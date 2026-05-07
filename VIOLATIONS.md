@@ -37,6 +37,18 @@ Add a new entry whenever a rule is violated or the user corrects your approach.
 
 ---
 
+## 2026-05-07 — Wrong fix instinct: chase the symptom instead of bisecting
+
+**Rule:** When a hotfix doesn't resolve a production error, STOP iterating on the same hypothesis. Bisect to localize the actual cause before shipping another fix.
+
+**What happened:** Production admin threw `Functions cannot be passed directly to Client Components` (digest 2717883476). I diagnosed it as a missing importMap, ran `pnpm run generate:importmap`, shipped PR #13 with 19 new entries, declared victory. User confirmed: still broken. I hypothesized stale browser cache; user proved that wrong with incognito. I then dispatched a thorough local reviewer who audited all `serverOnly*` lists in Payload's source and confidently said NO LEAK exists. That was also wrong — the reviewer missed `admin.importMap.generators` because it's not in any of the standard server-only lists. The actual fix took 6 preview deploys + manual /admin tests to localize via bisect; turned out to be an arrow function in `admin.importMap.generators` leaking through Payload v3.84.1 serialization. PR #14 fixed it by removing the block (auto-discovery handles registration once a richText field consumes the features).
+
+**What to do instead:** A bisect should have been the SECOND move, right after the first hotfix didn't resolve the symptom. The pattern: (1) ship the most likely fix; (2) if symptom persists, do NOT ship a second hypothesis-driven fix — instead, instrument or bisect to localize. Each unverified hypothesis is a deploy + review cycle. A 6-step bisect on Vercel previews ran in ~30 minutes and gave a definitive answer; the original audit-by-reading-source approach gave a confident wrong answer in similar wall-clock time. Also: when audit conclusions contradict observed evidence (user reports vs reviewer says "no leak exists"), TRUST THE EVIDENCE. The audit's coverage IS its weakness — it can only see what it knows to look for.
+
+**Specific Payload pattern flagged:** Don't pre-register custom Lexical features via `admin.importMap.generators` arrow functions in `payload.config.ts`. Wait until at least one richText field consumes them, then run `pnpm run generate:importmap` once. The arrow function serializes to client and trips React Flight at the next `/admin` render.
+
+---
+
 ## 2026-05-07 — Orchestrator wrote implementation files directly (Standing Instruction #6)
 
 **Rule:** Orchestrator session does not write implementation files. All file writes dispatch to specialist subagents; orchestrator handles sequencing, verification, and commits — not edits.
