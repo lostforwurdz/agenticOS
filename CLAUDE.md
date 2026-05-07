@@ -47,6 +47,7 @@ Named multi-step procedures live in `workflows/<name>.md`. Each is invoked by th
 | `workflows/bug-fix.md` | TDD bug-fix chain: failing repro test → fix → regression check → optional UI verify. Phase 2.5 auto-escalates to `dual-review` for auth/payment/encryption/migration paths. |
 | `workflows/new-feature.md` | TDD feature chain: failing tests → implementation (stack-routed) → regression → optional UI verify. |
 | `workflows/pre-commit.md` | Batch pre-commit gate: parallel reviewer + tester on staged files. |
+| `workflows/memory-stack-recovery.md` | Per-layer recovery runbook for the 6-layer memory stack. Triggered by red layers from `scripts/stack-health.py`. |
 
 Imported boilerplate workflows (no longer active) live in `workflows/archived/` for reference.
 
@@ -222,3 +223,5 @@ The mandatory tail of every session: `git pull --rebase && bd dolt push && git p
 - [workflows/bug-fix.md](workflows/bug-fix.md) — TDD bug-fix chain
 - [workflows/new-feature.md](workflows/new-feature.md) — TDD feature chain
 - [workflows/pre-commit.md](workflows/pre-commit.md) — Batch pre-commit gate
+- [workflows/memory-stack-recovery.md](workflows/memory-stack-recovery.md) — Per-layer recovery runbook for the 6-layer memory stack
+- [scripts/stack-health.py](scripts/stack-health.py) — Health probe wired into `workflows/session-start.md` Phase 1

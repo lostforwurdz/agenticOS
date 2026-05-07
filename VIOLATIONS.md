@@ -34,3 +34,13 @@ Add a new entry whenever a rule is violated or the user corrects your approach.
 **What happened:** During session-prime, the `vps-sync` agent reported three problems: `~/gemini/skills` junction missing, beads dolt remote unconfigured, and 4 of 5 expected MCP servers offline. The orchestrator wrote a confident "cross-machine drift (critical)" briefing on top of those claims. All three were wrong: the canonical path is `~/.gemini/skills` (leading dot — agent invented `~/gemini/skills`); `bd dolt remote list` shows `origin` configured; and `episodic-memory`/`playwright` are plugins, not MCP servers, and never appear in `claude mcp list`. The single real issue was `context7` and `agent-pool` being scoped to a different project directory.
 
 **What to do instead:** Before parroting a diagnostic agent's "MISSING" / "FAILED" / "OFFLINE" claims, run the underlying check yourself with the exact canonical command and look at raw output. Pattern: agent says "X is missing" → orchestrator must reply with "I ran `<command>` and got `<output>`, which confirms/refutes". The fixed `vps-sync.md` now requires the agent to cite raw output for every reported issue, but the orchestrator-side discipline still applies to every agent that reports state.
+
+---
+
+## 2026-05-06 — Stack instrumentation must precede stack reliance
+
+**Rule:** A persistent system without a health signal is silently broken by default. Add the probe before adding the dependency.
+
+**What happened:** The wiki-compiler memory stack on Windows quietly failed for ~10 days across 8 cascading bugs (lock import, PATH resolution, subprocess shadowing, .CMD shim arg-passing, cp1252 decoding, fcntl absence, timeout, stderr-pipe deadlock). The episodic-memory DB also froze for 6 days and self-resolved without alarm. None of these surfaced until I manually probed at the user's request, because the stack had no health signal — the only audit trail was `run.log`, which nothing was watching.
+
+**What to do instead:** Whenever a system layer becomes part of session-start assumptions (e.g. "the wiki has my context" / "bd has my memories" / "the indexer is current"), ship a health probe alongside it that fires per-session and per-night. See `scripts/stack-health.py` and `workflows/memory-stack-recovery.md`. Specifically: (1) any layer with a "freshness" semantic must expose a max-timestamp query that fits in one bash line; (2) any cron-fed layer must auto-bd-issue when it goes red on consecutive nights; (3) the recovery runbook is mandatory — every diagnostic sequence rediscovered after the fact costs more than it would have to capture during the original session.
