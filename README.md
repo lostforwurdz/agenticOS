@@ -58,7 +58,7 @@ Static check: `~/.claude/settings.json` has expected hooks wired. Prints live-te
 | [`skills/`](skills/) | 25+ reusable skill definitions (code-review, docker, nextjs, security, testing, etc.) plus subdirectories (codeql, differential-review, semgrep, sarif-parsing, supply-chain-risk-auditor, insecure-defaults) |
 | [`workflows/`](workflows/) | Multi-step workflow definitions (plan-compound.md, review-compound.md, work.md, explore.md, cycle.md, resolve-pr.md) |
 | [`workflows/archived/`](workflows/archived/) | Archived workflows |
-| [`gemini/skills/`](gemini/skills/) | Skills for Gemini CLI workers (tdd-planner, strict-reviewer) — consumed by agent-pool MCP |
+| [`gemini/skills/`](gemini/skills/) | Worker-side skills (tdd-planner, strict-reviewer) injected via `append_system_prompt` when callers route through the `loom-pool` MCP to a non-Claude worker |
 | [`scripts/`](scripts/) | Install + verification (bash + PowerShell, cross-platform) |
 
 ---

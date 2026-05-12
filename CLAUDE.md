@@ -62,7 +62,7 @@ Registered skills in three forms:
 - `security-gate` — parallel security chain (semgrep + codeql + supply-chain + insecure-defaults + security-auditor → differential-review consolidator)
 - `content-pr` — sequential content gate (seo → ui → a11y → reviewer)
 - `dep-health` — parallel dependency audit (dependency-manager + supply-chain + compliance → debugger consolidator)
-- `dual-review` — parallel high-stakes review (local reviewer + non-Claude cold-read; uses `mcp__agent-pool__consult_peer` today, swaps to `pool_consult` post-Phase-18 cutover)
+- `dual-review` — parallel high-stakes review (local reviewer + non-Claude cold-read via `pool_consult`)
 - `session-prime` — parallel session warm-up chain
 - `pr-ready` — sequential pre-merge gate composite
 - `schema-change` — DB migration safety gate (parallel + sequential)
@@ -90,8 +90,7 @@ Configured MCP servers (verify with `claude mcp list`):
 | episodic-memory | Plugin (local stdio) | Cross-session conversation search (`episodic-memory:search-conversations` agent) | Persistent; reads `~/.claude/projects/` |
 | playwright | Plugin (local stdio) | Browser automation, QA testing | Persistent |
 | context7 | Local stdio (npx) | Live library docs lookup (React, Next.js, etc.) | Free tier requires no auth |
-| agent-pool | Local stdio (npx) | **TRANSITIONAL** — delegate tasks to Gemini CLI workers. Being replaced by `loom-pool` (`~/loom-pool-mcp`) post-Phase-18 cutover (kobramaz-lmn.51.18). Loom-pool surface adds `pool_agents`, `agent: '<name>'` arg, and the full 7-factor router. | Persistent |
-| loom-pool | Local stdio (npx) | **POST-CUTOVER PRIMARY** — multi-CLI worker pool backed by the loom daemon at `http://localhost:7474`. Exposes `pool_dispatch` / `pool_consult` / `pool_agents` / `pool_explain_task` etc. See `~/loom-pool-mcp/README.md`. Register only after Phase 18 cutover; do not run both simultaneously. | Persistent |
+| loom-pool | Local stdio (`node ~/loom-pool-mcp/dist/src/index.js`) | Multi-CLI worker pool backed by the loom daemon at `http://localhost:7474`. Exposes `pool_dispatch` / `pool_consult` / `pool_agents` / `pool_explain_task` and the full 7-factor router. See `~/loom-pool-mcp/README.md`. Replaces the legacy `agent-pool` MCP (removed Phase 18 cutover, kobramaz-lmn.51.18, 2026-05-12). | Persistent |
 | vercel | HTTP OAuth (`https://mcp.vercel.com`) | Vercel project diagnostics: list/get deployments, build logs, runtime logs, project + team metadata, docs search (`mcp__*__list_deployments`, `_get_deployment_build_logs`, etc.) | Run `claude` then `/mcp` → vercel → Authenticate. **At Vercel auth screen, grant team scope (e.g., `lostforwurdzs-projects`) — without it tools 403 against team projects.** |
 
 **Re-authenticate OAuth servers:** https://claude.ai/customize/connectors
@@ -146,7 +145,7 @@ Hook configuration lives in `~/.claude/settings.json` (per-machine, NOT in this 
 
 ## Worker Pool Integration
 
-The **loom-pool** MCP (post-Phase-18 cutover) is the canonical surface for cross-tool skill delegation. Pre-cutover, the legacy `agent-pool` MCP still works in parallel — Phase 18 (kobramaz-lmn.51.18) flips the switch.
+The **loom-pool** MCP is the canonical surface for cross-tool skill delegation, backed by the loom daemon at `http://localhost:7474`. The legacy `agent-pool` MCP was removed during the Phase 18 cutover (kobramaz-lmn.51.18, 2026-05-12).
 
 **Worker substrates** (Tier 1, picked by the router): `claude-code`, `gemini-cli`, `codex`, `aider`, `ollama`, `cursor-agent`, `kimi-cli`, `glm-cli`, `gh-copilot`.
 
@@ -157,11 +156,9 @@ Worker-side skills live in `gemini/skills/` (loaded via `append_system_prompt` b
 - **tdd-planner** — TDD-style implementation plans with checkboxes, exact code, and commit steps
 - **strict-reviewer** — Code review: severity buckets (Critical / Important / Suggestions) + verdict (Approve / Request Changes / Major Rework)
 
-**Invocation:**
-- Post-cutover: `pool_dispatch`, `pool_dispatch_sync`, `pool_consult` from `loom-pool` MCP. See `~/loom-pool-mcp/README.md` for the full tool catalogue and `routing_hint` / `agent` semantics.
-- Pre-cutover legacy fallback: `mcp__agent-pool__delegate_task`, `delegate_task_readonly`, `consult_peer`. Equivalent capability surface but no agent-layer support and no 7-factor router visibility.
+**Invocation:** `pool_dispatch`, `pool_dispatch_sync`, `pool_consult` from `loom-pool` MCP. See `~/loom-pool-mcp/README.md` for the full tool catalogue and `routing_hint` / `agent` semantics.
 
-**Note:** `mcp__agent-pool__schedule_task` is **denied** in `~/.claude/settings.json` to prevent collision with Claude Code's `schedule` skill. Use the `schedule` skill instead.
+**Daemon requirement:** loom-pool tools fail with a connection error when the loom daemon isn't running. Start it via `bun src/index.ts` from `~/loom/` (or `loom up` once the systemd unit lands).
 
 ---
 
@@ -200,7 +197,7 @@ bd dolt pull          # Pull on different machine
 | `skills/` | Reusable skills in three forms: chain skills (`<name>/SKILL.md` dirs, slash-invocable), pointer `.md` files (point to `engineering:*` registered skills), and `references/` subfolder (topic references, not slash commands). |
 | `workflows/` | AgenticOS-native procedures: session-start, session-close, code-writing, plan-and-execute, full-audit, release-prep, bug-fix, new-feature, pre-commit. Imported boilerplate retired to workflows/archived/. |
 | `workflows/archived/` | Archived workflows |
-| `gemini/skills/` | Worker-side skills injected via `append_system_prompt` when callers route to a non-Claude worker. Consumed today by `agent-pool`; post-cutover by `loom-pool`. |
+| `gemini/skills/` | Worker-side skills injected via `append_system_prompt` when callers route to a non-Claude worker through `loom-pool`. |
 | `scripts/` | Install + verification scripts (Linux + Windows cross-platform); includes `check-skill-pointers.sh` |
 
 ---
