@@ -1,10 +1,10 @@
 ---
 name: testing
-description: Pointer to the registered `engineering:testing-strategy` skill — invoke that for test strategy design, test plans, and writing tests across frontend and backend.
+description: Pointer to the registered `superpowers:test-driven-development` skill — invoke that for test-first implementation of any feature or bugfix.
 ---
 
 # testing
 
-This skill is a pointer. Use the registered `engineering:testing-strategy` skill for actual testing work; it covers test strategy design, test plans, and guidance on what tests to write.
+This skill is a pointer. Use the registered `superpowers:test-driven-development` skill for actual testing work; it covers writing failing tests first, then implementation, then refactor — the canonical TDD loop.
 
-For writing or planning tests invoke `engineering:testing-strategy`. For specialist dispatch on test suites, see `agents/tester.md`.
+For test-first feature/bugfix work invoke `superpowers:test-driven-development`. For specialist dispatch on test suites, see `agents/tester.md`.
