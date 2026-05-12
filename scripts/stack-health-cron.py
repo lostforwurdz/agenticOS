@@ -63,9 +63,22 @@ def _resolve_bd() -> str:
     Strategy: shutil.which("bd"), check for sibling node_modules/@beads/
     bin/bd.exe; fall back to .CMD if not present.
     """
+    import glob
     import shutil
 
     resolved = shutil.which("bd")
+    if resolved is None:
+        # systemd-user services inherit a minimal PATH that excludes nvm/npm-global;
+        # probe common install locations before giving up.
+        candidates = [
+            *glob.glob(str(pathlib.Path.home() / ".nvm/versions/node/*/bin/bd")),
+            str(pathlib.Path.home() / ".npm-global/bin/bd"),
+            "/usr/local/bin/bd",
+        ]
+        for c in candidates:
+            if pathlib.Path(c).exists():
+                resolved = c
+                break
     if resolved is None:
         raise RuntimeError("bd not on PATH")
     if sys.platform != "win32":
@@ -83,11 +96,17 @@ def _resolve_bd() -> str:
 def _bd_run(cmd: list[str]) -> subprocess.CompletedProcess:
     """Run bd with utf-8 forced + .CMD shim bypass on Windows."""
     bd_path = _resolve_bd()
+    # bd has `#!/usr/bin/env node`; under systemd-user the inherited PATH lacks
+    # nvm's bin dir, so prepend bd's parent so the sibling `node` resolves too.
+    env = os.environ.copy()
+    bd_parent = str(pathlib.Path(bd_path).parent)
+    if bd_parent not in env.get("PATH", "").split(os.pathsep):
+        env["PATH"] = bd_parent + os.pathsep + env.get("PATH", "")
     return subprocess.run(
         [bd_path, *cmd],
         capture_output=True, text=True,
         encoding="utf-8", errors="replace",
-        check=False,
+        check=False, env=env,
     )
 
 
@@ -179,7 +198,7 @@ def file_issue(today_red: list[str], yesterday_red: list[str]) -> str:
     yesterday = (datetime.now(timezone.utc).date() - timedelta(days=1)).strftime("%Y-%m-%d")
     title = f"stack-health red 2+ nights: {', '.join(union)}"
     description = (
-        f"Auto-filed by stack-health-cron 2026-{today}. The memory stack has "
+        f"Auto-filed by stack-health-cron {today}. The memory stack has "
         f"reported red layers on consecutive nights:\n\n"
         f"- {yesterday}: red = {sorted(yesterday_red)}\n"
         f"- {today}: red = {sorted(today_red)}\n\n"

@@ -1,0 +1,16 @@
+[Unit]
+Description=AgenticOS memory-consolidation agent (cron wrapper)
+Documentation=file://%h/agenticOS/scripts/memory-consolidation-cron.py
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/env python3 %h/agenticOS/scripts/memory-consolidation-cron.py
+# Don't fail the unit if the wrapper exits non-zero; the wrapper's job
+# is to report and consolidate, not to gate other services.
+SuccessExitStatus=0 1
+# claude is heavier than the stack-health probe.
+MemoryMax=512M
+TimeoutStartSec=420
+
+[Install]
+WantedBy=default.target

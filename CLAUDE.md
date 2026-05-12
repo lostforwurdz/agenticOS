@@ -99,18 +99,26 @@ Configured MCP servers (verify with `claude mcp list`):
 
 ## Scheduled Agents
 
-Active scheduled agents (register new ones via the `schedule` skill):
+Six scheduled agents are registered. **Local-cron agents** run nightly on each machine the OS is installed on, scheduled via OS-level timers (systemd-user on Linux, Task Scheduler on Windows) — they probe per-machine state and must run on each host independently. **Cloud routines** fire from Anthropic's cloud on a single schedule regardless of which machine is online, and read repo state via GitHub.
 
-| Agent | Schedule | Purpose |
-|-------|----------|---------|
-| memory-consolidation | Nightly 11:00 PM (`0 23 * * *`) | Consolidate `bd remember` keys: dedupe, prune stale entries, fix relative dates to ISO format |
-| stack-health-cron | Nightly 11:30 PM (`30 23 * * *`) | Run `scripts/stack-health.py`, persist to `bd remember --key stack-health.<date>`, auto-file bd issue on consecutive red nights |
-| dep-health-weekly | Mondays 09:00 (`0 9 * * 1`) | `/dep-health` chain on active project repos |
-| full-audit-weekly | Sundays 10:00 (`0 10 * * 0`) | `/full-audit` workflow on active project |
-| agent-hygiene-monthly | 1st of month 09:00 (`0 9 1 * *`) | Catalog hygiene scan (broken refs, weak descriptions) |
-| stale-branch-sweep | Fridays 08:00 (`0 8 * * 5`) | Report-only stale-branch audit (no auto-prune) |
+| Agent | Venue | Schedule | Purpose |
+|-------|-------|----------|---------|
+| memory-consolidation | local cron (systemd timer) | Nightly 23:00 local | Consolidate `bd remember` keys; write report only |
+| stack-health-cron | local cron (systemd timer) | Nightly 23:30 local | Probe 6-layer memory stack per-machine; auto-file bd issue on consecutive red nights |
+| dep-health-weekly | cloud routine (RemoteTrigger) | Mon 09:00 America/Chicago | `/dep-health` on active project repos |
+| full-audit-weekly | cloud routine (RemoteTrigger) | Sun 10:00 America/Chicago | `/full-audit` on primary project |
+| agent-hygiene-monthly | cloud routine (RemoteTrigger) | 1st of month 09:00 America/Chicago | Catalog hygiene scan (broken refs, weak descriptions) |
+| stale-branch-sweep | cloud routine (RemoteTrigger) | Fri 08:00 America/Chicago | Report-only stale-branch audit (no auto-prune) |
 
-Agent prompts live in `agents/*.md` (42 active agents + 91 archived).
+**Local-cron registration (per machine):**
+
+- Linux: `systemctl --user enable --now stack-health.timer memory-consolidation.timer` (unit files in `scripts/systemd/`)
+- Windows: register equivalent tasks via `Register-ScheduledTask` (stack-health template in `scripts/install-windows.ps1`; adapt for memory-consolidation)
+- Run `loginctl enable-linger $USER` on Linux so user-scope timers fire when no shell is open.
+
+**Cloud-routine registration:**
+
+Use the `schedule` skill (one-time setup per Anthropic account; routines persist server-side). Requires GitHub connection via `/web-setup` for `lostforwurdz/agenticOS` and any other repos the routine clones. Agent prompts live in `agents/*.md`.
 
 ---
 
@@ -191,7 +199,7 @@ bd dolt pull          # Pull on different machine
 ## How to Expand This OS
 
 - **Add an integration:** Re-auth via `/mcp auth`, update the integrations table above, commit + push.
-- **Add a scheduled agent:** Write prompt in `agents/`, register via `schedule` skill, add row to Scheduled Agents table, commit + push.
+- **Add a scheduled agent:** Write prompt in `agents/`. For local-cron agents, also add systemd `.service`/`.timer` files in `scripts/systemd/` and a Windows Task Scheduler block in `scripts/install-windows.ps1`. For cloud routines, register via the `schedule` skill once. Add a row to the Scheduled Agents table above, commit + push.
 - **Inspect persistent memory:** `bd remember --list` (all keys) or `bd remember --key <key>` (one entry).
 - **Search cross-session conversations:** Use `episodic-memory:search-conversations` agent (semantic or text search).
 - **Update constitution:** Edit this file, commit, push. Changes take effect next session.
