@@ -55,20 +55,33 @@ Imported boilerplate workflows (no longer active) live in `workflows/archived/` 
 
 ## Skills
 
-Registered skills in three forms:
+Registered skills in two forms:
 
-**Chain skills (in `skills/<name>/SKILL.md` — slash-invocable):**
-- ~~`gemini-router`~~ — **DEPRECATED in Pool Phase 15** (moved to `skills/archived/`). Routing logic now lives in `~/loom/src/pool/router.ts` (7-factor engine). Callers use `pool_dispatch` / `pool_consult` with optional `routing_hint` / `agent` — the router selects the worker automatically.
-- `security-gate` — parallel security chain (semgrep + codeql + supply-chain + insecure-defaults + security-auditor → differential-review consolidator)
-- `content-pr` — sequential content gate (seo → ui → a11y → reviewer)
-- `dep-health` — parallel dependency audit (dependency-manager + supply-chain + compliance → debugger consolidator)
-- `dual-review` — parallel high-stakes review (local reviewer + non-Claude cold-read via `pool_consult`)
-- `session-prime` — parallel session warm-up chain
-- `pr-ready` — sequential pre-merge gate composite
-- `schema-change` — DB migration safety gate (parallel + sequential)
+**Pipelines (in `~/loom/pipelines/<name>.json` — invoke from any MCP client via `pool_pipeline_run`):**
 
-**Security skills (existing, in `skills/<name>/SKILL.md` — slash-invocable):**
+Orchestration DAGs converted from the old Claude-Code-only chain skills (kobramaz-lmn.53, 2026-05-12). Each is vendor-neutral: the steps run on whichever workers the 7-factor router (or explicit `agent` / `worker` / `routing_hint`) selects, with prior step outputs auto-prepended to downstream system prompts.
+
+| Pipeline | Shape |
+|---|---|
+| `security-gate` | 5 parallel (semgrep / codeql / supply-chain / insecure-defaults / OWASP) → debugger consolidator |
+| `dual-review` | 2 parallel (reviewer agent + cold-read substrate) → debugger synthesizer |
+| `dep-health` | 3 parallel (dependency-manager / supply-chain / compliance) → debugger consolidator |
+| `content-pr` | sequential: seo → ui → a11y → reviewer |
+| `schema-change` | parallel audit → consolidate → second-opinion cold-read → rollback verify |
+| `pr-ready` | parallel reviewer + tester → consolidator drafts PR |
+| `session-prime` | 5 parallel context-gathering → orchestrator-agent synthesizer briefing |
+
+Invoke: `pool_pipeline_run` with `pipeline_id`. See `~/loom-pool-mcp/README.md` for the full surface (list / run / status / cancel).
+
+**Worker-side prompt skills (in `skills/<name>/SKILL.md` — injected via `append_system_prompt`):**
+
+Vendor-neutral prompt fragments loaded by callers routing a task to any worker (Claude, Gemini, Codex, etc.). Not slash-invocable in Claude Code; they're substrate-side instructions.
+
 - `codeql`, `semgrep`, `differential-review`, `insecure-defaults`, `sarif-parsing`, `supply-chain-risk-auditor`
+
+**Deprecated** (moved to `skills/archived/` with redirect banners — preserved for reference):
+- `gemini-router` (Phase 15) — routing now lives in `~/loom/src/pool/router.ts` (7-factor engine)
+- `security-gate`, `dual-review`, `dep-health`, `content-pr`, `schema-change`, `pr-ready`, `session-prime` (kobramaz-lmn.53) — replaced by the pipelines above
 
 **Pointer skills (loose `.md` files at `skills/` root — point to registered `engineering:*` skills):**
 - `code-review` → `engineering:code-review`
