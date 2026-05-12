@@ -64,7 +64,16 @@ class LayerResult:
 HOME = pathlib.Path.home()
 EPISODIC_DB = HOME / ".config/superpowers/conversation-index/db.sqlite"
 WIKI_REPO = HOME / "wiki"
-WIKI_COMPILER = HOME / "dev/wiki-compiler"
+
+
+def _resolve_wiki_compiler() -> pathlib.Path:
+    for candidate in (HOME / "dev/wiki-compiler", HOME / "Documents/wiki-compiler"):
+        if (candidate / ".venv").exists() or (candidate / "pyproject.toml").exists():
+            return candidate
+    return HOME / "dev/wiki-compiler"
+
+
+WIKI_COMPILER = _resolve_wiki_compiler()
 BEADS_DIR = HOME / ".beads"
 AGENTIC_OS = HOME / "agenticOS"
 
@@ -262,8 +271,8 @@ def check_scheduled_run() -> LayerResult:
     except OSError as e:
         return LayerResult(4, "scheduled_run", RED, f"read failed: {e}")
 
-    # Find timestamp lines like 2026-05-06T19:25:30.123Z
-    pattern = re.compile(r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+Z)")
+    # Find timestamp lines like 2026-05-06T19:25:30.123Z OR 2026-05-12T09:05:27Z
+    pattern = re.compile(r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z)")
     matches = pattern.findall(text)
     if not matches:
         return LayerResult(4, "scheduled_run", RED,
