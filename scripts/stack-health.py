@@ -78,6 +78,25 @@ BEADS_DIR = HOME / ".beads"
 AGENTIC_OS = HOME / "agenticOS"
 
 
+def _resolve_loom_db() -> pathlib.Path:
+    """Resolve loom kernel DB path using the same precedence as loom's config.ts:
+    1. LOOM_RUNTIME_DIR env var
+    2. XDG_DATA_HOME/loom
+    3. ~/.local/share/loom
+    DB lives at <runtimeDir>/state/state.db.
+    """
+    env_dir = os.environ.get("LOOM_RUNTIME_DIR")
+    if env_dir:
+        return pathlib.Path(env_dir) / "state" / "state.db"
+    xdg = os.environ.get("XDG_DATA_HOME")
+    if xdg:
+        return pathlib.Path(xdg) / "loom" / "state" / "state.db"
+    return HOME / ".local" / "share" / "loom" / "state" / "state.db"
+
+
+LOOM_DB = _resolve_loom_db()
+
+
 def _runlog_path() -> pathlib.Path:
     """Return the OS-specific path to wiki-compile-and-push wrapper's run.log."""
     if sys.platform == "win32":
@@ -354,6 +373,57 @@ def check_wiki_repo() -> LayerResult:
                        f"clean, last commit {age_hours:.1f}h ago", metrics)
 
 
+def probe_vault_snapshots(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 7 — loom vault_snapshots table health."""
+    if not LOOM_DB.exists():
+        return LayerResult(
+            7, "vault_snapshots", SKIPPED,
+            f"loom.db not found at {LOOM_DB}",
+        )
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        row = conn.execute(
+            "SELECT COUNT(*), MAX(last_seen), MIN(last_seen), COALESCE(SUM(byte_size), 0)"
+            " FROM vault_snapshots"
+        ).fetchone()
+        conn.close()
+    except sqlite3.OperationalError as e:
+        if "no such table" in str(e):
+            return LayerResult(7, "vault_snapshots", SKIPPED,
+                               "vault_snapshots table not found (schema migration pending?)")
+        return LayerResult(7, "vault_snapshots", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(7, "vault_snapshots", RED, f"sqlite error: {e}")
+
+    count, max_last_seen, min_last_seen, total_bytes = row
+    total_mb = (total_bytes or 0) / (1024 * 1024)
+
+    if count == 0:
+        return LayerResult(
+            7, "vault_snapshots", GREEN,
+            "0 snapshots — no reads yet",
+            {"count": 0, "total_mb": 0.0},
+        )
+
+    oldest_age_h = _hours_since(_parse_iso(min_last_seen))
+    metrics = {
+        "count": count,
+        "oldest_age_h": round(oldest_age_h, 1),
+        "total_mb": round(total_mb, 1),
+        "max_last_seen": max_last_seen,
+        "min_last_seen": min_last_seen,
+    }
+    detail = f"{count} snapshots, oldest {oldest_age_h:.1f}h ago, {total_mb:.1f} MB total"
+
+    if count > 50 and oldest_age_h < 1.0:
+        return LayerResult(7, "vault_snapshots", RED,
+                           f"eviction/write storm: {detail}", metrics)
+    if total_mb > 50.0:
+        return LayerResult(7, "vault_snapshots", YELLOW,
+                           f"cap warning (>{50} MB): {detail}", metrics)
+    return LayerResult(7, "vault_snapshots", GREEN, detail, metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -431,6 +501,7 @@ def main(argv: list[str] | None = None) -> int:
         check_scheduled_run(),
         check_wiki_repo(),
         check_constitution(),
+        probe_vault_snapshots(quick=args.quick),
     ]
 
     if not args.json:
