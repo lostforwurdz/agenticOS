@@ -424,6 +424,109 @@ def probe_vault_snapshots(quick: bool) -> LayerResult:  # noqa: ARG001
     return LayerResult(7, "vault_snapshots", GREEN, detail, metrics)
 
 
+def _resolve_vault_root() -> pathlib.Path | None:
+    """Locate the vault root by inspecting the loom config or falling back to
+    common sibling paths relative to LOOM_DB's runtime directory."""
+    runtime_dir = LOOM_DB.parent.parent  # <runtimeDir>/state/state.db → <runtimeDir>
+    candidates = [
+        runtime_dir / "vault",
+        HOME / ".local" / "share" / "loom" / "vault",
+        HOME / "vault",
+        HOME / "Documents" / "vault",
+        HOME / "Vault",
+    ]
+    # Also try reading vault path from loom db config table if it exists
+    if LOOM_DB.exists():
+        try:
+            conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+            rows = conn.execute(
+                "SELECT value FROM config WHERE key='vaultRoot' LIMIT 1"
+            ).fetchone()
+            conn.close()
+            if rows and rows[0]:
+                candidates.insert(0, pathlib.Path(rows[0]))
+        except sqlite3.Error:
+            pass
+    for c in candidates:
+        if c.is_dir():
+            return c
+    return None
+
+
+def probe_vault_provenance(quick: bool) -> LayerResult:
+    """Layer 8 — vault provenance coverage (loom_source_runner_id in frontmatter).
+
+    Walks .md files modified in the last 7 days to measure what fraction
+    carry a ``loom_source_*`` frontmatter key — a drift detector for writes
+    that bypass the gateway.
+    """
+    vault_root = _resolve_vault_root()
+    if vault_root is None:
+        return LayerResult(8, "vault_provenance", SKIPPED, "vault root not found")
+
+    cutoff = time.time() - 7 * 24 * 3600
+    FRONTMATTER_RE = re.compile(r"^loom_source_runner_id\s*:", re.MULTILINE)
+    FRONTMATTER_BLOCK_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
+
+    # Collect .md files modified in the last 7 days
+    recent: list[pathlib.Path] = []
+    try:
+        for p in vault_root.rglob("*.md"):
+            try:
+                if p.stat().st_mtime >= cutoff:
+                    recent.append(p)
+            except OSError:
+                continue
+    except OSError as e:
+        return LayerResult(8, "vault_provenance", RED, f"vault walk error: {e}")
+
+    if not recent:
+        return LayerResult(
+            8, "vault_provenance", SKIPPED,
+            "no recent .md files (last 7 days)",
+            {"vault_root": str(vault_root)},
+        )
+
+    # Quick mode: cap at 100 most-recent files
+    if quick and len(recent) > 100:
+        recent.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+        recent = recent[:100]
+
+    total = len(recent)
+    with_key = 0
+    for p in recent:
+        try:
+            text = p.read_text(encoding="utf-8", errors="replace")
+        except OSError:
+            total -= 1
+            continue
+        # Extract frontmatter block only
+        m = FRONTMATTER_BLOCK_RE.match(text)
+        if m and FRONTMATTER_RE.search(m.group(1)):
+            with_key += 1
+
+    if total == 0:
+        return LayerResult(8, "vault_provenance", SKIPPED,
+                           "no readable .md files in sample")
+
+    coverage = with_key / total
+    pct = round(coverage * 100, 1)
+    detail = f"{pct}% of recent writes have loom_source_* ({with_key} of {total})"
+    metrics = {
+        "coverage": round(coverage, 4),
+        "with_key": with_key,
+        "total_sampled": total,
+        "vault_root": str(vault_root),
+        "quick": quick,
+    }
+    if coverage >= 0.80:
+        return LayerResult(8, "vault_provenance", GREEN, detail, metrics)
+    if coverage >= 0.40:
+        return LayerResult(8, "vault_provenance", YELLOW, detail, metrics)
+    return LayerResult(8, "vault_provenance", RED,
+                       f"{detail} — writes bypassing gateway?", metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -502,6 +605,7 @@ def main(argv: list[str] | None = None) -> int:
         check_wiki_repo(),
         check_constitution(),
         probe_vault_snapshots(quick=args.quick),
+        probe_vault_provenance(quick=args.quick),
     ]
 
     if not args.json:
