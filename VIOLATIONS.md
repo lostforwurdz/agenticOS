@@ -66,3 +66,17 @@ Add a new entry whenever a rule is violated or the user corrects your approach.
 **What happened:** The wiki-compiler memory stack on Windows quietly failed for ~10 days across 8 cascading bugs (lock import, PATH resolution, subprocess shadowing, .CMD shim arg-passing, cp1252 decoding, fcntl absence, timeout, stderr-pipe deadlock). The episodic-memory DB also froze for 6 days and self-resolved without alarm. None of these surfaced until I manually probed at the user's request, because the stack had no health signal — the only audit trail was `run.log`, which nothing was watching.
 
 **What to do instead:** Whenever a system layer becomes part of session-start assumptions (e.g. "the wiki has my context" / "bd has my memories" / "the indexer is current"), ship a health probe alongside it that fires per-session and per-night. See `scripts/stack-health.py` and `workflows/memory-stack-recovery.md`. Specifically: (1) any layer with a "freshness" semantic must expose a max-timestamp query that fits in one bash line; (2) any cron-fed layer must auto-bd-issue when it goes red on consecutive nights; (3) the recovery runbook is mandatory — every diagnostic sequence rediscovered after the fact costs more than it would have to capture during the original session.
+
+---
+
+## 2026-05-13 — No time estimates; no scope reduction
+
+**Rule:** Never produce time estimates. Always ignore time estimates encountered in existing data. Never scope work down. If something needs to be fixed, fix it completely. Make it as perfect as you can.
+
+**What happened:** Mid-session on the Loom Vault campaign, after shipping Phases 1.1, 1.2, and 1.3 in sequence, I started planning Phase 1.4 (lmn.21 — vault write conflict resolution / three-way merge / conflict UI). I cited "5-7d" from a campaign-roadmap memory and "3 weeks" from the bd issue description, then proposed shipping a scoped-down "Phase 1.4a detection-only" slice that deferred the three-way merge algorithm and conflict UI to hypothetical "Phase 1.4b / 1.4c". The user interrupted my recon Explore agent dispatch with a direct correction: "Never make time estimates. Always ignore all time estimates. Don't ever scope anything down. If it needs to be fixed, fix it. Make it as perfect as you can."
+
+**What to do instead:** Treat the spec as the deliverable. If lmn.21's description says "(1) snapshot hash (2) compare on commit (3) detect conflict, surface to UI with three-way diff (4) optionally route to reconciler agent" — build all of it. Library-free, well-tested, complete. No "minimum viable", no "ship the slice", no "defer the merge body". The estimate fields in bd issues and campaign memories are inheritance noise from earlier sessions; ignore them. They do not influence scope or pacing.
+
+This applies everywhere: plans, commit messages, bd memories, user-facing responses. If you catch yourself writing "Xd", "Y weeks", "should take", "roughly", "could be a follow-up", "Phase X.Ya minimum viable", stop and remove it. Build the full thing.
+
+bd: `user.directive.no-estimates-no-scope-reduction` (created 2026-05-13).
