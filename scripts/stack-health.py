@@ -755,6 +755,92 @@ def probe_vault_preflight(quick: bool) -> LayerResult:  # noqa: ARG001
                        f"{detail} — defaults flipped or embedding failing?", metrics)
 
 
+def probe_vault_extractions(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 12 — postflight extraction rate for completed run-source pool dispatches.
+
+    Shipped 2026-05-13 with Phase 1.7c. Compares extraction records against
+    completed run-source pool_tasks. Default is async for run-source so the
+    rate should be near 1.0 in production; below 20% suggests the extractor
+    sweeper isn't running, the agent isn't returning JSON, or defaults were
+    flipped.
+    """
+    if not LOOM_DB.exists():
+        return LayerResult(12, "vault_extractions", SKIPPED,
+                           f"loom.db not found at {LOOM_DB}")
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+        # Numerator + aggregates
+        extr_row = conn.execute(
+            """
+            SELECT COUNT(*),
+                   COALESCE(SUM(bd_remember_count), 0),
+                   COALESCE(SUM(entity_write_count), 0),
+                   COALESCE(SUM(source_write_count), 0),
+                   COALESCE(SUM(error_count), 0)
+              FROM vault_extracted_insights
+             WHERE created_at >= ? AND source_kind = 'run'
+            """,
+            (cutoff,),
+        ).fetchone()
+        # Denominator — completed run-source pool_tasks
+        tasks_row = conn.execute(
+            """
+            SELECT COUNT(*) FROM pool_tasks
+            WHERE created_at >= ?
+              AND status = 'completed'
+              AND json_extract(request_json, '$.source.kind') = 'run'
+            """,
+            (cutoff,),
+        ).fetchone()
+        conn.close()
+    except sqlite3.OperationalError as e:
+        if "no such table" in str(e):
+            return LayerResult(12, "vault_extractions", SKIPPED,
+                               "vault_extracted_insights or pool_tasks not found (pre-1.7c?)")
+        return LayerResult(12, "vault_extractions", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(12, "vault_extractions", RED, f"sqlite error: {e}")
+
+    extractions, sum_bd, sum_entities, sum_sources, sum_errors = extr_row
+    extractions = extractions or 0
+    tasks = (tasks_row[0] if tasks_row else 0) or 0
+
+    if tasks == 0:
+        return LayerResult(
+            12, "vault_extractions", SKIPPED,
+            "no completed run-source pool_tasks in 7d window",
+            {"extractions": extractions, "tasks": 0},
+        )
+
+    rate = extractions / tasks
+    error_rate = sum_errors / max(extractions, 1)
+    pct = round(rate * 100, 1)
+    err_pct = round(error_rate * 100, 1)
+    detail = (
+        f"{extractions}/{tasks} completed runs extracted ({pct}%) over 7d; "
+        f"+{sum_bd} bd / +{sum_entities} entities / +{sum_sources} sources; "
+        f"{sum_errors} errors ({err_pct}%)"
+    )
+    metrics = {
+        "extractions": extractions,
+        "tasks": tasks,
+        "rate": round(rate, 4),
+        "bd_remember_count": sum_bd,
+        "entity_write_count": sum_entities,
+        "source_write_count": sum_sources,
+        "error_count": sum_errors,
+        "error_rate": round(error_rate, 4),
+    }
+
+    if rate >= 0.50 and error_rate < 0.10:
+        return LayerResult(12, "vault_extractions", GREEN, detail, metrics)
+    if rate >= 0.20:
+        return LayerResult(12, "vault_extractions", YELLOW, detail, metrics)
+    return LayerResult(12, "vault_extractions", RED,
+                       f"{detail} — sweeper down or extractor failing?", metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -837,6 +923,7 @@ def main(argv: list[str] | None = None) -> int:
         probe_vault_critic(quick=args.quick),
         probe_vault_embeddings(quick=args.quick),
         probe_vault_preflight(quick=args.quick),
+        probe_vault_extractions(quick=args.quick),
     ]
 
     if not args.json:
