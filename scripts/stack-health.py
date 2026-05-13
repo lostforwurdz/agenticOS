@@ -687,6 +687,74 @@ def probe_vault_embeddings(quick: bool) -> LayerResult:  # noqa: ARG001
                        f"{detail} — run `loom vault embed --backfill` to recover", metrics)
 
 
+def probe_vault_preflight(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 11 — preflight retrieval rate for run-source pool dispatches.
+
+    Shipped 2026-05-13 with Phase 1.7b. Compares preflight retrievals over
+    last 7 days vs run-source pool_tasks dispatched in the same window.
+    Default is on for run-source, so the rate should be near 1.0 unless
+    embedding/retrieval is silently failing or defaults were flipped.
+    """
+    if not LOOM_DB.exists():
+        return LayerResult(11, "vault_preflight", SKIPPED,
+                           f"loom.db not found at {LOOM_DB}")
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+        # Numerator: preflight retrievals for run-source in window
+        retrievals_row = conn.execute(
+            """
+            SELECT COUNT(*) FROM vault_preflight_retrievals
+            WHERE created_at >= ? AND source_kind = 'run'
+            """,
+            (cutoff,),
+        ).fetchone()
+        # Denominator: run-source pool_tasks in window
+        tasks_row = conn.execute(
+            """
+            SELECT COUNT(*) FROM pool_tasks
+            WHERE created_at >= ?
+              AND json_extract(request_json, '$.source.kind') = 'run'
+            """,
+            (cutoff,),
+        ).fetchone()
+        conn.close()
+    except sqlite3.OperationalError as e:
+        msg = str(e)
+        if "no such table" in msg:
+            return LayerResult(11, "vault_preflight", SKIPPED,
+                               "vault_preflight_retrievals or pool_tasks not found (pre-1.7b?)")
+        return LayerResult(11, "vault_preflight", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(11, "vault_preflight", RED, f"sqlite error: {e}")
+
+    retrievals = (retrievals_row[0] if retrievals_row else 0) or 0
+    tasks = (tasks_row[0] if tasks_row else 0) or 0
+
+    if tasks == 0:
+        return LayerResult(
+            11, "vault_preflight", SKIPPED,
+            "no run-source pool_tasks in 7d window",
+            {"retrievals": retrievals, "tasks": 0},
+        )
+
+    rate = retrievals / tasks
+    pct = round(rate * 100, 1)
+    detail = f"{retrievals}/{tasks} run-source dispatches preflighted ({pct}%) over 7d"
+    metrics = {
+        "retrievals": retrievals,
+        "tasks": tasks,
+        "rate": round(rate, 4),
+    }
+
+    if rate >= 0.50:
+        return LayerResult(11, "vault_preflight", GREEN, detail, metrics)
+    if rate >= 0.20:
+        return LayerResult(11, "vault_preflight", YELLOW, detail, metrics)
+    return LayerResult(11, "vault_preflight", RED,
+                       f"{detail} — defaults flipped or embedding failing?", metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -768,6 +836,7 @@ def main(argv: list[str] | None = None) -> int:
         probe_vault_provenance(quick=args.quick),
         probe_vault_critic(quick=args.quick),
         probe_vault_embeddings(quick=args.quick),
+        probe_vault_preflight(quick=args.quick),
     ]
 
     if not args.json:
