@@ -69,6 +69,18 @@ Add a new entry whenever a rule is violated or the user corrects your approach.
 
 ---
 
+## 2026-05-13 — Parallel coders must not touch git state in a shared working tree
+
+**Rule:** When dispatching multiple coder subagents in parallel against a shared working tree, every coder is forbidden from running `git stash`, `git reset`, `git checkout`, `git restore`, or `git clean`. The working tree is shared; one coder's git mutation silently clobbers another's in-flight work. The orchestrator owns all git state mutation. Better: spawn each parallel coder with `isolation: "worktree"` so each gets its own git worktree.
+
+**What happened:** Mid-batch on the lmn.16 reviewer-batch sweep (2026-05-13), I dispatched 4 coders in parallel against `~/loom`'s shared working tree (T4, T6, D4, vjvj). One of the coders — likely T6 or T4 attempting to test against a clean baseline — ran `git stash` to capture in-progress work, reset to HEAD, then re-applied only their own changes. D4 had already finished and was not actively writing, so its files (db.ts, preflight-store.ts, pool/preflight.ts, receipts.ts, two test files, plus a contracts.ts hunk) were silently lost from the working tree. Detection: a `git status` mid-batch showed D4's files missing; reflog confirmed `reset: moving to HEAD`; `git stash list` showed `stash@{0}` containing the union of all 4 tasks' work. Recovery cost ~3 tool calls + a hand-spliced contracts.ts Edit. The next batch (T1+T3+D6) used `isolation: "worktree"` per coder and ran clean — pattern validated.
+
+**What to do instead:** When using parallel `Agent` dispatch with multiple coders, default to `isolation: "worktree"` on each. The orchestrator merges branches sequentially after per-task review. If you must dispatch against the shared tree (single coder, or coders touching truly disjoint directories), include an explicit prohibition in each dispatch prompt: "Do NOT run git stash, reset, checkout, restore, or clean. The working tree is shared." The orchestrator commits incrementally as each coder finishes so the shared tree shrinks rather than accumulating across all parallel work.
+
+bd: `violations.parallel-coders-git-state-2026-05-13`.
+
+---
+
 ## 2026-05-13 — No time estimates; no scope reduction
 
 **Rule:** Never produce time estimates. Always ignore time estimates encountered in existing data. Never scope work down. If something needs to be fixed, fix it completely. Make it as perfect as you can.
