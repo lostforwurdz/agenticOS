@@ -595,12 +595,13 @@ def probe_vault_critic(quick: bool) -> LayerResult:  # noqa: ARG001
 
 
 def probe_vault_embeddings(quick: bool) -> LayerResult:  # noqa: ARG001
-    """Layer 10 — vault_embeddings coverage vs FTS-indexed notes.
+    """Layer 10 — vault_embeddings coverage vs vault .md files.
 
     Shipped 2026-05-13 with Phase 1.7a. Reads vault_embeddings (count, dim,
-    model) and cross-references with notes_fts to estimate coverage. The
-    gateway hook (Task 6) keeps the index fresh on writes; the backfill
-    command (Tasks 5/7/8) recovers cold-start and post-incident drift.
+    model) and cross-references with the actual vault .md file count (excluding
+    .raw/) for a stable denominator that includes Obsidian-imported notes that
+    never went through the gateway. Falls back to FTS-based count when vault
+    root cannot be resolved.
     """
     if not LOOM_DB.exists():
         return LayerResult(
@@ -619,8 +620,7 @@ def probe_vault_embeddings(quick: bool) -> LayerResult:  # noqa: ARG001
               FROM vault_embeddings
             """,
         ).fetchone()
-        # FTS row count for the denominator. notes_fts indexes everything
-        # written through the gateway; subtract any .raw/ relpaths.
+        # FTS fallback denominator (used when vault root cannot be resolved).
         fts_total = conn.execute(
             "SELECT COUNT(*) FROM notes_fts WHERE relpath NOT LIKE '.raw/%'",
         ).fetchone()[0] or 0
@@ -636,23 +636,45 @@ def probe_vault_embeddings(quick: bool) -> LayerResult:  # noqa: ARG001
 
     embedded, dim, model = row
     embedded = embedded or 0
-    if fts_total == 0:
+
+    # Prefer vault-walk denominator so imported notes are counted correctly.
+    denom_note = "fts-fallback"
+    vault_root = _resolve_vault_root()
+    if vault_root is not None:
+        vault_total = 0
+        try:
+            for p in vault_root.rglob("*.md"):
+                try:
+                    rel = p.relative_to(vault_root).as_posix()
+                    if not rel.startswith(".raw/"):
+                        vault_total += 1
+                except (ValueError, OSError):
+                    continue
+            denom_note = "vault-walk"
+            total = vault_total
+        except OSError:
+            total = fts_total
+    else:
+        total = fts_total
+
+    if total == 0:
         return LayerResult(
             10, "vault_embeddings", SKIPPED,
-            "no notes_fts rows yet (empty vault?)",
-            {"embedded": embedded, "fts_total": 0},
+            "no notes found yet (empty vault?)",
+            {"embedded": embedded, "total": 0, "denom": denom_note},
         )
 
-    coverage = min(embedded / fts_total, 1.0) if fts_total > 0 else 0.0
+    coverage = min(embedded / total, 1.0) if total > 0 else 0.0
     pct = round(coverage * 100, 1)
     detail = (
-        f"{embedded}/{fts_total} notes embedded ({pct}%)"
+        f"{embedded}/{total} notes embedded ({pct}%)"
         + (f", model={model}" if model else "")
         + (f", dim={dim}" if dim else "")
     )
     metrics = {
         "embedded": embedded,
-        "fts_total": fts_total,
+        "total": total,
+        "denom": denom_note,
         "coverage": round(coverage, 4),
         "dim": dim,
         "model": model,
