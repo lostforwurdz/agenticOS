@@ -527,6 +527,73 @@ def probe_vault_provenance(quick: bool) -> LayerResult:
                        f"{detail} — writes bypassing gateway?", metrics)
 
 
+def probe_vault_critic(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 9 — vault_critic_decisions verdict distribution (last 7 days)."""
+    if not LOOM_DB.exists():
+        return LayerResult(
+            9, "vault_critic", SKIPPED,
+            f"loom.db not found at {LOOM_DB}",
+        )
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+        row = conn.execute(
+            """
+            SELECT COUNT(*),
+                   SUM(CASE WHEN verdict='accept' THEN 1 ELSE 0 END),
+                   SUM(CASE WHEN verdict='needs_revision' THEN 1 ELSE 0 END),
+                   SUM(CASE WHEN verdict='reject' THEN 1 ELSE 0 END)
+              FROM vault_critic_decisions
+             WHERE created_at >= ?
+            """,
+            (cutoff,),
+        ).fetchone()
+        conn.close()
+    except sqlite3.OperationalError as e:
+        if "no such table" in str(e):
+            return LayerResult(9, "vault_critic", SKIPPED,
+                               "vault_critic_decisions table not found")
+        return LayerResult(9, "vault_critic", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(9, "vault_critic", RED, f"sqlite error: {e}")
+
+    count, accepts, revisions, rejects = row
+    count = count or 0
+    if count == 0:
+        return LayerResult(
+            9, "vault_critic", SKIPPED,
+            "no critic decisions / 7d",
+            {"count": 0},
+        )
+
+    accepts = accepts or 0
+    revisions = revisions or 0
+    rejects = rejects or 0
+    reject_rate = rejects / count
+    accept_pct = round(accepts / count * 100, 1)
+    revise_pct = round(revisions / count * 100, 1)
+    reject_pct = round(rejects / count * 100, 1)
+
+    detail = (
+        f"{count} decisions / 7d — "
+        f"{accept_pct}% accept / {revise_pct}% revise / {reject_pct}% reject"
+    )
+    metrics = {
+        "count": count,
+        "accepts": accepts,
+        "revisions": revisions,
+        "rejects": rejects,
+        "reject_rate": round(reject_rate, 4),
+    }
+
+    if reject_rate >= 0.50:
+        return LayerResult(9, "vault_critic", RED,
+                           f"{detail} — critic flagging most writes (drift signal)", metrics)
+    if reject_rate >= 0.20:
+        return LayerResult(9, "vault_critic", YELLOW, detail, metrics)
+    return LayerResult(9, "vault_critic", GREEN, detail, metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -606,6 +673,7 @@ def main(argv: list[str] | None = None) -> int:
         check_constitution(),
         probe_vault_snapshots(quick=args.quick),
         probe_vault_provenance(quick=args.quick),
+        probe_vault_critic(quick=args.quick),
     ]
 
     if not args.json:
