@@ -187,6 +187,38 @@ $bytes = [System.IO.File]::ReadAllBytes("$env:LOCALAPPDATA\wiki-compiler\run.log
 
 **Fix:** depends on cause. If the wrapper itself is broken, see the appropriate Layer 3 sub-bug. If the timer is disabled, re-enable.
 
+### 4a. `indexer.py` crashes on non-UTF-8 wiki page (cascade-hider)
+
+**Symptom:** Run log ends with `UnicodeDecodeError: 'utf-8' codec can't decode byte 0xNN in position N: invalid start byte` from `wiki_compiler/indexer.py:_title_of`. Exit 1. No commit, no push. Layer 5 then shows uncommitted state because the wrapper's commit step never ran.
+
+**Cause:** `_title_of(path)` used `path.read_text()` (UTF-8 strict by default). Pre-`3be1e72` wiki-compiler runs wrote `Reconciler` output with the platform encoding on Windows, leaving cp1252 bytes (`0x85` ellipsis, `0x97` em-dash, etc.) embedded in some pages. When a later run hits a per-item exception (e.g. `BudgetExceeded`), the `finally:` block in `compile.py` calls `rebuild_index`, which crashes on the first corrupt page. The UnicodeDecodeError **supplants** the original exception (since it's raised from inside `finally`), so the original error is masked AND the in-flight writes are stranded.
+
+**Diagnostic:**
+
+```bash
+cd ~/wiki && python3 -c "
+from pathlib import Path
+for p in Path('.').rglob('*.md'):
+    try: p.read_text()
+    except UnicodeDecodeError as e: print(p, e)
+"
+```
+
+**Fix:**
+
+1. **In wiki-compiler** (one-time code fix): `_title_of` reads with `encoding="utf-8", errors="replace"` and wraps in `try/except OSError`; `compile.py` `finally:` block wraps `rebuild_index` + `append_run` in `try/except Exception` with single-line stderr (don't loop per-item — see 3e re: pipe deadlock). Shipped 2026-05-13.
+2. **In the wiki repo** (one-time cleanup): re-encode each corrupt file from cp1252 to UTF-8 in place:
+
+   ```bash
+   cd ~/wiki && python3 -c "
+   from pathlib import Path
+   for fn in ['<rel/path/a.md>', '<rel/path/b.md>']:
+       p = Path(fn); p.write_text(p.read_bytes().decode('cp1252'), encoding='utf-8')
+   "
+   ```
+
+3. Sweep-commit per Layer 5 to recover the stranded writes from the masked run.
+
 ## Layer 5 — Compiled wiki repo state
 
 **Healthy:** `~/wiki/.git` exists, `git status -sb` shows `## main...origin/main` (no ahead/behind, no dirty), last commit within 30 hours.
