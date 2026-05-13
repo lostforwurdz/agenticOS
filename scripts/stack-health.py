@@ -594,6 +594,77 @@ def probe_vault_critic(quick: bool) -> LayerResult:  # noqa: ARG001
     return LayerResult(9, "vault_critic", GREEN, detail, metrics)
 
 
+def probe_vault_embeddings(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 10 — vault_embeddings coverage vs FTS-indexed notes.
+
+    Shipped 2026-05-13 with Phase 1.7a. Reads vault_embeddings (count, dim,
+    model) and cross-references with notes_fts to estimate coverage. The
+    gateway hook (Task 6) keeps the index fresh on writes; the backfill
+    command (Tasks 5/7/8) recovers cold-start and post-incident drift.
+    """
+    if not LOOM_DB.exists():
+        return LayerResult(
+            10, "vault_embeddings", SKIPPED,
+            f"loom.db not found at {LOOM_DB}",
+        )
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        # vault_embeddings stats
+        row = conn.execute(
+            """
+            SELECT COUNT(*),
+                   MAX(dim),
+                   (SELECT model FROM vault_embeddings
+                     GROUP BY model ORDER BY COUNT(*) DESC LIMIT 1)
+              FROM vault_embeddings
+            """,
+        ).fetchone()
+        # FTS row count for the denominator. notes_fts indexes everything
+        # written through the gateway; subtract any .raw/ relpaths.
+        fts_total = conn.execute(
+            "SELECT COUNT(*) FROM notes_fts WHERE relpath NOT LIKE '.raw/%'",
+        ).fetchone()[0] or 0
+        conn.close()
+    except sqlite3.OperationalError as e:
+        msg = str(e)
+        if "no such table" in msg:
+            return LayerResult(10, "vault_embeddings", SKIPPED,
+                               "vault_embeddings table not found (pre-1.7a?)")
+        return LayerResult(10, "vault_embeddings", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(10, "vault_embeddings", RED, f"sqlite error: {e}")
+
+    embedded, dim, model = row
+    embedded = embedded or 0
+    if fts_total == 0:
+        return LayerResult(
+            10, "vault_embeddings", SKIPPED,
+            "no notes_fts rows yet (empty vault?)",
+            {"embedded": embedded, "fts_total": 0},
+        )
+
+    coverage = min(embedded / fts_total, 1.0) if fts_total > 0 else 0.0
+    pct = round(coverage * 100, 1)
+    detail = (
+        f"{embedded}/{fts_total} notes embedded ({pct}%)"
+        + (f", model={model}" if model else "")
+        + (f", dim={dim}" if dim else "")
+    )
+    metrics = {
+        "embedded": embedded,
+        "fts_total": fts_total,
+        "coverage": round(coverage, 4),
+        "dim": dim,
+        "model": model,
+    }
+    if coverage >= 0.95:
+        return LayerResult(10, "vault_embeddings", GREEN, detail, metrics)
+    if coverage >= 0.80:
+        return LayerResult(10, "vault_embeddings", YELLOW, detail, metrics)
+    return LayerResult(10, "vault_embeddings", RED,
+                       f"{detail} — run `loom vault embed --backfill` to recover", metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -674,6 +745,7 @@ def main(argv: list[str] | None = None) -> int:
         probe_vault_snapshots(quick=args.quick),
         probe_vault_provenance(quick=args.quick),
         probe_vault_critic(quick=args.quick),
+        probe_vault_embeddings(quick=args.quick),
     ]
 
     if not args.json:
