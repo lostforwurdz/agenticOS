@@ -841,6 +841,69 @@ def probe_vault_extractions(quick: bool) -> LayerResult:  # noqa: ARG001
                        f"{detail} — sweeper down or extractor failing?", metrics)
 
 
+def probe_vault_bd_success(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 13 — bdRemember success rate for postflight extractions.
+
+    Shipped 2026-05-13 with Phase 1.7d. Compares actual bd writes
+    against proposed insights across processed extractor records.
+    Below 80% suggests bd binary is missing on PATH, the dolt remote
+    is unreachable, or there's a key/value validation failure path
+    being hit at scale.
+    """
+    if not LOOM_DB.exists():
+        return LayerResult(13, "vault_bd_success", SKIPPED,
+                           f"loom.db not found at {LOOM_DB}")
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+        row = conn.execute(
+            """
+            SELECT
+              COALESCE(SUM(bd_remember_count), 0),
+              COALESCE(SUM(json_array_length(insights_json)), 0)
+            FROM vault_extracted_insights
+            WHERE status = 'processed'
+              AND source_kind = 'run'
+              AND created_at >= ?
+            """,
+            (cutoff,),
+        ).fetchone()
+        conn.close()
+    except sqlite3.OperationalError as e:
+        if "no such table" in str(e):
+            return LayerResult(13, "vault_bd_success", SKIPPED,
+                               "vault_extracted_insights not found (pre-1.7c?)")
+        return LayerResult(13, "vault_bd_success", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(13, "vault_bd_success", RED, f"sqlite error: {e}")
+
+    numerator = (row[0] if row else 0) or 0
+    denominator = (row[1] if row else 0) or 0
+
+    if denominator == 0:
+        return LayerResult(
+            13, "vault_bd_success", SKIPPED,
+            "no processed run-source extractions in 7d window",
+            {"numerator": 0, "denominator": 0},
+        )
+
+    rate = numerator / denominator
+    pct = round(rate * 100, 1)
+    detail = f"{numerator}/{denominator} insights → bd memory ({pct}%) over 7d"
+    metrics = {
+        "numerator": numerator,
+        "denominator": denominator,
+        "rate": round(rate, 4),
+    }
+
+    if rate >= 0.95:
+        return LayerResult(13, "vault_bd_success", GREEN, detail, metrics)
+    if rate >= 0.80:
+        return LayerResult(13, "vault_bd_success", YELLOW, detail, metrics)
+    return LayerResult(13, "vault_bd_success", RED,
+                       f"{detail} — check bd binary on PATH or dolt remote", metrics)
+
+
 def check_constitution() -> LayerResult:
     """Layer 6 — AgenticOS constitution drift (skill pointer integrity)."""
     script = AGENTIC_OS / "scripts/check-skill-pointers.sh"
@@ -924,6 +987,7 @@ def main(argv: list[str] | None = None) -> int:
         probe_vault_embeddings(quick=args.quick),
         probe_vault_preflight(quick=args.quick),
         probe_vault_extractions(quick=args.quick),
+        probe_vault_bd_success(quick=args.quick),
     ]
 
     if not args.json:
