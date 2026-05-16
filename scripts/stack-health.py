@@ -468,10 +468,15 @@ def probe_vault_provenance(quick: bool) -> LayerResult:
     FRONTMATTER_RE = re.compile(r"^loom_source_runner_id\s*:", re.MULTILINE)
     FRONTMATTER_BLOCK_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
 
-    # Collect .md files modified in the last 7 days
+    # Collect .md files modified in the last 7 days. Skip dot-directories
+    # (.git, .raw, .pipeline, .tmp-*) — the vault .gitignore treats these as
+    # scratch/non-canonical (cost reports, checkpoint spills) and they never
+    # carry gateway provenance. Walking them produces false RED readings.
     recent: list[pathlib.Path] = []
     try:
         for p in vault_root.rglob("*.md"):
+            if any(part.startswith(".") for part in p.relative_to(vault_root).parts[:-1]):
+                continue
             try:
                 if p.stat().st_mtime >= cutoff:
                     recent.append(p)
@@ -841,6 +846,101 @@ def probe_vault_extractions(quick: bool) -> LayerResult:  # noqa: ARG001
                        f"{detail} — sweeper down or extractor failing?", metrics)
 
 
+def probe_regression_last_run(quick: bool) -> LayerResult:  # noqa: ARG001
+    """Layer 14 — loom nightly regression suite last-run recency (lmn.28 Phase B).
+
+    Reads regression_runs from the loom state.db directly (no daemon needed).
+    Skips gracefully when:
+      - loom.db not found
+      - regression_runs table doesn't exist (Phase A only)
+    Reads [evals.regression] enabled flag from config.toml when present.
+    """
+    if not LOOM_DB.exists():
+        return LayerResult(
+            14, "regression_last_run", SKIPPED,
+            f"loom.db not found at {LOOM_DB}",
+        )
+
+    # Check if enabled in config.toml (best-effort — skip if toml not parseable)
+    enabled = False
+    try:
+        import configparser
+        config_path = LOOM_DB.parent.parent / "conf" / "config.toml"
+        if config_path.exists():
+            # Minimal TOML parse for [evals.regression] enabled key
+            # Use configparser with a fake DEFAULT section header hack
+            text = config_path.read_text(encoding="utf-8", errors="replace")
+            # Scan for enabled = true under [evals.regression]
+            in_section = False
+            for line in text.splitlines():
+                stripped = line.strip()
+                if stripped == "[evals.regression]":
+                    in_section = True
+                elif stripped.startswith("[") and stripped != "[evals.regression]":
+                    in_section = False
+                elif in_section and stripped.startswith("enabled"):
+                    val = stripped.split("=", 1)[-1].strip().lower()
+                    enabled = val in ("true", "1")
+                    break
+    except Exception:  # noqa: BLE001
+        pass
+
+    if not enabled:
+        return LayerResult(
+            14, "regression_last_run", SKIPPED,
+            "regression suite disabled (evals.regression.enabled = false in config or not set)",
+        )
+
+    try:
+        conn = sqlite3.connect(f"file:{LOOM_DB}?mode=ro", uri=True)
+        # Check table exists
+        table_check = conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name='regression_runs'"
+        ).fetchone()
+        if not table_check:
+            conn.close()
+            return LayerResult(14, "regression_last_run", SKIPPED,
+                               "regression_runs table not found (Phase B not yet deployed)")
+
+        row = conn.execute(
+            "SELECT run_date, SUM(regressions_count), MAX(started_at)"
+            " FROM regression_runs"
+            " WHERE started_at >= ?"
+            " GROUP BY run_date"
+            " ORDER BY run_date DESC"
+            " LIMIT 1",
+            ((datetime.now(timezone.utc) - timedelta(hours=36)).isoformat(),),
+        ).fetchone()
+        conn.close()
+    except sqlite3.OperationalError as e:
+        return LayerResult(14, "regression_last_run", RED, f"sqlite error: {e}")
+    except sqlite3.Error as e:
+        return LayerResult(14, "regression_last_run", RED, f"sqlite error: {e}")
+
+    if not row or not row[0]:
+        return LayerResult(
+            14, "regression_last_run", RED,
+            "regression suite enabled but no run in last 36h — scheduler may not be firing",
+        )
+
+    run_date, total_regressions, started_at_iso = row
+    total_regressions = total_regressions or 0
+    age_hours = _hours_since(_parse_iso(started_at_iso))
+    metrics = {
+        "run_date": run_date,
+        "total_regressions": total_regressions,
+        "age_hours": round(age_hours, 1),
+    }
+
+    if total_regressions > 0:
+        return LayerResult(14, "regression_last_run", YELLOW,
+                           f"last run {run_date} ({age_hours:.1f}h ago): {total_regressions} regression(s) detected",
+                           metrics)
+    return LayerResult(14, "regression_last_run", GREEN,
+                       f"last run {run_date} ({age_hours:.1f}h ago): no regressions",
+                       metrics)
+
+
 def probe_vault_bd_success(quick: bool) -> LayerResult:  # noqa: ARG001
     """Layer 13 — bdRemember success rate for postflight extractions.
 
@@ -988,6 +1088,7 @@ def main(argv: list[str] | None = None) -> int:
         probe_vault_preflight(quick=args.quick),
         probe_vault_extractions(quick=args.quick),
         probe_vault_bd_success(quick=args.quick),
+        probe_regression_last_run(quick=args.quick),
     ]
 
     if not args.json:
