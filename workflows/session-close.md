@@ -45,6 +45,23 @@ Local commits without a push strand work on one machine. bd issues closed withou
 3. Do not save what is already obvious from the code or git history. Save what future-you would need that isn't there.
 4. See `CLAUDE.md` "Memory hygiene" standing instruction for the full rule.
 
+### Phase 4.4: Decisions sync
+
+1. Dispatch the `decisions-sync` agent (`agents/decisions-sync.md`) against the current session's chat transcript at `~/.claude/projects/<slugified-cwd>/<session-uuid>.jsonl`.
+2. The agent identifies user decisions (selections, standing rules, constraints, approvals, sequencing choices, scope cuts, preferences), captures each as WHAT + WHY + WHEN + WHERE + verbatim QUOTE, dedupes against existing `decision.*` bd entries, and writes new entries via `bd remember --key "decision.<YYYY-MM-DD>.<slug>" "..."`.
+3. Future code-change sessions can then `bd memories <keyword>` to find "why did we choose X" with full reasoning + audit trail.
+4. The agent uses an independent reviewer subagent to verify quotes are verbatim and WHY is grounded in the source turn before any bd write.
+5. If the chat log has no captureable decisions, agent exits cleanly with "no decisions identified."
+
+### Phase 4.5: Documentation sync
+
+1. Dispatch the `docs-sync` agent (`agents/docs-sync.md`) against this session's commit range. Default: `git log origin/main..HEAD`.
+2. The agent identifies docs that drifted because of source changes (README, ARCHITECTURE.md, CLAUDE.md, docs/*, AGENTS.md, workflows/*, agents/*, loom-openapi.json), applies precise edits, then runs an independent reviewer subagent on the doc diff before committing.
+3. On reviewer approval: a `docs: sync from <range>` commit appears. Proceed to Phase 5.
+4. On reviewer rejection or unresolved drift: the agent writes findings to `.claude/audits/AUDIT_DOCS_SYNC_<YYYY-MM-DD>.md` and files bd issues for items it could not fix. Review and act on those before pushing OR file as session-out follow-up before continuing — do NOT skip the push if drift remains, but do NOT bury silently either.
+5. If the range is empty or contains only doc-only commits: agent exits cleanly with "no drift detected." State this explicitly and proceed.
+6. The docs commit goes through the same reviewer gate as code commits (user standing rule — no exceptions).
+
 ### Phase 5: Push
 
 1. Run the mandatory push sequence in order — do not reorder or skip steps:
